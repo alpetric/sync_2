@@ -1,0 +1,8 @@
+description: ''
+value:
+  branch: ''
+  folder: ''
+  github_app_installation_id: 63371276
+  is_github_app: true
+  url: '$var:u/alex/well_connected_git_repository'
+resource_type: git_repository

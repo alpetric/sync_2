@@ -1,0 +1,6 @@
+description: ''
+value:
+  branch: ''
+  folder: ''
+  url: 'https://github.com/alpetric/test_release.git'
+resource_type: git_repository
