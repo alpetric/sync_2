@@ -25,5 +25,5 @@ export async function main(
   }
 ) {
   // let x = await wmill.getVariable('u/user/foo')
-  return { foo: a };
+  return { foooooooo: a };
 }
