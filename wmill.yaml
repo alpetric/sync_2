@@ -11,5 +11,5 @@ includeSchedules: true
 includeTriggers: true
 includeUsers: false
 includeGroups: false
-includeSettings: false
+includeSettings: true
 includeKey: false
