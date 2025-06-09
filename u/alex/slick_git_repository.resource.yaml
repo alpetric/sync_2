@@ -1,6 +1,0 @@
-description: ''
-value:
-  branch: ''
-  folder: e
-  url: '$var:u/alex/slick_git_repository'
-resource_type: git_repository
