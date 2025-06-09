@@ -10,6 +10,6 @@ skipSecrets: true
 includeSchedules: true
 includeTriggers: true
 includeUsers: false
-includeGroups: false
+includeGroups: true
 includeSettings: false
 includeKey: false
