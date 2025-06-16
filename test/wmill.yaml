@@ -1,0 +1,16 @@
+workspaces:
+  test:
+    baseUrl: 'http://127.0.0.1:8000/'
+    workspaceId: test
+    repositories:
+      u/alex/breathtaking_git_repository:
+        defaultTs: bun
+        includes:
+          - f/**
+        skipVariables: true
+        skipResources: true
+        skipResourceTypes: true
+        skipSecrets: true
+        includeSchedules: true
+        includeTriggers: true
+defaultWorkspace: test
