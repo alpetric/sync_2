@@ -1,9 +1,0 @@
-defaultTs: bun
-includes:
-  - f/**
-skipVariables: true
-skipResources: true
-skipResourceTypes: true
-skipSecrets: true
-includeSchedules: true
-includeTriggers: true
