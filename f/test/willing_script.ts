@@ -1,4 +1,4 @@
-// there are multiple modes to add as header: //nobundling //native //npm //nodejs
+// there are multiple modes to add as header: //nobundling //native //npm //nodejsads
 // https://www.windmill.dev/docs/getting_started/scripts_quickstart/typescript#modes
 
 // import { toWords } from "number-to-words@1"adfadsf
@@ -27,5 +27,3 @@ export async function main(
   // let x = await wmill.getVariable('u/user/foo')
   return { foo: a };
 }
-
-adfadsfasdf
