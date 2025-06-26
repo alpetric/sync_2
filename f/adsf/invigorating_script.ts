@@ -1,5 +1,5 @@
 // there are multiple modes to add as header: //nobundling //native //npm //nodejs
-// https://www.windmill.dev/docs/getting_started/scripts_quickstart/typescript#modesadfadfa
+// https://www.windmill.dev/docs/getting_started/scripts_quickstart/typescript#modesadfadfaadsf
 
 // import { toWords } from "number-to-words@1"
 import * as wmill from "windmill-client"
