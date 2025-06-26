@@ -1,4 +1,4 @@
-// there are multiple modes to add as header: //nobundling //native //npm //nodejsadsadsfadfafd
+// there are multiple modes to add as header: //nobundling //native //npm //nodejsadsadsfadfafdadfadf
 // https://www.windmill.dev/docs/getting_started/scripts_quickstart/typescript#modes
 
 // import { toWords } from "number-to-words@1"adfadsf
