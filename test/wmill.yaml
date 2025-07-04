@@ -1,6 +1,6 @@
 defaultTs: bun
 includes:
-- f/**
+  - f/**
 skipVariables: true
 skipResources: true
 skipResourceTypes: true
@@ -11,8 +11,4 @@ overrides:
   'test:u/alex/breathtaking_git_repository':
     extraIncludes:
       - f/test2/**
-    skipVariables: true
-    skipResources: true
-    skipResourceTypes: true
-    skipSecrets: true
-    includeTriggers: true
+    includeSchedules: false
