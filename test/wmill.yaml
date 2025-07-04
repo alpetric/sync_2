@@ -11,4 +11,3 @@ overrides:
   'test:u/alex/breathtaking_git_repository':
     extraIncludes:
       - f/test2/**
-    includeSchedules: false
