@@ -10,7 +10,7 @@ skipScripts: false
 skipFlows: false
 skipApps: false
 skipFolders: false
-includeSchedules: false
+includeSchedules: true
 includeTriggers: true
 extraIncludes:
   - f/test2/**
