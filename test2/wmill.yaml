@@ -21,4 +21,8 @@ includeSettings: false
 includeKey: false
 overrides:
   'test:u/alex/breathtaking_git_repository':
+    extraIncludes: []
+    skipResources: false
+    skipResourceTypes: false
     includeSchedules: false
+    includeTriggers: false
