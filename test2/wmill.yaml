@@ -19,3 +19,6 @@ includeUsers: false
 includeGroups: false
 includeSettings: false
 includeKey: false
+overrides:
+  'test:u/alex/breathtaking_git_repository':
+    includeSchedules: false
