@@ -4,17 +4,16 @@ includes:
 excludes: []
 codebases: []
 skipVariables: true
-skipResources: true
+skipResources: false
 skipSecrets: true
 skipScripts: false
 skipFlows: false
 skipApps: false
 skipFolders: false
-includeSchedules: true
-includeTriggers: true
-extraIncludes:
-  - f/test2/**
-skipResourceTypes: true
+includeSchedules: false
+includeTriggers: false
+extraIncludes: []
+skipResourceTypes: false
 includeUsers: false
 includeGroups: false
 includeSettings: false
