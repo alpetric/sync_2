@@ -7,7 +7,3 @@ skipResourceTypes: true
 skipSecrets: true
 includeSchedules: true
 includeTriggers: true
-overrides:
-  'test:u/alex/breathtaking_git_repository':
-    extraIncludes:
-      - f/test2/**
