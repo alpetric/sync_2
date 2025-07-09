@@ -12,7 +12,7 @@ ai_config:
 auto_invite_as: developer
 auto_invite_enabled: false
 auto_invite_mode: invite
-color: '#23989d'
+color: '#e22d0e'
 default_app: u/alex/grateful_app
 error_handler: script/hub/11598/workspace-or-schedule-error-handler-teams
 error_handler_extra_args:
