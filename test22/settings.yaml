@@ -17,7 +17,7 @@ default_app: u/alex/grateful_app
 error_handler: script/hub/11598/workspace-or-schedule-error-handler-teams
 error_handler_extra_args:
   channel: '19:4SkiS4RJt1gOqqwRUeXdKJvB0XoklVFX4bL9-mhPLbs1@thread.tacv2'
-error_handler_muted_on_cancel: true
+error_handler_muted_on_cancel: false
 git_sync:
   repositories:
     - git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
