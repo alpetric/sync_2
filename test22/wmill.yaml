@@ -20,7 +20,6 @@ includeSettings: false
 includeKey: false
 overrides:
   'http://127.0.0.1:8000/:test:u/alex/breathtaking_git_repository':
-    includeTriggers: true
     includeSettings: true
     includeKey: true
   'http://127.0.0.1:8000/:test:u/alex/elated_git_repository':
