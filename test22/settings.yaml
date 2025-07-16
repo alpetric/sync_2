@@ -38,7 +38,6 @@ git_sync:
           - group
           - key
           - settings
-          - trigger
       use_individual_branch: false
     - git_repo_resource_path: '$res:u/alex/elated_git_repository'
       group_by_folder: false
