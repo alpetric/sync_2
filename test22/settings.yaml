@@ -35,6 +35,7 @@ git_sync:
           - folder
           - resource
           - resourcetype
+          - trigger
           - group
           - settings
           - key
