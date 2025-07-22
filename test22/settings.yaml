@@ -33,11 +33,11 @@ git_sync:
           - flow
           - app
           - folder
-          - resourcetype
           - resource
+          - resourcetype
           - group
-          - key
           - settings
+          - key
       use_individual_branch: false
     - git_repo_resource_path: '$res:u/alex/elated_git_repository'
       group_by_folder: false
