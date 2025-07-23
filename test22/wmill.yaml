@@ -1,6 +1,6 @@
 defaultTs: bun
 includes:
-  - f/test2/**
+  - f/**
 excludes: []
 codebases: []
 skipVariables: true
