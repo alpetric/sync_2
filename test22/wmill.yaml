@@ -1,6 +1,6 @@
 defaultTs: bun
 includes:
-  - f/test/**
+  - f/**
 excludes: []
 codebases: []
 skipVariables: true
@@ -15,7 +15,7 @@ includeTriggers: false
 extraIncludes: []
 skipResourceTypes: false
 includeUsers: false
-includeGroups: true
+includeGroups: false
 includeSettings: false
 includeKey: false
 overrides:
