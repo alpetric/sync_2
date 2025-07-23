@@ -1,6 +1,6 @@
 defaultTs: bun
 includes:
-  - f/**
+  - f/test/**
 excludes: []
 codebases: []
 skipVariables: true
@@ -14,8 +14,16 @@ includeSchedules: false
 includeTriggers: false
 extraIncludes: []
 skipResourceTypes: false
-includeUsers: true
-includeGroups: false
+includeUsers: false
+includeGroups: true
 includeSettings: false
-includeKey: true
-overrides: {}
+includeKey: false
+overrides:
+  'http://127.0.0.1:8000/:test:u/alex/breathtaking_git_repository':
+    includeKey: true
+    includeUsers: true
+  'http://127.0.0.1:8000/:test:u/alex/elated_git_repository':
+    skipResourceTypes: true
+    includeTriggers: true
+    includeUsers: false
+    includeKey: true
