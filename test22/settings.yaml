@@ -20,14 +20,15 @@ error_handler_extra_args:
 error_handler_muted_on_cancel: false
 git_sync:
   repositories:
-    - git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
+    - exclude_types_override: []
+      git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
       group_by_folder: false
-      script_path: u/alex/git_sync
+      script_path: hub/19785/sync-script-to-git-repo-windmill
       settings:
         exclude_path: []
         extra_include_path: []
         include_path:
-          - f/**
+          - f/test/**
         include_type:
           - script
           - flow
@@ -35,13 +36,15 @@ git_sync:
           - folder
           - resource
           - resourcetype
+          - user
           - group
           - settings
           - key
-      use_individual_branch: false
-    - git_repo_resource_path: '$res:u/alex/elated_git_repository'
+      use_individual_branch: true
+    - exclude_types_override: []
+      git_repo_resource_path: '$res:u/alex/elated_git_repository'
       group_by_folder: false
-      script_path: hub/19738/sync-script-to-git-repo-windmill
+      script_path: hub/19785/sync-script-to-git-repo-windmill
       settings:
         exclude_path: []
         extra_include_path: []
