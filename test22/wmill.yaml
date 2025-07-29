@@ -15,7 +15,7 @@ includeTriggers: false
 extraIncludes: []
 skipResourceTypes: false
 includeUsers: false
-includeGroups: false
+includeGroups: true
 includeSettings: true
 includeKey: false
 overrides:
