@@ -62,7 +62,7 @@ git_sync:
           - trigger
           - settings
           - schedule
-      use_individual_branch: false
+      use_individual_branch: true
 large_file_storage:
   type: S3Storage
   public_resource: false
