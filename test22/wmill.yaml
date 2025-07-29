@@ -1,6 +1,6 @@
 defaultTs: bun
 includes:
-  - f/**
+  - f/test/**
 excludes: []
 codebases: []
 skipVariables: true
@@ -16,7 +16,7 @@ extraIncludes: []
 skipResourceTypes: false
 includeUsers: false
 includeGroups: false
-includeSettings: false
+includeSettings: true
 includeKey: false
 overrides:
   'http://127.0.0.1:8000/:test:u/alex/breathtaking_git_repository':
