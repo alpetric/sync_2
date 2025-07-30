@@ -21,8 +21,7 @@ error_handler_extra_args:
 error_handler_muted_on_cancel: false
 git_sync:
   repositories:
-    - exclude_types_override: []
-      git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
+    - git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
       group_by_folder: false
       script_path: hub/19785/sync-script-to-git-repo-windmill
       settings:
@@ -38,9 +37,9 @@ git_sync:
           - user
           - settings
           - key
+          - app
       use_individual_branch: false
-    - exclude_types_override: []
-      git_repo_resource_path: '$res:u/alex/elated_git_repository'
+    - git_repo_resource_path: '$res:u/alex/elated_git_repository'
       group_by_folder: false
       script_path: hub/19785/sync-script-to-git-repo-windmill
       settings:
