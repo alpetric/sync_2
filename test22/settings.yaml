@@ -28,11 +28,10 @@ git_sync:
         exclude_path: []
         extra_include_path: []
         include_path:
-          - f/test/**
+          - f/**
         include_type:
           - script
           - flow
-          - app
           - folder
           - resource
           - resourcetype
