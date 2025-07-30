@@ -33,7 +33,6 @@ git_sync:
         include_type:
           - script
           - flow
-          - folder
           - resource
           - resourcetype
           - user
