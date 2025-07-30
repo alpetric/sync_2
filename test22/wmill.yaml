@@ -9,7 +9,7 @@ skipSecrets: true
 skipScripts: false
 skipFlows: false
 skipApps: true
-skipFolders: true
+skipFolders: false
 includeSchedules: false
 includeTriggers: false
 extraIncludes: []
