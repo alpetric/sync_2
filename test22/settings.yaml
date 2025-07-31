@@ -43,22 +43,17 @@ git_sync:
       group_by_folder: false
       script_path: hub/19785/sync-script-to-git-repo-windmill
       settings:
-        exclude_path: []
-        extra_include_path: []
         include_path:
           - f/**
         include_type:
           - script
           - flow
           - app
-          - folder
-          - group
-          - key
-          - user
           - resource
-          - trigger
+          - resourcetype
+          - user
           - settings
-          - schedule
+          - key
       use_individual_branch: false
 large_file_storage:
   type: S3Storage
