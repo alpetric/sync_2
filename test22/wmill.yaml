@@ -18,7 +18,7 @@ includeUsers: false
 includeGroups: false
 includeSettings: true
 includeKey: false
-branches:
+git_branches:
   main:
     promotionOverrides:
       skipApps: true
