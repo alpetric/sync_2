@@ -18,12 +18,4 @@ includeUsers: false
 includeGroups: false
 includeSettings: true
 includeKey: false
-overrides:
-  'http://127.0.0.1:8000/:test:u/alex/breathtaking_git_repository':
-    includeKey: true
-    includeUsers: true
-  'http://127.0.0.1:8000/:test:u/alex/elated_git_repository':
-    skipResourceTypes: true
-    includeTriggers: true
-    includeUsers: false
-    includeKey: true
+overrides: {}
