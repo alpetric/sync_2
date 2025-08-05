@@ -18,3 +18,6 @@ includeUsers: false
 includeGroups: false
 includeSettings: true
 includeKey: false
+overrides: 
+  'http://localhost:8000':test:u/alex/breathtaking_repository:
+    skipApps: false
