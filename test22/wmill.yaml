@@ -5,6 +5,7 @@ excludes: []
 codebases: []
 skipVariables: true
 skipResources: false
+skipResourceTypes: false
 skipSecrets: true
 skipScripts: false
 skipFlows: false
@@ -12,13 +13,12 @@ skipApps: false
 skipFolders: true
 includeSchedules: false
 includeTriggers: false
-extraIncludes: []
-skipResourceTypes: false
 includeUsers: false
 includeGroups: false
 includeSettings: true
 includeKey: false
 git_branches:
   main:
+    overrides: {}
     promotionOverrides:
       skipApps: true
