@@ -23,7 +23,7 @@ git_sync:
   repositories:
     - exclude_types_override: []
       git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
-      group_by_folder: false
+      group_by_folder: true
       script_path: u/alex/git_sync_1
       settings:
         exclude_path: []
@@ -33,7 +33,6 @@ git_sync:
         include_type:
           - script
           - flow
-          - app
           - resource
           - resourcetype
           - settings
