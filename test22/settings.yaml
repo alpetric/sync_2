@@ -24,7 +24,7 @@ git_sync:
     - exclude_types_override: []
       git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
       group_by_folder: false
-      script_path: u/alex/git_sync_1
+      script_path: hub/19789/sync-script-to-git-repo-windmill
       settings:
         exclude_path: []
         extra_include_path: []
@@ -37,7 +37,7 @@ git_sync:
           - resource
           - resourcetype
           - settings
-      use_individual_branch: true
+      use_individual_branch: false
 large_file_storage:
   type: S3Storage
   public_resource: false
