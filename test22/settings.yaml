@@ -10,7 +10,7 @@ ai_config:
         - claude-3-7-sonnet-20250219
       resource_path: u/alex/anthropic
 auto_invite_as: developer
-auto_invite_enabled: false
+auto_invite_enabled: true
 auto_invite_mode: invite
 color: '#e22d0e'
 default_app: u/alex/grateful_app
