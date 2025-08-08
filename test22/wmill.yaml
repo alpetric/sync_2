@@ -3,7 +3,7 @@ includes:
   - f/**
 excludes: []
 codebases: []
-skipVariables: true
+skipVariables: false
 skipResources: false
 skipResourceTypes: false
 skipSecrets: true
@@ -11,8 +11,8 @@ skipScripts: false
 skipFlows: false
 skipApps: false
 skipFolders: true
-includeSchedules: false
-includeTriggers: false
+includeSchedules: true
+includeTriggers: true
 includeUsers: false
 includeGroups: false
 includeSettings: true
