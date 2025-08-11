@@ -50,7 +50,7 @@ operator_settings:
   folders: true
   groups: true
   resources: true
-  runs: true
+  runs: false
   schedules: true
   triggers: true
   variables: true
