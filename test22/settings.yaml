@@ -9,7 +9,7 @@ ai_config:
         - claude-sonnet-4-0
         - claude-3-7-sonnet-20250219
       resource_path: u/alex/anthropic
-auto_invite_as: developer
+auto_invite_as: operator
 auto_invite_enabled: true
 auto_invite_mode: add
 color: '#e22d0e'
