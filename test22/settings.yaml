@@ -38,6 +38,21 @@ git_sync:
           - resourcetype
           - settings
       use_individual_branch: false
+    - exclude_types_override: []
+      git_repo_resource_path: '$res:u/alex/fast_git_repository'
+      group_by_folder: false
+      script_path: hub/19789/sync-script-to-git-repo-windmill
+      settings:
+        exclude_path: []
+        extra_include_path: []
+        include_path:
+          - f/**
+        include_type:
+          - script
+          - flow
+          - app
+          - folder
+      use_individual_branch: false
 large_file_storage:
   type: S3Storage
   public_resource: false
