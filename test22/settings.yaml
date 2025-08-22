@@ -34,8 +34,11 @@ git_sync:
           - script
           - flow
           - app
+          - variable
           - resource
           - resourcetype
+          - schedule
+          - trigger
           - settings
       use_individual_branch: false
     - exclude_types_override: []
@@ -55,6 +58,21 @@ git_sync:
       use_individual_branch: false
     - exclude_types_override: []
       git_repo_resource_path: '$res:u/alex/unaffected_git_repository'
+      group_by_folder: false
+      script_path: u/alex/git_sync_1
+      settings:
+        exclude_path: []
+        extra_include_path: []
+        include_path:
+          - f/**
+        include_type:
+          - script
+          - flow
+          - app
+          - folder
+      use_individual_branch: false
+    - exclude_types_override: []
+      git_repo_resource_path: '$res:u/alex/energetic_git_repository'
       group_by_folder: false
       script_path: u/alex/git_sync_1
       settings:
