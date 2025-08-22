@@ -1,4 +1,3 @@
-//nobundling
 import * as wmillclient from "windmill-client";
 import wmill from "windmill-cli";
 import { basename } from "node:path";
