@@ -26,10 +26,9 @@ git_sync:
       group_by_folder: false
       script_path: u/alex/git_sync_1
       settings:
-        exclude_path: []
-        extra_include_path: []
         include_path:
           - f/**
+          - u/**
         include_type:
           - script
           - flow
@@ -37,6 +36,7 @@ git_sync:
           - variable
           - resource
           - resourcetype
+          - secret
           - schedule
           - trigger
           - settings
