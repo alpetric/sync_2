@@ -1,4 +1,4 @@
-description: null
+description: ''
 value:
-  token: Hello
+  token: Hello123
 resource_type: gmail
