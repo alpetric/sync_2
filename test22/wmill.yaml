@@ -2,7 +2,9 @@ defaultTs: bun
 includes:
   - f/**
   - u/**
-excludes: []
+excludes:
+  - u/alex/fortuitous_c_git_gpg**
+  - u/alex/gpg_github**
 codebases: []
 skipVariables: false
 skipResources: false
