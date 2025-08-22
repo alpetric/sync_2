@@ -1,12 +1,13 @@
 defaultTs: bun
 includes:
   - f/**
+  - u/**
 excludes: []
 codebases: []
 skipVariables: false
 skipResources: false
 skipResourceTypes: false
-skipSecrets: true
+skipSecrets: false
 skipScripts: false
 skipFlows: false
 skipApps: false
@@ -17,9 +18,31 @@ includeUsers: false
 includeGroups: false
 includeSettings: true
 includeKey: false
-git_branches:
+gitBranches:
+  commonSpecificItems:
+    variables:
+      - u/alex/**
+    resources:
+      - u/alex/**
   main:
-    overrides: {}
+    overrides:
+      skipSecrets: false
     promotionOverrides:
       skipApps: true
       skipFlows: true
+      includeSettings: false
+    specificItems:
+      resources:
+        - f/discord/**
+        - f/slack/**
+  dev:
+    overrides:
+      includes:
+        - f/**
+      skipSecrets: true
+    specificItems:
+      resources:
+        - f/discord/**
+        - f/slack/**
+        - f/twenty/**
+        - f/windmill/**
