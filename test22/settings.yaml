@@ -24,11 +24,12 @@ git_sync:
     - exclude_types_override: []
       git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
       group_by_folder: false
-      script_path: u/alex/git_sync_1
+      script_path: hub/19801/sync-script-to-git-repo-windmill
       settings:
         exclude_path:
           - u/alex/fortuitous_c_git_gpg**
           - u/alex/gpg_github**
+        extra_include_path: []
         include_path:
           - f/**
           - u/**
