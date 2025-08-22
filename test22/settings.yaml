@@ -26,6 +26,9 @@ git_sync:
       group_by_folder: false
       script_path: u/alex/git_sync_1
       settings:
+        exclude_path:
+          - u/alex/fortuitous_c_git_gpg**
+          - u/alex/gpg_github**
         include_path:
           - f/**
           - u/**
