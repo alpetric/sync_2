@@ -1,0 +1,4 @@
+description: ''
+value:
+  environment: vpc1
+resource_type: environment

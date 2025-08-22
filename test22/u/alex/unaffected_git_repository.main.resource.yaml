@@ -1,0 +1,9 @@
+description: >-
+  Repository https://github.com/wmill-alex-test-org/empty2 with permissions
+  fetched using Windmill Github App.
+value:
+  branch: ''
+  folder: ''
+  is_github_app: false
+  url: '$var:u/alex/unaffected_git_repository'
+resource_type: git_repository

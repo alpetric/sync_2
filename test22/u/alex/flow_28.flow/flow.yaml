@@ -1,0 +1,98 @@
+summary: Example handler for Microsoft Teams bot commands
+description: |-
+  Microsoft Teams bot will handle
+  ```console
+  /windmill help
+  /windmill echo foo bar
+  ```
+value:
+  modules:
+    - id: c
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms:
+          text_input:
+            type: javascript
+            expr: flow_input.command
+        lock: '!inline inline_script_0.inline_script.lock'
+        is_trigger: false
+        language: bun
+    - id: d
+      summary: ''
+      value:
+        type: branchone
+        branches:
+          - summary: run command
+            modules:
+              - id: f
+                value:
+                  type: rawscript
+                  content: '!inline inline_script_0.inline_script.ts'
+                  input_transforms:
+                    activity_id:
+                      type: javascript
+                      expr: flow_input.activity_id
+                    command:
+                      type: javascript
+                      expr: flow_input.command
+                    from_name:
+                      type: javascript
+                      expr: flow_input.from_name
+                  lock: '!inline inline_script_0.inline_script.lock'
+                  is_trigger: false
+                  language: bun
+            expr: results.c.command === 'echo'
+            parallel: true
+            skip_failure: true
+        default:
+          - id: e
+            value:
+              type: rawscript
+              content: '!inline inline_script_0.inline_script.ts'
+              input_transforms:
+                activity_id:
+                  type: javascript
+                  expr: '`${flow_input.activity_id}`'
+              lock: '!inline inline_script_0.inline_script.lock'
+              is_trigger: false
+              language: bun
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order:
+    - activity_id
+    - command
+    - from_name
+    - team_id
+    - teams_message
+  properties:
+    activity_id:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+    command:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+    from_name:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+    team_id:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+    teams_message:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+  required:
+    - activity_id
+    - command
+    - from_name

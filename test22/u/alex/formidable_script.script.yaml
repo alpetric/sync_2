@@ -1,0 +1,38 @@
+summary: Example of responding to a Microsoft Teams command
+description: Fork of hub/11591/teams/Example of responding to a Microsoft Teams command
+lock: '!inline u/alex/formidable_script.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    activity_id:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    command:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    from_name:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    team_id:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    teams_message:
+      type: object
+      description: ''
+      default: null
+  required:
+    - activity_id
+    - command
+    - from_name
+    - team_id
+    - teams_message

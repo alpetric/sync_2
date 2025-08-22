@@ -1,0 +1,7 @@
+description: ''
+value:
+  branch: test1233
+  folder: ''
+  is_github_app: false
+  url: '$var:u/alex/energetic_git_repository'
+resource_type: git_repository

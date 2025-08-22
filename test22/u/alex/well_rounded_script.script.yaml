@@ -1,0 +1,37 @@
+summary: ''
+description: >-
+  ## Hello world
+
+  lorem ipsom
+
+
+  > [!TIP]
+
+  > Optional information to help a user be more successful.
+
+
+  <details><summary>test</summary>
+  adfijadf;ijdaf;ijads;kfakdfjkajdfkajdk</details>
+
+
+  <div class="border-l-4 border-blue-500 bg-blue-100 p-4 rounded">
+    <strong class="text-blue-700">Note:</strong> Hello
+  </div>
+lock: ''
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    database:
+      type: object
+      description: ''
+      format: resource-postgresql
+    first_name:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+  required:
+    - database
+    - first_name

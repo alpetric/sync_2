@@ -1,0 +1,4 @@
+description: ''
+value:
+  token: '$var:u/alex/humorous_slack'
+resource_type: slack

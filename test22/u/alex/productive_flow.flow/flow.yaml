@@ -1,0 +1,27 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms:
+          approver:
+            type: static
+            value: alex
+          conversation_id:
+            type: static
+            value: '19:49d9a024000e42f0877c599e84e49458@thread.tacv2'
+        lock: '!inline inline_script_0.inline_script.lock'
+        language: bun
+      continue_on_error: false
+      suspend:
+        required_events: 1
+        timeout: 1800
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order: []
+  properties: {}
+  required: []

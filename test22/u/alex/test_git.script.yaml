@@ -1,0 +1,19 @@
+summary: ''
+description: ''
+lock: '!inline u/alex/test_git.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    init:
+      type: boolean
+      description: ''
+      default: false
+    repo_url_resource_path:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+  required:
+    - repo_url_resource_path

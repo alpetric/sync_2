@@ -1,0 +1,29 @@
+summary: ''
+description: ''
+lock: ''
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    database:
+      type: object
+      description: ''
+      format: resource-ms_sql_server
+    name1:
+      type: string
+      description: ''
+      default: default arg
+      originalType: string
+    name2:
+      type: integer
+      description: ''
+      default: null
+    name3:
+      type: integer
+      description: ''
+      default: null
+  required:
+    - database
+    - name2
+    - name3

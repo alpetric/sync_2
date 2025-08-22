@@ -1,0 +1,11 @@
+description: ''
+value:
+  accessKey: EWDX6VWCW72D5MZKOGV9
+  bucket: windmill-test-alex
+  endPoint: localhost
+  pathStyle: true
+  port: 9000
+  region: home
+  secretKey: i+WDvLHwSdnQapZIJbpRFqbkhk6Wp1+P65M0ohX0
+  useSSL: false
+resource_type: s3

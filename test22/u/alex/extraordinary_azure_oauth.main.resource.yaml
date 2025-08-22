@@ -1,0 +1,4 @@
+description: ''
+value:
+  token: '$var:u/alex/extraordinary_azure_oauth'
+resource_type: azure_oauth

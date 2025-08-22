@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "dayjs": "latest",
+    "windmill-client": "latest"
+  }
+}
+//bun.lock
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "dependencies": {
+        "dayjs": "latest",
+        "windmill-client": "latest",
+      },
+    },
+  },
+  "packages": {
+    "dayjs": ["dayjs@1.11.13", "", {}, "sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg=="],
+
+    "windmill-client": ["windmill-client@1.457.1", "", {}, "sha512-m3p6g5lkbylV8mO5UBrJvQ093+0Of7gGdzBG+WFRKEEY6BFfWzpt137HnHZZBjCF7wi1WeNPDQ0e6074sFpY7w=="],
+  }
+}

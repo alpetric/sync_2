@@ -1,0 +1,341 @@
+summary: Snowflake Oauth
+value:
+  fullscreen: false
+  grid:
+    - '12':
+        fixed: true
+        fullHeight: false
+        h: 2
+        w: 12
+        x: 0
+        'y': 0
+      '3':
+        fixed: true
+        fullHeight: false
+        h: 2
+        w: 6
+        x: 0
+        'y': 0
+      id: topbar
+      data:
+        id: topbar
+        type: containercomponent
+        actions: []
+        configuration: {}
+        customCss:
+          container:
+            class: '!p-0'
+            style: ''
+        numberOfSubgrids: 1
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 1
+        w: 4
+        x: 0
+        'y': 2
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 1
+        w: 2
+        x: 0
+        'y': 2
+      id: a
+      data:
+        id: a
+        type: userresourcecomponent
+        actions: []
+        configuration:
+          disabled:
+            type: static
+            value: false
+          expressOauthSetup:
+            type: static
+            value: true
+          resourceType:
+            type: static
+            value: snowflake_oauth
+        customCss:
+          input:
+            class: ''
+            style: ''
+        verticalAlignment: center
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 1
+        w: 5
+        x: 4
+        'y': 2
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 1
+        w: 2
+        x: 0
+        'y': 3
+      id: b
+      data:
+        id: b
+        type: selectcomponent
+        actions: []
+        configuration:
+          create:
+            type: static
+            value: false
+          defaultValue:
+            type: static
+          disabled:
+            type: static
+            value: false
+          fullWidth:
+            type: static
+            value: true
+          items:
+            type: evalv2
+            value:
+              - value: foo
+                label: Foo
+              - value: bar
+                label: Bar
+            connections:
+              - id: result
+                componentId: bg_0
+            expr: >-
+              bg_0.result.map(_ => ({ value: _.TABLE_NAME, label:
+              _.TABLE_NAME}))
+          nativeHtmlSelect:
+            type: static
+            value: false
+          placeholder:
+            type: static
+            value: Select an item
+          preselectFirst:
+            type: static
+            value: true
+        customCss:
+          input:
+            class: ''
+            style: ''
+            tooltip: >-
+              https://github.com/rob-balfre/svelte-select/blob/master/docs/theming_variables.md
+        onSelect: []
+        recomputeIds: []
+        verticalAlignment: center
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 12
+        w: 12
+        x: 0
+        'y': 3
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 8
+        w: 2
+        x: 0
+        'y': 4
+      id: c
+      data:
+        id: c
+        type: displaycomponent
+        actions: []
+        componentInput:
+          type: runnable
+          value:
+            foo: 42
+          autoRefresh: true
+          fields:
+            database:
+              type: evalv2
+              allowUserResources: true
+              connections:
+                - id: result
+                  componentId: a
+              expr: a.result
+              fieldType: object
+              format: resource-snowflake
+            table_name:
+              type: evalv2
+              value: default arg
+              connections:
+                - id: result
+                  componentId: b
+              expr: b.result
+              fieldType: string
+          fieldType: object
+          recomputeOnInputChanged: true
+          runnable:
+            type: runnableByName
+            name: Inline Script 0
+            inlineScript:
+              content: '!inline inline_script_0.inline_script.sf.sql'
+              lock: ''
+              language: snowflake
+              path: u/alex/newapp/Inline_Script_0
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                type: object
+                properties:
+                  database:
+                    type: object
+                    description: ''
+                    format: resource-snowflake
+                  table_name:
+                    type: string
+                    description: ''
+                    default: default arg
+                    originalType: string
+                required:
+                  - database
+        configuration:
+          hideDetails:
+            type: static
+            value: false
+          title:
+            type: static
+            value: Result
+        customCss:
+          container:
+            class: ''
+            style: ''
+          header:
+            class: ''
+            style: ''
+  hiddenInlineScripts:
+    - type: runnableByName
+      name: Background Runnable 0
+      autoRefresh: true
+      fields:
+        database:
+          type: evalv2
+          allowUserResources: true
+          connections:
+            - id: result
+              componentId: a
+          expr: a.result
+          fieldType: object
+          format: resource-snowflake
+      inlineScript:
+        content: '!inline background_runnable_0.inline_script.sf.sql'
+        lock: ''
+        language: snowflake
+        path: u/alex/newapp/Background_Runnable_0
+        schema:
+          $schema: 'https://json-schema.org/draft/2020-12/schema'
+          type: object
+          properties:
+            database:
+              type: object
+              description: ''
+              format: resource-snowflake
+          required:
+            - database
+      recomputeIds: []
+      recomputeOnInputChanged: true
+  hideLegacyTopBar: true
+  mobileViewOnSmallerScreens: false
+  norefreshbar: false
+  subgrids:
+    topbar-0:
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 0
+          'y': 0
+        id: title
+        data:
+          id: title
+          type: textcomponent
+          actions: []
+          componentInput:
+            type: templatev2
+            connections:
+              - id: summary
+                componentId: ctx
+            eval: '${ctx.summary}'
+            fieldType: template
+          configuration:
+            copyButton:
+              type: static
+              value: false
+            disableNoText:
+              type: static
+              value: true
+              fieldType: boolean
+            style:
+              type: static
+              value: Body
+            tooltip:
+              type: evalv2
+              value: ''
+              connections:
+                - id: author
+                  componentId: ctx
+              expr: '`Author: ${ctx.author}`'
+              fieldType: text
+          customCss:
+            container:
+              class: ''
+              style: ''
+            text:
+              class: text-xl font-semibold whitespace-nowrap truncate
+              style: ''
+          horizontalAlignment: left
+          verticalAlignment: center
+      - '12':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 6
+          x: 6
+          'y': 0
+        '3':
+          fixed: false
+          fullHeight: false
+          h: 1
+          w: 3
+          x: 0
+          'y': 1
+        id: recomputeall
+        data:
+          id: recomputeall
+          type: recomputeallcomponent
+          actions: []
+          configuration: {}
+          customCss:
+            container:
+              class: ''
+              style: ''
+          horizontalAlignment: right
+          menuItems: []
+          verticalAlignment: center
+  theme:
+    type: path
+    path: f/app_themes/theme_0
+  unusedInlineScripts: []
+policy:
+  execution_mode: publisher
+  s3_inputs: []
+  triggerables_v2:
+    'bg_0:rawscript/464ee291680b25cb381713da09217310ea1c616ee2574c3d041694ed3a2f431e':
+      allow_user_resources:
+        - database
+      one_of_inputs: {}
+      static_inputs: {}
+    'c:rawscript/353d181f6e1df03de3f4a3d2ea4701e837826e208651e24e551ce6fc76a1faa5':
+      allow_user_resources:
+        - database
+      one_of_inputs: {}
+      static_inputs: {}

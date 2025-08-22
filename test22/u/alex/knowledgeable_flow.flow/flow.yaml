@@ -1,0 +1,101 @@
+summary: Slack Approval (typescript)
+description: Demo sample approval flow showing off slack interactive approvals
+value:
+  modules:
+    - id: d
+      summary: Approval
+      value:
+        type: rawscript
+        content: '!inline approval.inline_script.ts'
+        input_transforms:
+          approver:
+            type: static
+            value: alex
+          channelId:
+            type: static
+            value: test
+          defaultArgsJson:
+            type: static
+            value:
+              age: 100
+          dynamicEnumsJson:
+            type: static
+            value:
+              choice:
+                - hello
+                - 'blor['
+          message:
+            type: static
+            value: Hello world
+          slackResourcePath:
+            type: static
+            value: u/alex/humorous_slack
+        lock: '!inline approval.inline_script.lock'
+        concurrency_time_window_s: 0
+        is_trigger: false
+        language: bun
+      continue_on_error: false
+      suspend:
+        hide_cancel: true
+        required_events: 1
+        resume_form:
+          schema:
+            order:
+              - choice
+              - age
+              - smat
+              - time
+            properties:
+              age:
+                type: number
+                description: age
+                title: my age
+              choice:
+                type: string
+                description: ''
+                default: ''
+                enum:
+                  - foo
+                  - bar
+                enumLabels: {}
+              smat:
+                type: boolean
+                default: false
+              time:
+                type: string
+                description: ''
+                default: ''
+                format: date-time
+                nullable: false
+            required:
+              - time
+        timeout: 1800
+    - id: b
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms:
+          approvers:
+            type: javascript
+            expr: approvers
+          resume:
+            type: javascript
+            expr: resumes
+        lock: '!inline inline_script_0.inline_script.lock'
+        is_trigger: false
+        language: bun
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order:
+    - flow_input_1
+    - flow_input_2
+  properties:
+    flow_input_1:
+      type: string
+      description: ''
+      default: ''
+    flow_input_2:
+      type: string
+      description: ''
+  required: []

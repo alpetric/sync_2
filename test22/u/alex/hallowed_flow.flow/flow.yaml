@@ -1,0 +1,25 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.sh'
+        input_transforms: {}
+        assets: []
+        lock: ''
+        language: bash
+    - id: b
+      value:
+        type: rawscript
+        content: '!inline inline_script_1.inline_script.sh'
+        input_transforms: {}
+        assets: []
+        lock: ''
+        language: bash
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []

@@ -1,0 +1,4 @@
+description: ''
+value:
+  token: '$var:u/alex/compliant_my_visma'
+resource_type: my_visma

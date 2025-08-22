@@ -1,0 +1,24 @@
+args:
+  name: Nicolas Bourbaki
+  age: 42
+  file_: <function call>
+  l:
+    - or
+    - lists!
+  no_default: '1'
+  obj:
+    even: dicts
+cron_version: v2
+email: alex@windmill.dev
+enabled: false
+is_flow: false
+no_flow_overlap: false
+on_failure_exact: false
+on_failure_times: 1
+on_recovery_extra_args: {}
+on_recovery_times: 1
+on_success_extra_args: {}
+schedule: 0 * * ? * *
+script_path: u/alex/unrivaled_script
+timezone: America/New_York
+ws_error_handler_muted: false

@@ -1,0 +1,60 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.sh'
+        input_transforms:
+          dflt:
+            type: static
+            value: default value
+          msg:
+            type: static
+            value: ''
+        lock: ''
+        is_trigger: false
+        language: bash
+    - id: b
+      value:
+        type: rawscript
+        content: '!inline inline_script_1.inline_script.sh'
+        input_transforms:
+          dflt:
+            type: static
+            value: default value
+          msg:
+            type: static
+            value: ''
+        lock: ''
+        is_trigger: false
+        language: bash
+    - id: c
+      value:
+        type: rawscript
+        content: '!inline inline_script_2.inline_script.ts'
+        input_transforms:
+          x:
+            type: static
+            value: ''
+        lock: '!inline inline_script_2.inline_script.lock'
+        is_trigger: false
+        language: bun
+    - id: d
+      value:
+        type: rawscript
+        content: '!inline inline_script_3.inline_script.py'
+        input_transforms:
+          x:
+            type: static
+            value: ''
+        lock: '!inline inline_script_3.inline_script.lock'
+        is_trigger: false
+        language: python3
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order: []
+  properties: {}
+  required: []

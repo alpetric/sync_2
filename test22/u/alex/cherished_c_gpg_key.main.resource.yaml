@@ -1,0 +1,8 @@
+description: ''
+value:
+  name: Alex Petric
+  email: alex@windmill.dev
+  gpg_passphrase: '1234'
+  passphrase: '1234'
+  private_key: '$var:u/alex/cherished_c_gpg_key'
+resource_type: c_gpg_key

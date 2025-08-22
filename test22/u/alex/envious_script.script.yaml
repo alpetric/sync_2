@@ -1,0 +1,44 @@
+summary: Global / workspace error handler template
+description: Fork of hub/9083/windmill/workspace_error_handler_template
+lock: '!inline u/alex/envious_script.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    email:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    error:
+      type: object
+      description: ''
+      default: null
+      properties: {}
+    is_flow:
+      type: boolean
+      description: ''
+      default: null
+    job_id:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    path:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    workspace_id:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+  required:
+    - path
+    - email
+    - error
+    - job_id
+    - is_flow
+    - workspace_id

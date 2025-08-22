@@ -1,0 +1,258 @@
+summary: Refund manager with approval step - Automatically triggered by email reception
+description: >-
+  To configure trigger by email reception:
+  https://docs.windmill.dev/docs/integrations/mailchimp_mandrill
+value:
+  modules:
+    - id: a
+      summary: Parses to JSON
+      value:
+        type: rawscript
+        content: '!inline parses_to_json.inline_script.deno.ts'
+        input_transforms:
+          x:
+            type: javascript
+            expr: flow_input.mandrill_events
+        language: deno
+    - id: b
+      summary: Ask channel for approval (slack)
+      value:
+        type: script
+        input_transforms:
+          channel:
+            type: static
+            value: general
+          slack:
+            type: static
+            value: '$res:u/alex/humorous_slack'
+          text:
+            type: javascript
+            expr: >-
+              `New email from _${results.a[0].msg.from_email}_ recieved on
+              _${results.a[0].msg.headers.Date}_. \n Subject:
+              ${results.a[0].msg.headers.Subject} \n Content: \n
+              ${results.a[0].msg.text}`
+        path: hub/763/slack/ask_channel_for_approval
+      suspend:
+        required_events: 1
+        resume_form:
+          schema:
+            $schema: 'https://json-schema.org/draft/2020-12/schema'
+            type: object
+            properties:
+              Action:
+                type: string
+                description: Action about refund
+                default: ''
+                enum:
+                  - Refund
+                  - De not refund
+                  - Email
+              Message:
+                type: string
+                description: 'If email, content'
+                default: ''
+            required:
+              - Action
+        timeout: 1800
+    - id: c
+      summary: ''
+      value:
+        type: branchone
+        branches:
+          - summary: Send message
+            modules:
+              - id: o
+                summary: ' Send Email (gmail)'
+                value:
+                  type: script
+                  input_transforms:
+                    gmail_auth:
+                      type: javascript
+                      expr: 'flow_input["Gmail Account"]'
+                    message:
+                      type: javascript
+                      expr: 'resume["Message"]'
+                    subject:
+                      type: static
+                      value: More information
+                    to_email:
+                      type: javascript
+                      expr: 'results.a[0].msg.from_email'
+                    user_id:
+                      type: static
+                      value: me
+                  path: hub/868/gmail/_send_email
+              - id: l
+                summary: Send Message to Channel (slack)
+                value:
+                  type: script
+                  input_transforms:
+                    channel:
+                      type: javascript
+                      expr: 'flow_input["Slack Channel"]'
+                    slack:
+                      type: javascript
+                      expr: 'flow_input["Slack Account"]'
+                    text:
+                      type: javascript
+                      expr: >-
+                        `Refund request by ${results.a[0].msg.from_email}.
+                        Message ${resume["Message"]} was just sent.`
+                  path: hub/849/slack/send_message_to_channel
+            expr: 'resume["Action"] === "Email"'
+            parallel: true
+            skip_failure: true
+          - summary: Do not refund
+            modules:
+              - id: h
+                summary: Update database
+                value:
+                  type: rawscript
+                  content: '!inline update_database.inline_script.deno.ts'
+                  input_transforms: {}
+                  language: deno
+              - id: i
+                summary: ' Send Email (gmail)'
+                value:
+                  type: script
+                  input_transforms:
+                    gmail_auth:
+                      type: javascript
+                      expr: 'flow_input["Gmail Account"]'
+                    message:
+                      type: javascript
+                      expr: >-
+                        `Hello! \nThank you for your message. \nAfter a review
+                        from our team, we decided you can not be refunded this
+                        article.`
+                    subject:
+                      type: static
+                      value: Refund request
+                    to_email:
+                      type: javascript
+                      expr: 'results.a[0].msg.from_email'
+                    user_id:
+                      type: static
+                      value: me
+                  path: hub/868/gmail/_send_email
+              - id: j
+                summary: Send Message to Channel (slack)
+                value:
+                  type: script
+                  input_transforms:
+                    channel:
+                      type: javascript
+                      expr: 'flow_input["Slack Channel"]'
+                    slack:
+                      type: javascript
+                      expr: 'flow_input["Slack Account"]'
+                    text:
+                      type: javascript
+                      expr: >-
+                        `User ${results.a[0].msg.from_email} was just been
+                        refused refund`
+                  path: hub/849/slack/send_message_to_channel
+            expr: 'resume["Action"] === "Do not refund"'
+            parallel: true
+            skip_failure: true
+          - summary: Refund
+            modules:
+              - id: d
+                summary: Refund via Stripe
+                value:
+                  type: rawscript
+                  content: '!inline refund_via_stripe.inline_script.deno.ts'
+                  input_transforms: {}
+                  language: deno
+              - id: f
+                summary: Update database
+                value:
+                  type: rawscript
+                  content: '!inline update_database.inline_script.deno.ts'
+                  input_transforms: {}
+                  language: deno
+              - id: m
+                summary: ' Send Email (gmail)'
+                value:
+                  type: script
+                  input_transforms:
+                    gmail_auth:
+                      type: javascript
+                      expr: 'flow_input["Gmail Account"]'
+                    message:
+                      type: javascript
+                      expr: >-
+                        `Hi! \nThank you for your message. \nYou have just been
+                        refunded :)`
+                    subject:
+                      type: static
+                      value: Refund
+                    to_email:
+                      type: javascript
+                      expr: 'results.a[0].msg.from_email'
+                    user_id:
+                      type: static
+                      value: me
+                  path: hub/868/gmail/_send_email
+              - id: g
+                summary: Send Message to Channel (slack)
+                value:
+                  type: script
+                  input_transforms:
+                    channel:
+                      type: javascript
+                      expr: 'flow_input["Slack Channel"]'
+                    slack:
+                      type: javascript
+                      expr: 'flow_input["Slack Account"]'
+                    text:
+                      type: javascript
+                      expr: >-
+                        `User ${results.a[0].msg.from_email} has just been
+                        refunded`
+                  path: hub/849/slack/send_message_to_channel
+            expr: 'resume["Action"] === "Refund"'
+            parallel: true
+            skip_failure: true
+        default:
+          - id: 'n'
+            summary: Send Message to Channel (slack)
+            value:
+              type: script
+              input_transforms:
+                channel:
+                  type: javascript
+                  expr: 'flow_input["Slack Channel"]'
+                slack:
+                  type: javascript
+                  expr: 'flow_input["Slack Account"]'
+                text:
+                  type: javascript
+                  expr: >-
+                    `Refund request by ${results.a[0].msg.from_email}. Manage
+                    refund manually.`
+              path: hub/849/slack/send_message_to_channel
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    Gmail Account:
+      type: object
+      description: 'https://docs.windmill.dev/docs/integrations/gmail'
+      format: resource-gmail
+    mandrill_events:
+      type: string
+      description: ''
+      default: ''
+      format: ''
+    Slack Account:
+      type: object
+      description: 'https://docs.windmill.dev/docs/integrations/slack'
+      format: resource-slack
+    Slack Channel:
+      type: string
+      description: Channel to send Slack alerts
+      default: general
+      format: null
+  required: []

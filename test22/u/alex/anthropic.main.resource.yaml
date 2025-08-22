@@ -1,0 +1,4 @@
+description: ''
+value:
+  apiKey: '$var:u/alex/anthropic'
+resource_type: anthropic

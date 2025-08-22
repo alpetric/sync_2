@@ -1,0 +1,6 @@
+description: ''
+value:
+  email: alex@windmill.dev
+  passphrase: ''
+  private_key: '$var:u/alex/gpg_key_no_passphrase'
+resource_type: c_gpg_key

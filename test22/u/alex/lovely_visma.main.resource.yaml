@@ -1,0 +1,4 @@
+description: ''
+value:
+  token: '$var:u/alex/lovely_visma'
+resource_type: visma

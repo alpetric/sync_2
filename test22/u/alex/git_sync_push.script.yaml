@@ -1,0 +1,67 @@
+summary: git sync push
+description: ''
+lock: '!inline u/alex/git_sync_push.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    excludes:
+      type: string
+      description: ''
+      default: ''
+      originalType: string
+    extra_includes:
+      type: string
+      description: ''
+      default: ''
+      originalType: string
+    include_groups:
+      type: boolean
+      description: ''
+      default: false
+    include_key:
+      type: boolean
+      description: ''
+      default: false
+    include_schedules:
+      type: boolean
+      description: ''
+      default: false
+    include_settings:
+      type: boolean
+      description: ''
+      default: false
+    include_users:
+      type: boolean
+      description: ''
+      default: false
+    message:
+      type: string
+      description: ''
+      default: ''
+      originalType: string
+    payload:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    repo_resource_path:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    skip_resources:
+      type: boolean
+      description: ''
+      default: false
+    skip_secret:
+      type: boolean
+      description: ''
+      default: false
+    skip_variables:
+      type: boolean
+      description: ''
+      default: false
+  required:
+    - payload

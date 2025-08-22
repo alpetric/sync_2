@@ -1,0 +1,61 @@
+summary: ''
+description: ''
+lock: '!inline u/alex/teams_error_handler.script.lock'
+kind: failure
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    channel:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    error:
+      type: object
+      description: ''
+      default: null
+      properties: {}
+    failed_times:
+      type: number
+      description: ''
+      default: null
+    is_flow:
+      type: boolean
+      description: ''
+      default: null
+    job_id:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    path:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    schedule_path:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    started_at:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    workspace_id:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+  required:
+    - workspace_id
+    - job_id
+    - path
+    - is_flow
+    - schedule_path
+    - error
+    - started_at
+    - failed_times
+    - channel

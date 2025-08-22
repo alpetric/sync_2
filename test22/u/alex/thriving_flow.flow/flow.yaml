@@ -1,0 +1,112 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      summary: Approval
+      value:
+        type: rawscript
+        content: '!inline approval.inline_script.ts'
+        input_transforms:
+          approver:
+            type: static
+            value: ''
+          channelName:
+            type: static
+            value: General
+          defaultArgsJson:
+            type: static
+            value: null
+          dynamicEnumsJson:
+            type: static
+            value: null
+          message:
+            type: static
+            value: ''
+          teamName:
+            type: static
+            value: Windmill
+        lock: '!inline approval.inline_script.lock'
+        language: bun
+      continue_on_error: false
+      suspend:
+        hide_cancel: false
+        required_events: 1
+        resume_form:
+          schema:
+            order:
+              - key1
+              - key2
+              - foo
+              - bar
+              - my_choice
+              - my_enum
+              - my_string
+            properties:
+              bar:
+                type: string
+                description: ''
+                default: ''
+                enum:
+                  - choice 1
+                  - choice 2
+                  - choice 3
+                enumLabels: {}
+              foo:
+                type: string
+                description: ''
+                default: ''
+                enum:
+                  - choice 1
+                  - choice 2
+                enumLabels: {}
+              key1:
+                type: string
+                description: ''
+                default: ''
+                enumLabels: {}
+              key2:
+                type: string
+                description: ''
+                default: ''
+              my_choice:
+                type: boolean
+                description: ''
+                default: false
+              my_enum:
+                type: string
+                description: Enum Description
+                default: ''
+                enum:
+                  - hello
+                  - world
+                enumLabels:
+                  hello: Hello Title
+                  world: World Title
+                title: Enum Title
+              my_string:
+                type: string
+                description: my string description
+                default: ''
+                placeholder: a placeholder
+                title: my string title
+            required: []
+        timeout: 1800
+    - id: b
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms:
+          x:
+            type: javascript
+            expr: resumes
+          'y':
+            type: javascript
+            expr: approvers
+        lock: '!inline inline_script_0.inline_script.lock'
+        language: bun
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []

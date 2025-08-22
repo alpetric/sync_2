@@ -1,0 +1,6 @@
+description: ''
+value:
+  branch: dfasdsfafdsa
+  folder: ''
+  url: '$var:u/alex/sensitive_git_repository'
+resource_type: git_repository

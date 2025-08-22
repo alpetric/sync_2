@@ -1,0 +1,21 @@
+summary: slack handler
+description: ''
+lock: '!inline u/alex/slack_handler.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    response_url:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    text:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+  required:
+    - response_url
+    - text

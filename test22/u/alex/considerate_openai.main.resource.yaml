@@ -1,0 +1,5 @@
+description: ''
+value:
+  api_key: '$var:u/alex/considerate_openai'
+  organization_id: ''
+resource_type: openai

@@ -1,0 +1,21 @@
+description: ''
+value:
+  account_identifier: sccfdiq-mu22807
+  database: ''
+  private_key: '$var:u/alex/healthy_snowflake'
+  public_key: |-
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3kP7uvc73ekTaysWQwJl
+    XnPiMyeSMKBzu7x5uLCSUppsFbid6GfiT+vD8tyxUGRi68Qjtt933j5PLjySDiu8
+    gtM3v75oBR1b7MrhwWTKkZbKgpFg8AuVOXal9eEB7JsczDZTWe3k6cNI5tJ/mk9y
+    EWrIi6Vs5MUeK5iDrcjThPvPy/P+GGvIkfjchORVyeob+zc6nUYXQJpiUz/EPjH1
+    Ik2OoethTBfTAheYAlR/N+HBnld1zgeS8nHoHdERMc6+2vlBuirYj3HVjkHRG+jY
+    6MDwQN1Eo8AxiHBAzcx+g9kXpAqYm1IIPXJxQUYFSrsSQlyVUOx2Cy08OLnsMUJ3
+    XwIDAQAB
+    -----END PUBLIC KEY-----
+  role: ''
+  schema: ''
+  token: ''
+  username: ALPETRIC
+  warehouse: ''
+resource_type: snowflake

@@ -1,0 +1,10 @@
+description: ''
+value:
+  dbname: windmill
+  host: localhost
+  password: '$var:u/alex/intimate_postgresql'
+  port: 5432
+  root_certificate_pem: ''
+  sslmode: disable
+  user: postgres
+resource_type: postgresql

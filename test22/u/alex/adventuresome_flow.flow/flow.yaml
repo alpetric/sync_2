@@ -1,0 +1,21 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms: {}
+        lock: '!inline inline_script_0.inline_script.lock'
+        language: bun
+        path: hub/8712/windmill/approval_prompt
+      continue_on_error: false
+      suspend:
+        required_events: 1
+        timeout: 1800
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []

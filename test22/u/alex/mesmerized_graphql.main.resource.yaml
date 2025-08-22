@@ -1,0 +1,6 @@
+description: ''
+value:
+  base_url: 'https://business.visma.net/api/graphql-service'
+  bearer_token: '$var:u/alex/imaginative_visma'
+  custom_headers: {}
+resource_type: graphql

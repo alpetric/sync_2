@@ -1,0 +1,96 @@
+summary: Python Slack Approval test
+description: test lorem ipsum
+value:
+  modules:
+    - id: a
+      summary: Approval
+      value:
+        type: rawscript
+        content: '!inline approval.inline_script.py'
+        input_transforms:
+          approver:
+            type: static
+            value: null
+          channel_id:
+            type: static
+            value: test
+          default_args:
+            type: static
+            value: null
+          dynamic_enums:
+            type: static
+            value: null
+          message:
+            type: static
+            value: null
+          slack_resource:
+            type: static
+            value: u/alex/humorous_slack
+        lock: '!inline approval.inline_script.lock'
+        is_trigger: false
+        language: python3
+      continue_on_error: false
+      suspend:
+        hide_cancel: false
+        required_events: 1
+        resume_form:
+          schema:
+            order:
+              - start time
+              - hello
+              - world
+            properties:
+              hello:
+                type: string
+                description: ''
+                default: ''
+                enum:
+                  - german
+                  - french
+                enumLabels: {}
+                nullable: false
+              start time:
+                type: string
+                description: ''
+                default: '123'
+                format: date-time
+                nullable: false
+              world:
+                type: string
+                description: ''
+                default: mars
+                nullable: false
+            required:
+              - hello
+              - world
+        timeout: 1800
+    - id: b
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.py'
+        input_transforms:
+          approval:
+            type: static
+            value: null
+          resumes:
+            type: static
+            value: null
+        lock: ''
+        is_trigger: false
+        language: python3
+      continue_on_error: false
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order:
+    - mjork
+    - farb
+  properties:
+    farb:
+      type: string
+      description: ''
+    mjork:
+      type: string
+      description: ''
+      default: ''
+  required: []

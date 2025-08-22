@@ -1,0 +1,6 @@
+description: ''
+value:
+  email: alex@windmill.dev
+  passphrase: ''
+  private_key: '$var:u/alex/ethical_gpg_key'
+resource_type: gpg_key

@@ -1,0 +1,44 @@
+summary: teams succsss
+description: ''
+lock: '!inline u/alex/teams_succes_handler.script.lock'
+kind: failure
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    channel:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    is_flow:
+      type: boolean
+      description: ''
+      default: null
+    path:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    schedule_path:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    success_result:
+      type: object
+      description: ''
+      default: null
+      properties: {}
+    success_started_at:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+  required:
+    - path
+    - is_flow
+    - schedule_path
+    - success_result
+    - success_started_at
+    - channel

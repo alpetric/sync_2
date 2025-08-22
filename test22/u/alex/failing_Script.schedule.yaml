@@ -1,0 +1,15 @@
+args: {}
+cron_version: v2
+email: alex+wadmin@windmill.dev
+enabled: false
+is_flow: false
+no_flow_overlap: false
+on_failure_exact: false
+on_failure_times: 1
+on_recovery_extra_args: {}
+on_recovery_times: 1
+on_success_extra_args: {}
+schedule: 0 0 12 * * 1-5
+script_path: u/alex/failing_Script
+timezone: America/New_York
+ws_error_handler_muted: false

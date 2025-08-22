@@ -1,0 +1,8 @@
+description: ''
+value:
+  branch: ''
+  folder: test2
+  gpg_key: '$res:u/alex/optimal_gpg_key'
+  is_github_app: false
+  url: '$var:u/alex/sharper_git_repository'
+resource_type: git_repository

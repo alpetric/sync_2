@@ -1,0 +1,29 @@
+description: ''
+value:
+  aad_token: ''
+  ca_cert: |-
+    -----BEGIN CERTIFICATE-----
+    MIIC+zCCAeOgAwIBAgIUL4IMODAfWeCL6WztPZXVd6ISCkQwDQYJKoZIhvcNAQEL
+    BQAwFDESMBAGA1UEAwwJTXkgRGV2IENBMB4XDTI1MDQwMjE4MjQxNVoXDTM1MDMz
+    MTE4MjQxNVowFDESMBAGA1UEAwwJTXkgRGV2IENBMIIBIjANBgkqhkiG9w0BAQEF
+    AAOCAQ8AMIIBCgKCAQEAkNU1+flaw3UxILbWSwreMLouRLJzFSsbS2VsYGSHhh74
+    Qj12FfLNRz34Zk6nk/TCK4AQzj+ZeoObBhsw7KzGU/VuT/yexMw71BzAPQ+dZWLv
+    wwXstx5iejsWPTimDXniduHmzIkXhgkrtIzaxi2E3yFgVWp2ib4qFDgFVxTJ4zpD
+    pnaftsQKXdAGiMQFfAmSHLZIN/DkFj0N2PBYM0Ny4x2Uym8XFztFJ8ymDq9GMx7L
+    8fNvcCGh0UvW1r2lWnRoQvblHjO4KURkfEWV1FSEsIDcASnnmndixkt9ZmUmvkpA
+    4GyeoMaxnsXZYrOjrxfZ5389CrtamEYriEp1DO7IyQIDAQABo0UwQzASBgNVHRMB
+    Af8ECDAGAQH/AgEAMA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQU58ZAY9XaVwVt
+    XuDUmGho2pNjuFMwDQYJKoZIhvcNAQELBQADggEBAA6U2vTQHxg6Q6rR2j8ENFjj
+    0rHRePOS8zESUPZ8q4KhbSTnaR36BTPmhZ37CyGp1OMVTkz49sKAltuJ5xOAswqJ
+    Hozcktdz4bqnIA/duPd9DDn7sFLtp4HdIgs2wSIwvAt13NAsnSCZQLaKNAwJruKN
+    LnRzrcMlphQrgmh/fhMl3Sz7ZVsrBe51ozA64bdrj/7fubF5K8luLmLy9ded5QeG
+    4vViMQ19r/HAARAu5O4FzmfCzgMVglZ6vKMZAlcfJc7oyrSuuwjyyGgDI6Pi2sk4
+    pq1FvpcKaXG2S0r0nr4AwlLEnSxDHrQ2AT8TtnDU3j3g1Lf2nS4bO/+sJdqN1h0=
+    -----END CERTIFICATE-----
+  dbname: master
+  host: localhost
+  instance_name: ''
+  password: '$var:u/alex/localhost'
+  trust_cert: false
+  user: SA
+resource_type: ms_sql_server

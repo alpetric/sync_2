@@ -1,0 +1,10 @@
+description: ''
+value:
+  database: windmill
+  host: localhost
+  password: '$var:u/alex/best_mysql'
+  port: 3306
+  root_certificate_pem: ''
+  ssl: false
+  user: windmill
+resource_type: mysql

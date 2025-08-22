@@ -1,0 +1,31 @@
+summary: ''
+description: Hello world
+lock: '!inline u/alex/sweeping_script.script.lock'
+concurrency_time_window_s: 0
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order:
+    - env
+    - arg
+  properties:
+    arg:
+      type: object
+      description: ''
+      default: null
+    env:
+      type: string
+      description: ''
+      default: null
+      enum:
+        - a1
+        - a2
+        - a3
+        - vpc1
+        - vpc2
+      enumLabels: {}
+      originalType: string
+  required:
+    - env
+    - arg

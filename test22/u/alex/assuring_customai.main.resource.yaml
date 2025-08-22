@@ -1,0 +1,6 @@
+description: Bedrock AI
+value:
+  api_key: '$var:u/alex/assuring_customai'
+  base_url: >-
+    http://bedroc-proxy-6uw0eixxs9z6-486012858.us-east-2.elb.amazonaws.com/api/v1
+resource_type: customai

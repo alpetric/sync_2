@@ -1,0 +1,49 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      summary: ''
+      value:
+        type: branchall
+        branches:
+          - modules: []
+            expr: ''
+            parallel: true
+            skip_failure: false
+          - summary: ''
+            modules:
+              - id: b
+                summary: Approval
+                value:
+                  type: rawscript
+                  content: '!inline approval.inline_script.ts'
+                  input_transforms:
+                    approver:
+                      type: static
+                      value: ''
+                  lock: '!inline approval.inline_script.lock'
+                  language: bun
+                continue_on_error: false
+                suspend:
+                  hide_cancel: true
+                  required_events: 1
+                  resume_form:
+                    schema:
+                      order:
+                        - Hello
+                      properties:
+                        Hello:
+                          type: string
+                          description: ''
+                      required: []
+                  timeout: 1800
+            expr: 'false'
+            parallel: true
+            skip_failure: false
+        parallel: true
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []

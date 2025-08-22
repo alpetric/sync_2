@@ -1,0 +1,10 @@
+description: >-
+  Repository https://github.com/alpetric/windmill_sync with permissions fetched
+  using Windmill Github App.
+value:
+  branch: ''
+  folder: ''
+  github_app_installation_id: 63391699
+  is_github_app: true
+  url: 'https://github.com/alpetric/windmill_sync'
+resource_type: git_repository

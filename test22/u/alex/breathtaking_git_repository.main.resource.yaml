@@ -1,0 +1,8 @@
+description: sync test
+value:
+  branch: main
+  folder: test22
+  gpg_key: '$res:u/alex/optimal_gpg_key'
+  is_github_app: false
+  url: '$var:u/alex/breathtaking_git_repository'
+resource_type: git_repository

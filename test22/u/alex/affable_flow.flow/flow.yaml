@@ -1,0 +1,70 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      summary: Request Interactive Slack Approval (slack)
+      value:
+        type: script
+        input_transforms:
+          approver:
+            type: static
+            value: alex
+          channelId:
+            type: static
+            value: test
+          defaultArgsJson:
+            type: static
+            value: null
+          dynamicEnumsJson:
+            type: static
+            value: null
+          message:
+            type: static
+            value: 'hello '
+          slackResourcePath:
+            type: static
+            value: f/slack_bot/bot_token
+        is_trigger: false
+        path: hub/18028/slack/request_interactive_slack_approval
+      continue_on_error: false
+      suspend:
+        hide_cancel: false
+        required_events: 1
+        resume_form:
+          schema:
+            order:
+              - adfa
+              - adfasdf
+              - adsf
+            properties:
+              adfa:
+                type: string
+                description: ''
+              adfasdf:
+                type: string
+                description: ''
+              adsf:
+                type: string
+                description: ''
+            required: []
+        timeout: 1800
+    - id: b
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms:
+          x:
+            type: javascript
+            expr: resume
+          'y':
+            type: javascript
+            expr: approvers
+        lock: '!inline inline_script_0.inline_script.lock'
+        language: bun
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order: []
+  properties: {}
+  required: []

@@ -1,0 +1,52 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms:
+          x:
+            type: static
+            value: ''
+        lock: '!inline inline_script_0.inline_script.lock'
+        language: bun
+    - id: b
+      value:
+        type: script
+        input_transforms:
+          branch_to_push:
+            type: static
+            value: ''
+          dry_run:
+            type: static
+            value: false
+          only_wmill_yaml:
+            type: static
+            value: false
+          pull:
+            type: static
+            value: false
+          repo_url_resource_path:
+            type: static
+            value: ''
+          workspace_id:
+            type: static
+            value: ''
+          yaml:
+            type: static
+            value: ''
+        is_trigger: false
+        path: u/alex/init_git_repo
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order:
+    - x
+  properties:
+    x:
+      type: string
+      description: ''
+      default: ''
+  required: []
