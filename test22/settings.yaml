@@ -36,7 +36,6 @@ git_sync:
           - variable
           - resource
           - resourcetype
-          - secret
           - schedule
           - trigger
           - settings
