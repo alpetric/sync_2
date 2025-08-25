@@ -1,0 +1,7 @@
+description: Test non-branch-specific resource
+value:
+  dbname: testdb
+  host: localhost
+  port: 5432
+  user: testuser
+resource_type: postgresql
