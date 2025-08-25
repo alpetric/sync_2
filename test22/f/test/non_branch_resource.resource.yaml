@@ -1,4 +1,4 @@
-description: Test non-branch-specific resource
+description: Updated non-branch-specific resource
 value:
   dbname: testdb
   host: localhost
