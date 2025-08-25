@@ -1,4 +1,4 @@
-description: Branch-specific MySQL database resource
+description: Updated branch-specific MySQL database resource
 value:
   database: dev_database
   host: dev-mysql-host
