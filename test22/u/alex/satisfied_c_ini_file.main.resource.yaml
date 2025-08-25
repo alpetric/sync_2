@@ -1,0 +1,4 @@
+description: aaaaaa
+value:
+  content: '!inline u/alex/satisfied_c_ini_file.resource.file.ini'
+resource_type: c_ini_file
