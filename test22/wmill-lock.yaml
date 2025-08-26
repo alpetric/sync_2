@@ -66,7 +66,7 @@ locks:
     inline_script_1.inline_script.sh: 6e636d09792d59c0e1ebba501b7179981193cc6c572c96f3e5c0ca939b27d3e4
   u/alex/hardier_script: 1a8dd9a4d0dbfcc204b0d21eb196f8f43ebc85cdc63dd9cc154ad0592779d6ae
   u/alex/hardy_script: a643258c198ee72cc243a6c9993bc097dc8059c86ce6f51bb66ba905f6e0da47
-  u/alex/hilarious_script: 001593e6cc4a6369f488209480d79a61df144e038c69750dfceaaf613ba0f3e3
+  u/alex/hilarious_script: e2f108451b8bd80637eb06dbf4c5f23a505c2db4bd1e47c8dba7ec63917aede4
   u/alex/init_git_repo: 359c5213da986a4ce961388cdf65f13cd824b0a5304ffa61fc3686c280adccce
   u/alex/knowledgeable_flow.flow:
     __flow_hash: 2a095fc7e002a1ddd95be3c3e0d62d0e3e8ed31fa0f00cdc358a4209a8baca49
