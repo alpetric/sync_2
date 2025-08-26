@@ -3,9 +3,6 @@
     console.log("Parsed email:", parsed_email);
     console.log("Extra args:", extraArgs);
 
-    // The extra args will be passed in the order they were parsed
-    // You can also access them from the Windmill job context if available
-
     return {
       raw_email_length: raw_email.length,
       parsed_subject: parsed_email.headers?.Subject,
