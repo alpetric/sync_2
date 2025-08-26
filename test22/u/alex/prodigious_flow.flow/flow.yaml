@@ -1,0 +1,128 @@
+summary: ''
+description: ''
+value:
+  modules: []
+  preprocessor_module:
+    id: preprocessor
+    value:
+      type: rawscript
+      content: |
+        /**
+         * Trigger preprocessor
+         *
+         * It processes raw trigger data from various sources (webhook, custom HTTP route, SQS, WebSocket, Kafka, NATS, MQTT, Postgres, or email) 
+         * before passing it to the flow. This separates the trigger logic from the flow logic and keeps the auto-generated UI clean.
+         * 
+         * The returned object determines the parameter values passed to the flow.
+         * e.g., `{ b: 1, a: 2 }` → Calls the flow with `a = 2` and `b = 1`, assuming the flow has two inputs called `a` and `b`.
+         * Ensure that the input names of the flow match the keys in the returned object.
+         * 
+         * Learn more: https://www.windmill.dev/docs/core_concepts/preprocessors
+         */
+        export async function preprocessor(
+          event:
+            | {
+              kind: "webhook";
+              body: any;
+              raw_string: string | null;
+              query: Record<string, string>;
+              headers: Record<string, string>;
+            }
+            | {
+              kind: "http";
+              body: any;
+              raw_string: string | null;
+              route: string;
+              path: string;
+              method: string;
+              params: Record<string, string>;
+              query: Record<string, string>;
+              headers: Record<string, string>;
+            }
+            | {
+              kind: "email";
+              parsed_email: any;
+              raw_email: string;
+              email_extra_args?: Record<string, any>;
+            }
+            | { kind: "websocket"; msg: string; url: string }
+            | {
+              kind: "kafka";
+              payload: string;
+              brokers: string[];
+              topic: string;
+              group_id: string;
+            }
+            | {
+              kind: "nats";
+              payload: string;
+              servers: string[];
+              subject: string;
+              headers?: Record<string, string[]>;
+              status?: number;
+              description?: string;
+              length: number;
+            }
+            | {
+              kind: "sqs";
+              msg: string;
+              queue_url: string;
+              message_id?: string;
+              receipt_handle?: string;
+              attributes: Record<string, string>;
+              message_attributes?: Record<
+                string,
+                { string_value?: string; data_type: string }
+              >;
+            }
+            | {
+              kind: "mqtt";
+              payload: string;
+              topic: string;
+              retain: boolean;
+              pkid: number;
+              qos: number;
+              v5?: {
+                payload_format_indicator?: number;
+                topic_alias?: number;
+                response_topic?: string;
+                correlation_data?: Array<number>;
+                user_properties?: Array<[string, string]>;
+                subscription_identifiers?: Array<number>;
+                content_type?: string;
+              };
+            }
+            | {
+              kind: "gcp";
+              payload: string;
+              message_id: string;
+              subscription: string;
+              ordering_key?: string;
+              attributes?: Record<string, string>;
+              delivery_type: "push" | "pull";
+              headers?: Record<string, string>;
+              publish_time?: string;
+              ack_id?: string;
+            }
+            | {
+              kind: "postgres";
+              transaction_type: "insert" | "update" | "delete",
+              schema_name: string,
+              table_name: string,
+              old_row?: Record<string, any>,
+              row: Record<string, any>
+            }
+        ) {
+          return {
+            // return the args to be passed to the runnable
+          };
+        }
+      input_transforms:
+        event:
+          type: static
+      language: bun
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []
