@@ -27,6 +27,18 @@
 //     };
 //   }
 
+export async function preprocessor(event: any) {
+  // This is your preprocessor function
+  console.log("Preprocessing event:", event);
+
+  // Process the raw trigger data
+  return {
+    processed: true,
+    timestamp: new Date().toISOString(),
+    ...event
+  };
+}
+
 export async function main(...allArgs) {
   console.log(allArgs)
 }
