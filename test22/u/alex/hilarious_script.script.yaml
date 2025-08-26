@@ -10,7 +10,7 @@ schema:
       type: object
       description: ''
       default: null
-    email_arg_Test2:
+    email_arg_test2:
       type: object
       description: ''
       default: null
@@ -26,4 +26,4 @@ schema:
     - raw_email
     - parsed_email
     - email_arg_test
-    - email_arg_Test2
+    - email_arg_test2

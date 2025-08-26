@@ -27,7 +27,7 @@
 //     };
 //   }
 
-export async function main(raw_email, parsed_email, email_arg_test, email_arg_Test2) {
+export async function main(raw_email, parsed_email, email_arg_test, email_arg_test2) {
   console.log(email_arg_test)
   console.log(email_arg_test2)
 }
