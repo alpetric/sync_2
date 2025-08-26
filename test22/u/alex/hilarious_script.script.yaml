@@ -6,15 +6,24 @@ schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object
   properties:
+    email_arg_test:
+      type: object
+      description: ''
+      default: null
+    email_arg_Test2:
+      type: object
+      description: ''
+      default: null
     parsed_email:
       type: object
       description: ''
       default: null
     raw_email:
-      type: string
+      type: object
       description: ''
       default: null
-      originalType: string
   required:
     - raw_email
     - parsed_email
+    - email_arg_test
+    - email_arg_Test2
