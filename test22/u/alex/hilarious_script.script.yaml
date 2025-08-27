@@ -1,0 +1,14 @@
+summary: ''
+description: ''
+lock: '!inline u/alex/hilarious_script.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    email_extra_args:
+      type: object
+      description: ''
+      default: null
+  required:
+    - email_extra_args

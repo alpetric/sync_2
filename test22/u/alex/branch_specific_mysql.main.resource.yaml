@@ -1,0 +1,8 @@
+description: Updated branch-specific MySQL database resource
+value:
+  database: dev_database
+  host: dev-mysql-host
+  password: dev_password
+  port: 3306
+  user: dev_user
+resource_type: mysql

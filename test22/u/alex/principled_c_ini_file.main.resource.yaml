@@ -1,4 +1,4 @@
-description: adfa
+description: adf
 value:
   content: '!inline u/alex/principled_c_ini_file.resource.file.ini'
 resource_type: c_ini_file

@@ -66,6 +66,7 @@ locks:
     inline_script_1.inline_script.sh: 6e636d09792d59c0e1ebba501b7179981193cc6c572c96f3e5c0ca939b27d3e4
   u/alex/hardier_script: 1a8dd9a4d0dbfcc204b0d21eb196f8f43ebc85cdc63dd9cc154ad0592779d6ae
   u/alex/hardy_script: a643258c198ee72cc243a6c9993bc097dc8059c86ce6f51bb66ba905f6e0da47
+  u/alex/hilarious_script: 3ab1bce374da56c26b15f29b9bb3e4da117e9621e477de6b3071d7b954c4a899
   u/alex/init_git_repo: 359c5213da986a4ce961388cdf65f13cd824b0a5304ffa61fc3686c280adccce
   u/alex/knowledgeable_flow.flow:
     __flow_hash: 2a095fc7e002a1ddd95be3c3e0d62d0e3e8ed31fa0f00cdc358a4209a8baca49
@@ -85,7 +86,7 @@ locks:
     __flow_hash: 5a5a355810d7813e9ef76adc1a60fe28e6e5f4f5bd03dd6f2a2516bb937cb3f7
     inline_script_0.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
     inline_script_1.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
-  u/alex/permissible_script: a927c96820190d3f5968233e30c727489d40b9c89be74bbbea25a8ad6ae5c6e9
+  u/alex/permissible_script: ceb1cdfb8be1b9312c79a59e1dc5b74cb25ec834c8a30f83aef1e3033513c930
   u/alex/phenomenal_script: b1fe31a782fb1f92cdd76c1ea16e26b26cd232ba45879066818f04c28cd7f33e
   u/alex/prestigious_script: 4df793d78b534eeac97186e95df55ae681cfaffde7f4dacaa6e1c53edef651ad
   u/alex/productive_flow.flow:
