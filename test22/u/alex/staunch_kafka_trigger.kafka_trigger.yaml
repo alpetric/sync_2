@@ -1,0 +1,8 @@
+email: alex@windmill.dev
+enabled: true
+group_id: windmill_consumer-test-u__alex__staunch_kafka_trigger
+is_flow: false
+kafka_resource_path: u/alex/swankiest_kafka
+script_path: f/test44/terrific_script
+topics:
+  - dfafdafafdafd
