@@ -1,0 +1,4 @@
+description: adfadfs
+value:
+  content: '!inline u/alex/integral_c_ini_file.resource.file.ini'
+resource_type: c_ini_file
