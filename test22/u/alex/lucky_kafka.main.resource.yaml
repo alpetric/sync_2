@@ -1,0 +1,8 @@
+description: adfadfsadf
+value:
+  brokers:
+    - adf
+    - afdadf
+  security:
+    label: PLAINTEXT
+resource_type: kafka
