@@ -1,0 +1,7 @@
+description: ffff333333
+value:
+  brokers:
+    - '3333'
+  security:
+    label: PLAINTEXT
+resource_type: kafka
