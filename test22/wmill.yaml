@@ -26,6 +26,8 @@ gitBranches:
       - u/alex/**
     resources:
       - u/alex/**
+    triggers:
+      - u/alex/**
   main:
     overrides:
       skipSecrets: true
@@ -48,3 +50,5 @@ gitBranches:
         - f/slack/**
         - f/twenty/**
         - f/windmill/**
+  dev2:
+    overrides: {}
