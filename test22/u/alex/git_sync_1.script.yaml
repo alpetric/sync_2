@@ -6,62 +6,32 @@ schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object
   properties:
-    commit_msg:
-      type: string
+    dry_run:
+      type: boolean
       description: ''
       default: null
-      originalType: string
-    group_by_folder:
+    only_wmill_yaml:
       type: boolean
       description: ''
       default: false
-    parent_path:
-      type: string
+    pull:
+      type: boolean
       description: ''
-      default: null
-      originalType: string
-    path:
-      type: string
-      description: ''
-      default: null
-      originalType: string
-    path_type:
-      type: string
-      description: ''
-      default: null
-      enum:
-        - script
-        - flow
-        - app
-        - folder
-        - resource
-        - variable
-        - resourcetype
-        - schedule
-        - user
-        - group
-        - httptrigger
-        - websockettrigger
-        - kafkatrigger
-        - natstrigger
-        - postgrestrigger
-        - mqtttrigger
-        - sqstrigger
-        - gcptrigger
-      originalType: enum
+      default: false
     repo_url_resource_path:
       type: string
       description: ''
       default: null
       originalType: string
-    skip_secret:
+    settings_json:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    use_promotion_overrides:
       type: boolean
       description: ''
-      default: true
-    use_individual_branch:
-      type: boolean
-      description: ''
-      default: false
+      default: null
     workspace_id:
       type: string
       description: ''
@@ -70,5 +40,4 @@ schema:
   required:
     - workspace_id
     - repo_url_resource_path
-    - path_type
-    - commit_msg
+    - dry_run
