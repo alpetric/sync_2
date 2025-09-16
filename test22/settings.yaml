@@ -74,22 +74,6 @@ git_sync:
           - app
           - folder
       use_individual_branch: true
-    - exclude_types_override: []
-      git_repo_resource_path: '$res:u/alex/test'
-      group_by_folder: false
-      script_path: hub/19816/sync-script-to-git-repo-windmill
-      settings:
-        exclude_path: []
-        extra_include_path: []
-        include_path:
-          - f/**
-        include_type:
-          - script
-          - flow
-          - app
-          - folder
-          - trigger
-      use_individual_branch: false
 large_file_storage:
   type: S3Storage
   public_resource: false
