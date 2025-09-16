@@ -49,7 +49,7 @@ value:
           connections:
             - id: query
               componentId: ctx
-          eval: 'Hello ${ctx.query.account_id}'
+          eval: 'Hello ${ctx.query.id}'
           fieldType: template
         configuration:
           copyButton:
