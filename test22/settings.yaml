@@ -17,7 +17,8 @@ default_app: u/alex/grateful_app
 deploy_to: prod
 error_handler: script/hub/11598/workspace-or-schedule-error-handler-teams
 error_handler_extra_args:
-  channel: '19:4SkiS4RJt1gOqqwRUeXdKJvB0XoklVFX4bL9-mhPLbs1@thread.tacv2'
+  channel: '19:RQmL5XixywKyu0vq3i_cAHMlA-9R8rk6FyJhPY_Hi9c1@thread.tacv2'
+  channel_name: General
 error_handler_muted_on_cancel: false
 git_sync:
   repositories:
