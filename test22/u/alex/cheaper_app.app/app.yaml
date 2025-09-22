@@ -30,7 +30,7 @@ value:
         fixed: false
         fullHeight: false
         h: 1
-        w: 3
+        w: 2
         x: 0
         'y': 2
       '3':
@@ -43,41 +43,498 @@ value:
       id: a
       data:
         id: a
-        type: textcomponent
+        type: buttoncomponent
         componentInput:
-          type: templatev2
-          connections:
-            - id: query
-              componentId: ctx
-          eval: 'Hello ${ctx.query.id}'
-          fieldType: template
+          type: runnable
+          autoRefresh: false
+          fields:
+            dflt:
+              type: static
+              value: default value
+              fieldType: string
+            msg:
+              type: static
+              value: null
+              fieldType: string
+          fieldType: any
+          recomputeOnInputChanged: false
+          runnable:
+            type: runnableByName
+            name: Inline Script
+            inlineScript:
+              content: '!inline inline_script.inline_script.sh'
+              lock: ''
+              language: bash
+              path: u/alex/cheaper_app/Inline_Script
+              schema:
+                $schema: 'https://json-schema.org/draft/2020-12/schema'
+                type: object
+                properties:
+                  dflt:
+                    type: string
+                    description: ''
+                    default: default value
+                    originalType: string
+                  msg:
+                    type: string
+                    description: ''
+                    default: null
+                    originalType: string
+                required:
+                  - msg
         configuration:
-          copyButton:
+          afterIcon:
+            type: static
+          beforeIcon:
+            type: static
+          color:
+            type: static
+            value: blue
+          confirmationModal:
+            type: oneOf
+            configuration:
+              confirmationModal:
+                description:
+                  type: static
+                  value: Are you sure?
+                confirmationText:
+                  type: static
+                  value: Confirm
+                title:
+                  type: static
+                  value: Title
+              none: {}
+            selected: none
+          disabled:
             type: static
             value: false
-          disableNoText:
+          fillContainer:
             type: static
             value: false
-          style:
+          label:
             type: static
-            value: Body
+            value: Press me
+          onError:
+            type: oneOf
+            configuration:
+              close:
+                id:
+                  type: static
+                  value: ''
+              errorOverlay: {}
+              gotoUrl:
+                newTab:
+                  type: static
+                  value: true
+                url:
+                  type: static
+                  value: ''
+              open:
+                id:
+                  type: static
+                  value: ''
+              sendErrorToast:
+                appendError:
+                  type: static
+                  value: true
+                message:
+                  type: static
+                  value: An error occured
+              setTab:
+                setTab:
+                  type: static
+                  value: []
+            selected: errorOverlay
+          onSuccess:
+            type: oneOf
+            configuration:
+              clearFiles:
+                id:
+                  type: static
+                  value: ''
+              close:
+                id:
+                  type: static
+                  value: ''
+              closeModal:
+                modalId:
+                  type: static
+                  value: ''
+              gotoUrl:
+                newTab:
+                  type: static
+                  value: true
+                url:
+                  type: static
+                  value: ''
+              none: {}
+              open:
+                id:
+                  type: static
+                  value: ''
+              openModal:
+                modalId:
+                  type: static
+                  value: ''
+              sendToast:
+                message:
+                  type: static
+                  value: ''
+              setTab:
+                setTab:
+                  type: static
+                  value: []
+            selected: none
+          returnEarly:
+            type: oneOf
+            configuration:
+              returnEarly:
+                showLoadingTime:
+                  type: static
+                  value: 1000
+              wait: {}
+            selected: returnEarly
+          size:
+            type: static
+            value: xs
           tooltip:
             type: static
+          triggerOnAppLoad:
+            type: static
+            value: false
+        customCss:
+          button:
+            class: ''
+            style: ''
+          container:
+            class: ''
+            style: ''
+        horizontalAlignment: center
+        recomputeIds: []
+        verticalAlignment: center
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 10
+        w: 6
+        x: 2
+        'y': 2
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 10
+        w: 3
+        x: 0
+        'y': 3
+      id: b
+      data:
+        id: b
+        type: aggridcomponent
+        actions:
+          - id: b_a
+            type: buttoncomponent
+            componentInput:
+              type: runnable
+              autoRefresh: false
+              fields:
+                dflt:
+                  type: static
+                  value: default value
+                  fieldType: string
+                msg:
+                  type: static
+                  value: null
+                  fieldType: string
+              fieldType: any
+              recomputeOnInputChanged: false
+              runnable:
+                type: runnableByName
+                name: Inline Script
+                inlineScript:
+                  content: '!inline inline_script_1.inline_script.sh'
+                  lock: ''
+                  language: bash
+                  path: u/alex/cheaper_app/Inline_Script
+                  schema:
+                    $schema: 'https://json-schema.org/draft/2020-12/schema'
+                    type: object
+                    properties:
+                      dflt:
+                        type: string
+                        description: ''
+                        default: default value
+                        originalType: string
+                      msg:
+                        type: string
+                        description: ''
+                        default: null
+                        originalType: string
+                    required:
+                      - msg
+            configuration:
+              afterIcon:
+                type: static
+              beforeIcon:
+                type: static
+                value: ''
+              color:
+                type: static
+                value: blue
+              confirmationModal:
+                type: oneOf
+                configuration:
+                  confirmationModal:
+                    description:
+                      type: static
+                      value: Are you sure?
+                    confirmationText:
+                      type: static
+                      value: Confirm
+                    title:
+                      type: static
+                      value: Title
+                  none: {}
+                selected: none
+              disabled:
+                type: static
+                value: false
+              fillContainer:
+                type: static
+                value: false
+              label:
+                type: static
+                value: Press me
+              onError:
+                type: oneOf
+                configuration:
+                  close:
+                    id:
+                      type: static
+                      value: ''
+                  errorOverlay: {}
+                  gotoUrl:
+                    newTab:
+                      type: static
+                      value: true
+                    url:
+                      type: static
+                      value: ''
+                  open:
+                    id:
+                      type: static
+                      value: ''
+                  sendErrorToast:
+                    appendError:
+                      type: static
+                      value: true
+                    message:
+                      type: static
+                      value: An error occured
+                  setTab:
+                    setTab:
+                      type: static
+                      value: []
+                selected: errorOverlay
+              onSuccess:
+                type: oneOf
+                configuration:
+                  clearFiles:
+                    id:
+                      type: static
+                      value: ''
+                  close:
+                    id:
+                      type: static
+                      value: ''
+                  closeModal:
+                    modalId:
+                      type: static
+                      value: ''
+                  gotoUrl:
+                    newTab:
+                      type: static
+                      value: true
+                    url:
+                      type: static
+                      value: ''
+                  none: {}
+                  open:
+                    id:
+                      type: static
+                      value: ''
+                  openModal:
+                    modalId:
+                      type: static
+                      value: ''
+                  sendToast:
+                    message:
+                      type: static
+                      value: ''
+                  setTab:
+                    setTab:
+                      type: static
+                      value: []
+                selected: none
+              returnEarly:
+                type: oneOf
+                configuration:
+                  returnEarly:
+                    showLoadingTime:
+                      type: static
+                      value: 100
+                  wait: {}
+                selected: returnEarly
+              size:
+                type: static
+                value: xs2
+              tooltip:
+                type: evalv2
+                value: hello world
+                connections: []
+                expr: ''
+              triggerOnAppLoad:
+                type: static
+                value: false
+            customCss:
+              button:
+                class: ''
+                style: ''
+              container:
+                class: ''
+                style: ''
+            horizontalAlignment: center
+            recomputeIds: []
+            verticalAlignment: center
+        componentInput:
+          type: static
+          value:
+            - id: 1
+              name: A cell with a long name
+              age: 42
+            - id: 2
+              name: A briefer cell
+              age: 84
+          fieldType: array
+          subFieldType: object
+        configuration:
+          allEditable:
+            type: static
+            value: false
+          columnDefs:
+            type: static
+            value:
+              - field: id
+                flex: 1
+              - editable: true
+                field: name
+                flex: 1
+              - field: age
+                flex: 1
+              - _isActionsColumn: true
+                field: __actions__
+                flex: 1
+                headerName: Actions
+          compactness:
+            type: static
+            value: normal
+          customActionsHeader:
+            type: static
+          extraConfig:
+            type: static
+            value: {}
+          flex:
+            type: static
+            value: true
+          footer:
+            type: static
+            value: true
+          multipleSelectable:
+            type: static
+            value: false
+          pagination:
+            type: static
+            value: false
+          rowIdCol:
+            type: static
             value: ''
+          rowMultiselectWithClick:
+            type: static
+            value: true
+          selectFirstRowByDefault:
+            type: static
+            value: true
+          wrapActions:
+            type: static
+            value: false
         customCss:
           container:
             class: ''
             style: ''
-          text:
+    - '12':
+        fixed: false
+        fullHeight: false
+        h: 8
+        w: 6
+        x: 0
+        'y': 12
+      '3':
+        fixed: false
+        fullHeight: false
+        h: 8
+        w: 2
+        x: 0
+        'y': 13
+      id: c
+      data:
+        id: c
+        type: tabscomponent
+        configuration:
+          tabsKind:
+            type: static
+            value: tabs
+        customCss:
+          allTabs:
             class: ''
             style: ''
-        horizontalAlignment: left
-        verticalAlignment: top
+          container:
+            class: ''
+            style: ''
+          selectedTab:
+            class: ''
+            style: ''
+          tabRow:
+            class: ''
+            style: ''
+        disabledTabs:
+          - type: static
+            value: false
+            fieldType: boolean
+          - type: static
+            value: false
+            fieldType: boolean
+        hiddenTabs:
+          - type: evalv2
+            connections: []
+            expr: 'false'
+            fieldType: boolean
+          - type: evalv2
+            connections: []
+            expr: 'false'
+            fieldType: boolean
+        numberOfSubgrids: 2
+        tabs:
+          - First tab
+          - Second tab
   hiddenInlineScripts: []
   hideLegacyTopBar: true
   mobileViewOnSmallerScreens: false
   norefreshbar: false
   subgrids:
+    c-0: []
+    c-1: []
+    d-0: []
+    d-1: []
+    d-2: []
     topbar-0:
       - '12':
           fixed: false
@@ -169,4 +626,16 @@ policy:
   allowed_s3_keys: []
   execution_mode: anonymous
   s3_inputs: []
-  triggerables_v2: {}
+  triggerables_v2:
+    'a:rawscript/f8c757fc4447b9e179969f8acf6ba6fcc47b1523f1ce561adea105543bc4d73d':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs:
+        dflt: default value
+        msg: null
+    'b_a:rawscript/f8c757fc4447b9e179969f8acf6ba6fcc47b1523f1ce561adea105543bc4d73d':
+      allow_user_resources: []
+      one_of_inputs: {}
+      static_inputs:
+        dflt: default value
+        msg: null
