@@ -46,6 +46,7 @@ locks:
     refund_via_stripe.inline_script.deno.ts: 0b991d313e31181a9214687d84dd79ce62c8bf577037b20b997f02c68af7b02d
     update_database.inline_script.deno.ts: 19b50e5d6a21453fe223b449f381ef7d8d17edd40ed2365decd6a1f42f8bf621
   u/alex/dominated_script: 97498bc31b1891b9ee1981fcf718a2932c67e15437018ace4f0bf7b376374651
+  u/alex/draft2: 5c5be9adfb5379370759e7b0a460ee1a4ea0cd4311050a55654aba4e3ab3a4e6
   u/alex/enhanced_flow.flow:
     __flow_hash: 7a452ff20d50e1b5a33212989b893286d375b2e1541a3321d84b50e0784e8e46
     inline_script_0.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
