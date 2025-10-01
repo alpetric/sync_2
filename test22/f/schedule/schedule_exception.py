@@ -4,16 +4,11 @@
 
 def main(scheduled_for: str) -> bool:
     # scheduled_for is an ISO8601 datetime string, e.g. "2025-09-30T12:00:00Z"
-
-    # Example: Skip weekends
-    # from datetime import datetime
-    # dt = datetime.fromisoformat(scheduled_for.replace('Z', '+00:00'))
-    # if dt.weekday() >= 5:  # 5 = Saturday, 6 = Sunday
-    #     return False
-
-    # Example: Only run on business hours (9 AM - 5 PM)
-    # if dt.hour < 9 or dt.hour >= 17:
-    #     return False
-
-    # return "nafiods"
-    raise Exception("Testing exception handling in schedule handler")
+    
+    from datetime import datetime
+    
+    # Parse the ISO8601 datetime string
+    dt = datetime.fromisoformat(scheduled_for.replace('Z', '+00:00'))
+    
+    # Return True if minute is even, False if minute is odd
+    return dt.minute % 2 == 0
