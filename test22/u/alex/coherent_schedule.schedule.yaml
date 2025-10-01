@@ -1,5 +1,7 @@
 description: ''
-args: {}
+args:
+  hello: schedule
+  world: mew
 cron_version: v2
 dynamic_skip: f/schedule/schedule_exception
 email: alex@windmill.dev
