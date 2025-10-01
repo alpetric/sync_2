@@ -12,6 +12,7 @@ on_recovery_extra_args: {}
 on_recovery_times: 1
 on_success_extra_args: {}
 schedule: 0 */1 * * * *
+schedule_handler: f/schedule/schedule_exception
 script_path: u/alex/dominated_script
 timezone: America/New_York
 ws_error_handler_muted: false
