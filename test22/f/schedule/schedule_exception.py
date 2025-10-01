@@ -15,4 +15,5 @@ def main(scheduled_for: str) -> bool:
     # if dt.hour < 9 or dt.hour >= 17:
     #     return False
 
-    return "nafiods"
+    # return "nafiods"
+    raise Exception("Testing exception handling in schedule handler")
