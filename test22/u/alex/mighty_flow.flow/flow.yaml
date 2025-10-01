@@ -1,9 +1,34 @@
 summary: ''
 description: ''
 value:
-  modules: []
+  modules:
+    - id: a
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms:
+          x:
+            type: javascript
+            expr: 'flow_input[''hello'']'
+          'y':
+            type: javascript
+            expr: 'flow_input[''world'']'
+        assets: []
+        lock: '!inline inline_script_0.inline_script.lock'
+        language: bun
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object
-  properties: {}
+  order:
+    - hello
+    - world
+  properties:
+    hello:
+      type: string
+      description: ''
+      default: ''
+    world:
+      type: string
+      description: ''
+      default: ''
   required: []

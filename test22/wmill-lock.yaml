@@ -85,6 +85,9 @@ locks:
     __flow_hash: 4365ac1143bb7087ace7e9c831ae1b3f92fb46e19fc42b0d394e5ddd1ace8b58
     approval.inline_script.ts: c3af41714601fbc8ad506c0170e0c90244c2e478872c6b882bbbc48c02fb493f
     inline_script_0.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
+  u/alex/mighty_flow.flow:
+    __flow_hash: d63254ec2db4c091e29ee95a4bfc0998acd4fff4cb7817533ae8339988da7172
+    inline_script_0.inline_script.ts: 5cb1c05aa16ecbd5318461ae4ef71bbc6e49a9db8807c0b3cd2a77f9353a8488
   u/alex/pampered_script: 008b9724694247288cd8e008ffdaad46a33846d8cca5c27cb8f3f2cdab665cae
   u/alex/passionate_script: 9ea9b3fab1e9dd1427cc5883ca74632cb95550fcfd0cbca5f1c76f904d54cab9
   u/alex/peppy_flow.flow:
