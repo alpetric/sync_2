@@ -1,0 +1,21 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      summary: dividebyzero
+      value:
+        type: rawscript
+        content: '!inline dividebyzero.inline_script.py'
+        input_transforms:
+          x:
+            type: static
+            value: ''
+        assets: []
+        lock: '!inline dividebyzero.inline_script.lock'
+        language: python3
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []

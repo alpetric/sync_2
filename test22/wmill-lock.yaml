@@ -41,6 +41,9 @@ locks:
   u/alex/creative_script: 76ee14f39db76d25e28f5267c2150d39d014d769dbada1b190c1b596ebe241e2
   u/alex/dev___sync_script_to_git_repo: e8956303e7172e32ecf0eeb1212172b61e604e30a5c79e1f7fd07c56d2b457a0
   u/alex/diplomatic_script: c3a3df62217079ae10b2020d19e5735f73b0a1a8e5ac7ab0cca648a9c79dd2ec
+  u/alex/divide_by_zer.flow:
+    __flow_hash: 4f6789c6741935847ea921a5fa053550f4b522a393699f3fbdc370fd2091969f
+    dividebyzero.inline_script.py: e5d6b1393a3dcec0a009eb9445d465b97c076a68ed414ece29ec04fbfadae961
   u/alex/docs_interactive_slack.flow:
     __flow_hash: 866cd45e365a1cb538223f2fe69b943e49e14694a1dfb07831ec2079f1417571
     parses_to_json.inline_script.deno.ts: 65061c33f558fae3cdc186b9d7d82d02bd14a07c2f10ca5b7cff07a1b1fdf5f6
