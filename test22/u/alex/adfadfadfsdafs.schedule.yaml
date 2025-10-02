@@ -11,7 +11,11 @@ on_failure_exact: false
 on_failure_times: 1
 on_recovery_extra_args: {}
 on_recovery_times: 1
-on_success_extra_args: {}
+on_success: script/u/alex/permissible_script
+on_success_extra_args:
+  x:
+    - adfsasdf
+    - dfdafs
 schedule: 0 */1 * * * *
 script_path: u/alex/dominated_script
 timezone: America/New_York
