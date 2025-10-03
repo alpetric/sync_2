@@ -144,3 +144,6 @@ locks:
   u/alex/wealthy_script: abe014c47024963c405a280fc943bc43bbfe1f908f250381da93b3db5bb60c18
   u/alex/welcome_script: 9a14d49ed863a8bcc465f6304b6ac03b6db9432a82dafb66f6c3cf9a6eb23fb2
   u/alex/well_rounded_script: 0cae12a46a6e2bfdc449a77960b6b4d2b98c89b6eb26f316ab169d136fc81b8b
+  u/alex/wonderful_flow.flow:
+    __flow_hash: b65586a1584d02df728dbbc4574ddda6bccc7693eb6019002473278acb13608e
+    inline_script_0.inline_script.ts: c8254dd359581db4f3422dd694a656584b1ed4f2a195b45d9ca50dcae53f6245
