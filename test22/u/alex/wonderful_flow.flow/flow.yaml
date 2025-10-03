@@ -13,6 +13,17 @@ value:
         assets: []
         lock: '!inline inline_script_0.inline_script.lock'
         language: bun
+    - id: b
+      value:
+        type: rawscript
+        content: '!inline inline_script_1.inline_script.ts'
+        input_transforms:
+          x:
+            type: javascript
+            expr: results.a
+        assets: []
+        lock: '!inline inline_script_1.inline_script.lock'
+        language: bun
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object
