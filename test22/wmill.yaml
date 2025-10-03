@@ -13,7 +13,7 @@ skipSecrets: true
 skipScripts: false
 skipFlows: false
 skipApps: false
-skipFolders: true
+skipFolders: false
 includeSchedules: true
 includeTriggers: true
 includeUsers: false
