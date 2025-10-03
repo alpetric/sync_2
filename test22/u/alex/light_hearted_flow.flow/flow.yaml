@@ -1,0 +1,47 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      summary: Approval
+      value:
+        type: rawscript
+        content: '!inline approval.inline_script.ts'
+        input_transforms:
+          approver1:
+            type: static
+            value: alex
+          approver2:
+            type: static
+            value: alex2
+        assets: []
+        lock: '!inline approval.inline_script.lock'
+        language: bun
+      continue_on_error: false
+      suspend:
+        hide_cancel: false
+        required_events: 2
+        resume_form:
+          schema:
+            order:
+              - hey
+              - ho
+            properties:
+              hey:
+                type: string
+                description: ''
+              ho:
+                type: string
+                description: ''
+            required: []
+        self_approval_disabled: true
+        timeout: 1800
+        user_auth_required: true
+        user_groups_required:
+          type: static
+          value: []
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}
+  required: []
