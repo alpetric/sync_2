@@ -30,7 +30,6 @@ git_sync:
         exclude_path:
           - u/alex/fortuitous_c_git_gpg**
           - u/alex/gpg_github**
-        extra_include_path: []
         include_path:
           - f/**
           - u/**
@@ -38,6 +37,7 @@ git_sync:
           - script
           - flow
           - app
+          - folder
           - variable
           - resource
           - resourcetype
