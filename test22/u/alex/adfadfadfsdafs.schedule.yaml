@@ -2,9 +2,8 @@ description: ''
 args:
   x: '1'
 cron_version: v2
-dynamic_skip: f/schedule/schedule_exceptionnnnnn
 email: alex@windmill.dev
-enabled: false
+enabled: true
 is_flow: false
 no_flow_overlap: false
 on_failure_exact: false
