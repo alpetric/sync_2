@@ -130,6 +130,7 @@ locks:
   u/alex/teams_recovery: 50be9552ae7492f99d09c408763219ccd9112e7c6b4c443924ae32723b946120
   u/alex/teams_succes_handler: 230fe4eb650e56a104577985eeb2533c79125d5ad71ffe00c71582727ed5b58d
   u/alex/test_git: ac9d53e2a61fe85907bd449402febe42d8212d3dc6562d06c0dfbade591a8ecc
+  u/alex/test3: 3b900cb4f383ad84356d68d5257d7e4ed369a4ccac488eab4a1bebe7fa3fb803
   u/alex/thriving_flow.flow:
     __flow_hash: 40c125d0045c985d609a3b5ea446cd98ee027113ca28b67d386a02125e56a39c
     approval.inline_script.ts: 65458e08becf0e67cea2536522387bb0d5b52c6a48ee3413ee8cc49b2885fc84
