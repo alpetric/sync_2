@@ -1,6 +1,6 @@
 summary: ''
 description: ''
-lock: '!inline u/alex/test3.script.lock'
+lock: '!inline f/test2/test3.script.lock'
 kind: script
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
