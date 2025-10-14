@@ -43,6 +43,8 @@ git_sync:
           - resourcetype
           - schedule
           - trigger
+          - user
+          - group
           - settings
       use_individual_branch: false
     - exclude_types_override: []
