@@ -1,3 +1,4 @@
 admins:
   - u/alex
-members: []
+members:
+  - u/alexbasic
