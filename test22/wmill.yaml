@@ -16,8 +16,8 @@ skipApps: false
 skipFolders: false
 includeSchedules: true
 includeTriggers: true
-includeUsers: false
-includeGroups: false
+includeUsers: true
+includeGroups: true
 includeSettings: true
 includeKey: false
 gitBranches:
