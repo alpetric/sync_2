@@ -7,7 +7,7 @@ schema:
   type: object
   properties:
     x:
-      type: string
+      type: number
       description: ''
       default: null
       originalType: string
