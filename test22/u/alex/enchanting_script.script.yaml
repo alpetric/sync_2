@@ -1,0 +1,15 @@
+summary: ''
+description: ''
+lock: '!inline u/alex/enchanting_script.script.lock'
+kind: script
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    x:
+      type: number
+      description: ''
+      default: null
+      originalType: string
+  required:
+    - x
