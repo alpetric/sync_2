@@ -1,0 +1,20 @@
+summary: ''
+description: ''
+value:
+  modules:
+    - id: a
+      value:
+        type: forloopflow
+        modules: []
+        iterator:
+          type: javascript
+          expr: '[1, 2, 3, 4, 5]'
+        parallel: false
+        skip_failures: true
+  same_worker: true
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order: []
+  properties: {}
+  required: []
