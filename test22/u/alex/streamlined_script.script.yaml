@@ -21,10 +21,6 @@ schema:
       description: ''
       default: null
       originalType: string
-    slack_resource:
-      type: object
-      description: ''
-      default: null
     text:
       type: string
       description: ''
