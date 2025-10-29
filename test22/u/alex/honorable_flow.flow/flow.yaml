@@ -1,0 +1,104 @@
+summary: Example handler for slack bot commands and @mentions
+description: |-
+  Slack bot will handle both slash commands and @mentions:
+  ```console
+  /windmill help
+  /windmill echo foo bar
+  @Windmill help
+  @Windmill echo foo bar
+  ```
+value:
+  modules:
+    - id: c
+      summary: parse input
+      value:
+        type: rawscript
+        content: '!inline parse_input.inline_script.deno.ts'
+        input_transforms:
+          text_input:
+            type: javascript
+            expr: flow_input.text
+        assets: []
+        lock: ''
+        language: deno
+    - id: d
+      summary: ''
+      value:
+        type: branchone
+        branches:
+          - summary: run command
+            modules:
+              - id: h
+                summary: handle echo command
+                value:
+                  type: script
+                  input_transforms:
+                    channel_id:
+                      type: javascript
+                      expr: flow_input.channel_id
+                    command:
+                      type: javascript
+                      expr: flow_input.command
+                    response_url:
+                      type: javascript
+                      expr: flow_input.response_url
+                    slack:
+                      type: javascript
+                      expr: flow_input.slack
+                    text:
+                      type: javascript
+                      expr: results.c.input
+                  path: hub/28070/slack/example_of_responding_to_a_slack_command
+            expr: results.c.command === 'echo'
+            parallel: true
+            skip_failure: true
+        default:
+          - id: e
+            summary: print help
+            value:
+              type: rawscript
+              content: '!inline print_help.inline_script.deno.ts'
+              input_transforms:
+                channel_id:
+                  type: javascript
+                  expr: flow_input.channel_id
+                command:
+                  type: javascript
+                  expr: flow_input.command
+                response_url:
+                  type: javascript
+                  expr: flow_input.response_url
+              assets:
+                - access_type: null
+                  alt_access_type: null
+                  kind: resource
+                  path: f/slack_bot/bot_token
+              lock: '!inline print_help.inline_script.lock'
+              language: deno
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties:
+    channel_id:
+      type: string
+      description: Slack channel ID where message was sent
+      default: null
+      format: ''
+    command:
+      type: string
+      description: 'Trigger type: ''/windmill'' for slash commands, ''@mention'' for @mentions'
+      default: null
+      format: ''
+    response_url:
+      type: string
+      description: Slack webhook URL (empty for @mentions)
+      default: ''
+      format: ''
+    text:
+      type: string
+      description: The text following the command or @mention
+      default: ''
+      format: ''
+  required:
+    - response_url
+    - text
