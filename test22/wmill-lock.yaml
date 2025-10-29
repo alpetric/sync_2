@@ -60,6 +60,10 @@ locks:
   u/alex/dominated_script: 97498bc31b1891b9ee1981fcf718a2932c67e15437018ace4f0bf7b376374651
   u/alex/draft2: 5c5be9adfb5379370759e7b0a460ee1a4ea0cd4311050a55654aba4e3ab3a4e6
   u/alex/enchanting_script: 31a9f3bfa560383cada454cb11e157280ecf7c437566ab251c02c6f33fa0d1e2
+  u/alex/energy_efficient_flow.flow:
+    __flow_hash: 84c78436a4799c9c5b5c32b2e30d47cafd56dfbc0ef51ba527e3d161bacd883c
+    parse_input.inline_script.deno.ts: 6d244c580c6d913fc302c7d2661c0e902b7ae1f6ea251a1036b942fbd0ca296a
+    print_help.inline_script.deno.ts: 71feb2f55ed4f20b5117d809d03c9f85fa2bdb64f959df4157f1ae6209d915b3
   u/alex/enhanced_flow.flow:
     __flow_hash: 7a452ff20d50e1b5a33212989b893286d375b2e1541a3321d84b50e0784e8e46
     inline_script_0.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
