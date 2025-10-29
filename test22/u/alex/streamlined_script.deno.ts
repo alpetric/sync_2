@@ -1,21 +1,25 @@
-  export async function main(
-      response_url: string,  // Will be empty string "" for @mentions
-      text: string,          // Message text with @mention stripped
-      channel_id?: string,   // Channel ID
-      user_id?: string,      // Slack user ID
-      command?: string,      // Will be "@mention" for @mentions, "/windmill" for slash commands
-      event_id?: string,     // Unique event ID (only for @mentions)
-      ts?: string,           // Message timestamp (only for @mentions)
-      thread_ts?: string     // Thread timestamp if in thread (only for @mentions)
-  ) {
-      // Your handler logic
 
-      // Check if it's an @mention
+  import { WebClient } from 'https://deno.land/x/slack_web_api@1.0.0/mod.ts';
+
+  export async function main(
+      response_url: string,
+      text: string,
+      channel_id?: string,
+      command?: string,
+      slack_resource?: any  // Your Slack resource
+  ) {
       if (command === "@mention") {
-          // Handle @mention - can't use response_url, use Slack API instead
-          console.log("Triggered by @mention");
+          // Use Slack API for @mentions
+          const web = new WebClient(slack_resource.token);
+          await web.chat.postMessage({
+              channel: channel_id,
+              text: `I received: ${text}`
+          });
       } else {
-          // Handle /windmill command
-          console.log("Triggered by slash command");
+          // Use response_url for slash commands
+          await fetch(response_url, {
+              method: 'POST',
+              body: JSON.stringify({ text: `I received: ${text}` })
+          });
       }
   }

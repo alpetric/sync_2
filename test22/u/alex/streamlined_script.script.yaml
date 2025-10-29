@@ -1,6 +1,6 @@
 summary: Example of responding to a slack command
 description: Fork of hub/314/slack/example_of_responding_to_a_slack_command_slack
-lock: ''
+lock: '!inline u/alex/streamlined_script.script.lock'
 kind: script
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
@@ -16,32 +16,16 @@ schema:
       description: ''
       default: null
       originalType: string
-    event_id:
-      type: string
-      description: ''
-      default: null
-      originalType: string
     response_url:
       type: string
       description: ''
       default: null
       originalType: string
+    slack_resource:
+      type: object
+      description: ''
+      default: null
     text:
-      type: string
-      description: ''
-      default: null
-      originalType: string
-    thread_ts:
-      type: string
-      description: ''
-      default: null
-      originalType: string
-    ts:
-      type: string
-      description: ''
-      default: null
-      originalType: string
-    user_id:
       type: string
       description: ''
       default: null
