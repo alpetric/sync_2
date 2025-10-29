@@ -13,7 +13,7 @@
   ) {
       if (command === "@mention") {
           // @mention - use Slack API
-          const slack = await wmill.getResource<Slack>('f/slack/slack_bot');
+          const slack = await wmill.getResource<Slack>('f/slack_bot/bot_token');
           const web = new WebClient(slack.token);
           await web.chat.postMessage({
               channel: channel_id,
