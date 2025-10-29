@@ -1,11 +1,21 @@
 summary: Example of responding to a slack command
 description: Fork of hub/314/slack/example_of_responding_to_a_slack_command_slack
-lock: ''
+lock: '!inline u/alex/smartest_script.script.lock'
 kind: script
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'
   type: object
   properties:
+    channel_id:
+      type: string
+      description: ''
+      default: null
+      originalType: string
+    command:
+      type: string
+      description: ''
+      default: null
+      originalType: string
     response_url:
       type: string
       description: ''
