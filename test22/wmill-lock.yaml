@@ -92,6 +92,10 @@ locks:
   u/alex/light_hearted_flow.flow:
     __flow_hash: ff3d07006f48e28fbc8d644640cf09bf5064719a63bbf12b20a8e4465a91e906
     approval.inline_script.ts: 2efc72be7eb99edc778521162eeabd9f8024a56f315a6b81e5314c9d9be7dc90
+  u/alex/loving_flow.flow:
+    __flow_hash: 6dd23bf92a019b42ac3d50f25736364f4eb6fb9dbe60e3a88041d28687f8dee5
+    parse_input.inline_script.deno.ts: 6d244c580c6d913fc302c7d2661c0e902b7ae1f6ea251a1036b942fbd0ca296a
+    print_help.inline_script.deno.ts: ed8c3801011b35dd7fa4b935af726e24dba84da449669428fd552cb5b3b93e08
   u/alex/low_risk_flow.flow:
     __flow_hash: b0612df24ab1049f5b823ac9882fa2b130ce5fe446cc100f3d89595e7ab43115
     approval.inline_script.ts: fca89f43064444c50a9ea9844669813b8966b6c3666f04f35353a1fffad35ed0
