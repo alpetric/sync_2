@@ -85,6 +85,10 @@ locks:
   u/alex/git_sync_2: 1f7f8632e664cec72682d70efc3c50438e842aaa4b44686315bf2c75c6a5ff13
   u/alex/git_sync_push: 2efb90f3669efe246023b85b9be181cd20ae3dac0c0f40b28f5ae4e337c77a04
   u/alex/groundbreaking_script: 884b3b52a79973a90d8d14449128d3134840dc7dee2d0a09ab685b9cba4c4958
+  u/alex/guiltless_flow.flow:
+    __flow_hash: 5e511432e6a91926bdcc975cf8d32f0027edeb8f60cd84298d1272b380de66c9
+    parse_input.inline_script.deno.ts: 6d244c580c6d913fc302c7d2661c0e902b7ae1f6ea251a1036b942fbd0ca296a
+    print_help.inline_script.deno.ts: 1887d9d5303567340028224a5c6c53507d6abc0e4816b8e015e79bebe6715298
   u/alex/hallowed_flow.flow:
     __flow_hash: 4440e07c76e595be0863a45991db8aafd2df672bd07d024ada84d6a909bca5fc
     inline_script_0.inline_script.sh: 6e636d09792d59c0e1ebba501b7179981193cc6c572c96f3e5c0ca939b27d3e4
