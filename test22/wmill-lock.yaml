@@ -132,6 +132,10 @@ locks:
     __flow_hash: bf1d63791eced010ed303a0c84a9d0d8fb6b1883e21a50aa7b26b01b48fe189d
     inline_script_0.inline_script.ts: 1c686864787a9c5af5d96966032dfbc1e89bd36f83c19115ba2f4d9ef3cb42d0
   u/alex/promising_script: e4254dee669e961c32850dd9e80f6f9abc669d82960b96b5365edddf62ed815f
+  u/alex/proper_flow.flow:
+    __flow_hash: 5e511432e6a91926bdcc975cf8d32f0027edeb8f60cd84298d1272b380de66c9
+    parse_input.inline_script.deno.ts: 6d244c580c6d913fc302c7d2661c0e902b7ae1f6ea251a1036b942fbd0ca296a
+    print_help.inline_script.deno.ts: 1887d9d5303567340028224a5c6c53507d6abc0e4816b8e015e79bebe6715298
   u/alex/python_slack_approval.flow:
     __flow_hash: cb1ed2ae8fc5cad2b9a153d4b9b48cfff371bd07f78a983ca9992c409b6dd0ec
     approval.inline_script.py: 3a0fd64dea4eb41ee8c9d4ea64af8961ab5f2cc552d80547248b81cf71956c31
