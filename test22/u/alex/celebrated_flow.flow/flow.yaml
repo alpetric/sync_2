@@ -1,0 +1,1255 @@
+summary: Run Tests Only In Environment
+description: Run Deployment Of Services
+value:
+  modules:
+    - id: as
+      summary: ''
+      value:
+        type: branchone
+        branches:
+          - summary: Check if Start Runners is enabled
+            modules:
+              - id: bn
+                summary: ''
+                value:
+                  type: branchone
+                  branches:
+                    - summary: Is Ephemeral?
+                      modules:
+                        - id: ad
+                          summary: Start Runners
+                          value:
+                            type: script
+                            input_transforms:
+                              alwaysResume:
+                                type: static
+                                value: false
+                              environment:
+                                type: javascript
+                                expr: flow_input.Environment
+                              inputParams:
+                                type: javascript
+                                expr: |-
+                                  return {
+                                      action : "start",
+                                      numberOfRunners : "30"
+                                  }
+                              org:
+                                type: static
+                                value: intelycaretech
+                              repo:
+                                type: static
+                                value: ReusableWorkflows
+                              skipRunnerLabel:
+                                type: static
+                                value: false
+                              workflowName:
+                                type: static
+                                value: ManageECSTasks.yml
+                            path: f/Release/scripts/run_github_action
+                            tag_override: null
+                          continue_on_error: false
+                          sleep:
+                            type: static
+                            value: 180
+                          suspend:
+                            required_events: 1
+                            timeout: 1800
+                      expr: '!flow_input["Is Ephemeral?"]'
+                      parallel: true
+                      skip_failure: true
+                  default:
+                    - id: bo
+                      summary: Start Ephemeral Runners
+                      value:
+                        type: flow
+                        input_transforms:
+                          Cluster Name:
+                            type: javascript
+                            value: Platform_Services
+                            expr: 'flow_input["Cluster Name"]'
+                          Desired Count:
+                            type: javascript
+                            expr: >-
+                              flow_input["Run Platform Integration Tests"] ? 10
+                              : flow_input["Run Service Integration Tests"] ? 30
+                              : 3
+                          Environment:
+                            type: javascript
+                            value: ''
+                            expr: flow_input.Environment
+                          Is Ephemeral?:
+                            type: static
+                            value: true
+                          Services:
+                            type: static
+                            value:
+                              - githubrunnertester
+                        path: f/Release/Deploy/update_desired_count_for_services
+                      continue_on_error: false
+            expr: 'flow_input["Start Runners?"]'
+            parallel: true
+            skip_failure: true
+        default: []
+    - id: ah
+      summary: ''
+      value:
+        type: branchone
+        branches:
+          - summary: Get GitHub Variable Version
+            modules:
+              - id: ai
+                summary: Get Release Tag Value
+                value:
+                  type: script
+                  input_transforms:
+                    releaseTagName:
+                      type: javascript
+                      expr: >-
+                        flow_input["GitHub Release Tag Variable"] == "Current
+                        Release Tag" ? "CURRENT_RELEASE_TAG" :
+                        "LATEST_RELEASE_TAG"
+                  path: f/Release/scripts/get_org_github_variable
+                  tag_override: null
+            expr: 'flow_input["Use GitHub Variable For Release"]'
+            parallel: true
+            skip_failure: true
+        default: []
+    - id: bi
+      summary: ''
+      value:
+        type: branchone
+        branches:
+          - summary: Release Hardening?
+            modules:
+              - id: bk
+                summary: Request UAT Cycles
+                value:
+                  type: flow
+                  input_transforms:
+                    environment:
+                      type: javascript
+                      value: '${flow_input["Cluster Name"]}'
+                      expr: '`${flow_input["Cluster Name"]}`'
+                    projectKey:
+                      type: static
+                      value: FTT
+                    releaseTag:
+                      type: javascript
+                      value: '${flow_input["Tag/Branch To Deploy"]}'
+                      expr: '`${flow_input["Tag/Branch To Deploy"]}`'
+                    testCaseParent:
+                      type: static
+                      value: '22082315'
+                    testCycleParent:
+                      type: static
+                      value: '20204827'
+                  path: u/rbeck/mature_flow
+                continue_on_error: false
+              - id: bh
+                summary: Initial UAT Upload
+                value:
+                  type: flow
+                  input_transforms:
+                    env:
+                      type: javascript
+                      value: ''
+                      expr: 'flow_input["Cluster Name"]'
+                    parentFolder:
+                      type: static
+                      value: '20204827'
+                    projectId:
+                      type: static
+                      value: '10275'
+                    projectKey:
+                      type: static
+                      value: FTT
+                    releaseTag:
+                      type: javascript
+                      value: ''
+                      expr: 'flow_input["Tag/Branch To Deploy"]'
+                    triggeredById:
+                      type: javascript
+                      value: ''
+                      expr: flow_input.TriggeredById
+                  path: f/Release/Reporting/upload_manual_tests
+            expr: >-
+              flow_input["Release Hardening"] && flow_input["Run Service
+              Integration Tests"]
+            parallel: true
+            skip_failure: true
+        default: []
+      mock:
+        enabled: false
+        return_value:
+          example: value
+      skip_if:
+        expr: 'true'
+    - id: aw
+      summary: Update Report Portal
+      value:
+        type: flow
+        input_transforms:
+          buildDashboard:
+            type: javascript
+            expr: 'flow_input["Build ReportPortal Dashboard"]'
+          clusterName:
+            type: javascript
+            expr: 'flow_input["Cluster Name"]'
+          env:
+            type: javascript
+            expr: flow_input.Environment
+          releaseHardening:
+            type: javascript
+            expr: 'flow_input["Release Hardening"]'
+          sendKickOffMessage:
+            type: javascript
+            expr: 'flow_input["Send Kickoff Message"]'
+          tagToDeploy:
+            type: javascript
+            value: '${flow_input["Tag/Branch To Deploy"]}'
+            expr: '`${flow_input["Tag/Branch To Deploy"]}`'
+          triggeredById:
+            type: javascript
+            expr: flow_input.TriggeredById
+          updateFilters:
+            type: javascript
+            expr: 'flow_input["Update ReportPortal Filters"]'
+        path: f/Release/Reporting
+      continue_on_error: false
+      mock:
+        enabled: false
+        return_value:
+          example: value
+    - id: r
+      summary: ''
+      value:
+        type: branchall
+        branches:
+          - summary: Run Integration Tests
+            modules:
+              - id: bp
+                summary: ''
+                value:
+                  type: branchone
+                  branches:
+                    - summary: Run Integration Test
+                      modules:
+                        - id: w
+                          value:
+                            type: forloopflow
+                            modules:
+                              - id: x
+                                summary: Run Integration Test Per Service
+                                value:
+                                  type: flow
+                                  input_transforms:
+                                    Cluster Name:
+                                      type: javascript
+                                      value: ''
+                                      expr: 'flow_input["Cluster Name"]'
+                                    Environment:
+                                      type: javascript
+                                      expr: flow_input.Environment
+                                    Is Ephemeral?:
+                                      type: javascript
+                                      value: false
+                                      expr: 'flow_input["Is Ephemeral?"]'
+                                    Service:
+                                      type: javascript
+                                      expr: flow_input.iter.value
+                                    Tag:
+                                      type: javascript
+                                      expr: >-
+                                        flow_input["Use GitHub Variable For
+                                        Release"] ? results.ai :
+                                        flow_input["Tag/Branch To Deploy"]
+                                    TriggeredById:
+                                      type: javascript
+                                      expr: flow_input.TriggeredById
+                                  path: f/Release/deployment/run_tests
+                                continue_on_error: false
+                            iterator:
+                              type: javascript
+                              expr: 'flow_input["Services To Test"]'
+                            parallel: true
+                            parallelism:
+                              type: static
+                              value: 30
+                            skip_failures: true
+                        - id: bc
+                          summary: ''
+                          value:
+                            type: branchone
+                            branches:
+                              - summary: Release Hardening?
+                                modules:
+                                  - id: bb
+                                    summary: Verify Test Results
+                                    value:
+                                      type: script
+                                      input_transforms:
+                                        cluster:
+                                          type: javascript
+                                          value: ''
+                                          expr: 'flow_input["Cluster Name"]'
+                                        env:
+                                          type: javascript
+                                          value: ''
+                                          expr: flow_input.Environment
+                                        tag:
+                                          type: javascript
+                                          value: ''
+                                          expr: 'flow_input["Tag/Branch To Deploy"]'
+                                        testType:
+                                          type: static
+                                          value: service-UT-IT
+                                        triggeredById:
+                                          type: javascript
+                                          value: ''
+                                          expr: flow_input.TriggeredById
+                                      is_trigger: false
+                                      path: f/Release/Report_Bot_Message/d
+                                  - id: bd
+                                    summary: ''
+                                    value:
+                                      type: branchone
+                                      branches:
+                                        - summary: Start UAT
+                                          modules:
+                                            - id: bf
+                                              summary: Approve UAT
+                                              value:
+                                                type: flow
+                                                input_transforms:
+                                                  Message:
+                                                    type: javascript
+                                                    expr: |-
+                                                      return {
+                                                          "type": "message",
+                                                          "attachments": [
+                                                            {
+                                                              "content": {
+                                                                "body": [
+                                                                  {
+                                                                    "size": "large",
+                                                                    "text": `${flow_input["Tag/Branch To Deploy"]} - ${flow_input.TriggeredById}`,
+                                                                    "type": "TextBlock",
+                                                                    "weight": "bolder"
+                                                                  },
+                                                                  {
+                                                                    "type": "RichTextBlock",
+                                                                    "inlines": [
+                                                                    {
+                                                                      "text": `${results.bb[1].failed} Test Failures Reported.\n`,
+                                                                      "type": "TextRun",
+                                                                      "weight": "bolder",
+                                                                        "color": "good"
+                                                                    },
+                                                                    {
+                                                                      "text": `\nRelease Candidate Approved for `,
+                                                                      "type": "TextRun"
+                                                                    },
+                                                                    {
+                                                                      "text": `UAT Validation in: \n`,
+                                                                      "type": "TextRun",
+                                                                      "weight": "bolder",
+                                                                      "selectAction": {
+                                                                        "url": `https://intelycare.atlassian.net/projects/FTT?selectedItem=com.atlassian.plugins.atlassian-connect-plugin:com.kanoah.test-manager__main-project-page#!/v2/testCycles?projectId=10275`,
+                                                                        "type": "Action.OpenUrl"
+                                                                      }
+                                                                    },
+                                                                    {
+                                                                      "text": `\n${flow_input["Cluster Name"]}\n`,
+                                                                      "type": "TextRun",
+                                                                      "weight": "bolder",
+                                                                      "selectAction": {
+                                                                        "url": `https://staffing.eph-${flow_input["Cluster Name"]}.pre.prod01.platform.legacy.intelycare.com/`,
+                                                                        "type": "Action.OpenUrl"
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                    "separator": true
+                                                                  }
+                                                                ],
+                                                                "type": "AdaptiveCard",
+                                                                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                                                                "actions": [
+                                                                  {
+                                                                    "url": `https://devreports.intelycare.com/ui/#intelycare/dashboard/${results.bb[0]}`,
+                                                                    "type": "Action.OpenUrl",
+                                                                    "title": "Report Dashboard"
+                                                                  },
+                                                                  {
+                                                                    "url": `https://windmill-dev.intelycare.com/run/${flow_input.TriggeredById}?workspace=release-tooling`,
+                                                                    "type": "Action.OpenUrl",
+                                                                    "title": "Windmill Workflow"
+                                                                  }
+                                                                ],
+                                                                "version": "1.5"
+                                                              },
+                                                              "contentType": "application/vnd.microsoft.card"
+                                                            }
+                                                          ]
+                                                        }
+                                                  TeamsWorkflowURL:
+                                                    type: static
+                                                    value: >-
+                                                      https://prod-144.westus.logic.azure.com:443/workflows/4875a1744dad41e7915af178c0d5f4e4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=l_2B07MPVqdGZvIP8jbEM3bDqqCsEkDRl5t6PNCavCQ
+                                                path: f/Release/Reporting/send_teams_message
+                                            - id: bj
+                                              summary: Enable UAT Check Schedule
+                                              value:
+                                                type: script
+                                                input_transforms:
+                                                  create:
+                                                    type: static
+                                                    value: true
+                                                  env:
+                                                    type: javascript
+                                                    value: ''
+                                                    expr: 'flow_input["Cluster Name"]'
+                                                  parentFolder:
+                                                    type: static
+                                                    value: '20204827'
+                                                  projectId:
+                                                    type: static
+                                                    value: '10275'
+                                                  projectKey:
+                                                    type: static
+                                                    value: FTT
+                                                  releaseTag:
+                                                    type: javascript
+                                                    value: ''
+                                                    expr: 'flow_input["Tag/Branch To Deploy"]'
+                                                  remove:
+                                                    type: static
+                                                    value: false
+                                                  triggeredById:
+                                                    type: javascript
+                                                    value: ''
+                                                    expr: flow_input.TriggeredById
+                                                hash: 63be810df93fd115
+                                                is_trigger: false
+                                                path: f/Release/schedule_uat_checks
+                                              continue_on_error: false
+                                          expr: >-
+                                            results.bb[1].failed == 0 ||
+                                            results.bb[1].failed/results.bb[1].total
+                                            < 0.0033
+                                          parallel: true
+                                          skip_failure: true
+                                      default:
+                                        - id: bg
+                                          summary: Delay UAT
+                                          value:
+                                            type: flow
+                                            input_transforms:
+                                              Message:
+                                                type: javascript
+                                                expr: |-
+                                                  return {
+                                                      "type": "message",
+                                                      "attachments": [
+                                                        {
+                                                          "content": {
+                                                            "body": [
+                                                              {
+                                                                "size": "large",
+                                                                "text": `${flow_input["Tag/Branch To Deploy"]} - ${flow_input.TriggeredById}`,
+                                                                "type": "TextBlock",
+                                                                "weight": "bolder"
+                                                              },
+                                                              {
+                                                                "type": "RichTextBlock",
+                                                                "inlines": [
+                                                                {
+                                                                  "text": `${results.bb[1].failed} Test Failures Reported.\n`,
+                                                                  "type": "TextRun",
+                                                                  "weight": "bolder",
+                                                                    "color": "attention"
+                                                                },
+                                                                {
+                                                                  "text": `\nRelease Candidate Rejected.\n`,
+                                                                  "type": "TextRun",
+                                                                  "weight": "bolder"
+                                                                },
+                                                                {
+                                                                  "text": `\nUAT Validation Delayed Until Further Notice. \n`,
+                                                                  "type": "TextRun",
+                                                                  "weight": "bolder"
+                                                                }
+                                                              ],
+                                                                "separator": true
+                                                              }
+                                                            ],
+                                                            "type": "AdaptiveCard",
+                                                            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                                                            "actions": [
+                                                              {
+                                                                "url": `https://devreports.intelycare.com/ui/#intelycare/dashboard/${results.bb[0]}`,
+                                                                "type": "Action.OpenUrl",
+                                                                "title": "Report Dashboard"
+                                                              },
+                                                              {
+                                                                "url": `https://windmill-dev.intelycare.com/run/${flow_input.TriggeredById}?workspace=release-tooling`,
+                                                                "type": "Action.OpenUrl",
+                                                                "title": "Windmill Workflow"
+                                                              }
+                                                            ],
+                                                            "version": "1.5"
+                                                          },
+                                                          "contentType": "application/vnd.microsoft.card"
+                                                        }
+                                                      ]
+                                                    }
+                                              TeamsWorkflowURL:
+                                                type: static
+                                                value: >-
+                                                  https://prod-144.westus.logic.azure.com:443/workflows/4875a1744dad41e7915af178c0d5f4e4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=l_2B07MPVqdGZvIP8jbEM3bDqqCsEkDRl5t6PNCavCQ
+                                            path: f/Release/Reporting/send_teams_message
+                                expr: 'flow_input["Release Hardening"]'
+                                parallel: true
+                                skip_failure: true
+                            default: []
+                          skip_if:
+                            expr: 'true'
+                      expr: flow_input.runServiceIntegrationTests
+                      parallel: true
+                      skip_failure: true
+                  default: []
+            expr: ''
+            parallel: true
+            skip_failure: true
+          - summary: Run Platform Tests
+            modules:
+              - id: s
+                summary: ''
+                value:
+                  type: branchone
+                  branches:
+                    - summary: Run Platform Tests
+                      modules:
+                        - id: ar
+                          summary: Platform Suite Loop
+                          value:
+                            type: forloopflow
+                            modules:
+                              - id: aq
+                                summary: Run One Platform Tests
+                                value:
+                                  type: flow
+                                  input_transforms:
+                                    Cluster Name:
+                                      type: javascript
+                                      value: ''
+                                      expr: 'flow_input["Cluster Name"]'
+                                    Environment:
+                                      type: javascript
+                                      expr: flow_input.Environment
+                                    Is Ephemeral?:
+                                      type: javascript
+                                      value: false
+                                      expr: 'flow_input["Is Ephemeral?"]'
+                                    Suite:
+                                      type: javascript
+                                      expr: flow_input.iter.value
+                                    Tag/Branch:
+                                      type: javascript
+                                      expr: >-
+                                        flow_input["Use GitHub Variable For
+                                        Release"] ? results.ai :
+                                        flow_input["Tag/Branch To Deploy"]
+                                    TriggeredById:
+                                      type: javascript
+                                      expr: flow_input.TriggeredById
+                                  path: f/Release/run_single_platform_tests
+                            iterator:
+                              type: javascript
+                              expr: 'flow_input["Platform Suites"]'
+                            parallel: true
+                            parallelism:
+                              type: static
+                              value: 60
+                            skip_failures: true
+                      expr: flow_input.runPlatformIntegrationTests
+                      parallel: true
+                      skip_failure: true
+                  default: []
+            expr: ''
+            parallel: true
+            skip_failure: true
+          - summary: Run UX Automation
+            modules:
+              - id: aj
+                summary: ''
+                value:
+                  type: branchone
+                  branches:
+                    - summary: Run UX Tests
+                      modules:
+                        - id: au
+                          summary: ''
+                          value:
+                            type: branchone
+                            branches:
+                              - summary: If Not Ephemeral?
+                                modules:
+                                  - id: ak
+                                    summary: Start UX Runners
+                                    value:
+                                      type: script
+                                      input_transforms:
+                                        alwaysResume:
+                                          type: static
+                                          value: false
+                                        environment:
+                                          type: javascript
+                                          expr: flow_input.Environment
+                                        inputParams:
+                                          type: javascript
+                                          expr: |-
+                                            return {
+                                              action : "start",
+                                              numberOfRunners : "3"
+                                            }
+                                        org:
+                                          type: static
+                                          value: intelycaretech
+                                        repo:
+                                          type: static
+                                          value: WebAutomation
+                                        skipRunnerLabel:
+                                          type: static
+                                          value: false
+                                        workflowName:
+                                          type: static
+                                          value: ManageECSTasks.yml
+                                      path: f/Release/scripts/run_github_action
+                                      tag_override: null
+                                    continue_on_error: false
+                                    sleep:
+                                      type: static
+                                      value: 180
+                                expr: '!flow_input["Is Ephemeral?"]'
+                                parallel: true
+                                skip_failure: true
+                            default:
+                              - id: ax
+                                summary: Start Ephemeral QE Runners
+                                value:
+                                  type: flow
+                                  input_transforms:
+                                    Cluster Name:
+                                      type: javascript
+                                      expr: 'flow_input["Cluster Name"]'
+                                    Desired Count:
+                                      type: javascript
+                                      expr: '3'
+                                    Environment:
+                                      type: javascript
+                                      expr: flow_input.Environment
+                                    Is Ephemeral?:
+                                      type: static
+                                      value: true
+                                    Services:
+                                      type: static
+                                      value:
+                                        - githubrunnerqetester
+                                  path: >-
+                                    f/Release/Deploy/update_desired_count_for_services
+                                continue_on_error: false
+                                sleep:
+                                  type: static
+                                  value: 60
+                        - id: al
+                          summary: Run UX Suites
+                          value:
+                            type: forloopflow
+                            modules:
+                              - id: am
+                                summary: Run UX Suite
+                                value:
+                                  type: flow
+                                  input_transforms:
+                                    Cluster:
+                                      type: javascript
+                                      expr: 'flow_input["Cluster Name"]'
+                                    Environment:
+                                      type: javascript
+                                      expr: flow_input.Environment
+                                    Suite:
+                                      type: javascript
+                                      expr: flow_input.iter.value
+                                    Tag/Branch:
+                                      type: javascript
+                                      expr: >-
+                                        flow_input["Use GitHub Variable For
+                                        Release"] ? results.ai :
+                                        flow_input["Tag/Branch To Deploy"]
+                                    TriggeredById:
+                                      type: javascript
+                                      expr: flow_input.TriggeredById
+                                  path: f/Release/deployment/Web_UX_Tests
+                                continue_on_error: false
+                            iterator:
+                              type: javascript
+                              expr: 'flow_input["Web UX Suites"]'
+                            parallel: true
+                            parallelism:
+                              type: static
+                              value: 3
+                            skip_failures: true
+                        - id: av
+                          summary: ''
+                          value:
+                            type: branchone
+                            branches:
+                              - summary: If Not Ephemeral?
+                                modules:
+                                  - id: an
+                                    summary: Shutdown UX Runners
+                                    value:
+                                      type: script
+                                      input_transforms:
+                                        alwaysResume:
+                                          type: static
+                                          value: true
+                                        environment:
+                                          type: javascript
+                                          expr: flow_input.Environment
+                                        inputParams:
+                                          type: javascript
+                                          expr: |-
+                                            return {
+                                              action : "stop",
+                                              numberOfRunners: "0"
+                                            }
+                                        org:
+                                          type: static
+                                          value: intelycaretech
+                                        repo:
+                                          type: static
+                                          value: WebAutomation
+                                        skipRunnerLabel:
+                                          type: static
+                                          value: false
+                                        workflowName:
+                                          type: static
+                                          value: ManageECSTasks.yml
+                                      path: f/Release/scripts/run_github_action
+                                      tag_override: null
+                                    suspend:
+                                      required_events: 1
+                                      timeout: 1800
+                                expr: '!flow_input["Is Ephemeral?"]'
+                                parallel: true
+                                skip_failure: true
+                            default:
+                              - id: ay
+                                summary: Stop Ephemeral QE Runners
+                                value:
+                                  type: flow
+                                  input_transforms:
+                                    Cluster Name:
+                                      type: javascript
+                                      expr: 'flow_input["Cluster Name"]'
+                                    Desired Count:
+                                      type: static
+                                      value: 0
+                                    Environment:
+                                      type: javascript
+                                      expr: flow_input.Environment
+                                    Is Ephemeral?:
+                                      type: static
+                                      value: true
+                                    Services:
+                                      type: static
+                                      value:
+                                        - githubrunnerqetester
+                                  path: >-
+                                    f/Release/Deploy/update_desired_count_for_services
+                      expr: 'flow_input["Run UX Automation"]'
+                      parallel: true
+                      skip_failure: true
+                  default: []
+            expr: ''
+            parallel: true
+            skip_failure: true
+        parallel: false
+    - id: ao
+      summary: Send Slack Report
+      value:
+        type: flow
+        input_transforms:
+          Cluster Name:
+            type: javascript
+            expr: 'flow_input["Cluster Name"]'
+          Environment:
+            type: javascript
+            expr: flow_input.Environment
+          TriggeredById:
+            type: javascript
+            expr: flow_input.TriggeredById
+        path: f/Release/Report_Bot_Message
+      continue_on_error: false
+      mock:
+        enabled: false
+        return_value:
+          example: value
+    - id: bl
+      summary: ''
+      value:
+        type: branchone
+        branches:
+          - summary: Is Ephemeral?
+            modules:
+              - id: ag
+                summary: Stop Runners
+                value:
+                  type: script
+                  input_transforms:
+                    alwaysResume:
+                      type: static
+                      value: true
+                    environment:
+                      type: javascript
+                      value: '${flow_input.Environment}'
+                      expr: '`${flow_input.Environment}`'
+                    inputParams:
+                      type: javascript
+                      expr: |-
+                        return {
+                            action : "stop",
+                            numberOfRunners : "0"
+                        }
+                    org:
+                      type: static
+                      value: intelycaretech
+                    repo:
+                      type: static
+                      value: ReusableWorkflows
+                    skipRunnerLabel:
+                      type: static
+                      value: false
+                    workflowName:
+                      type: static
+                      value: ManageECSTasks.yml
+                  path: f/Release/scripts/run_github_action
+                  tag_override: null
+                continue_on_error: false
+                mock:
+                  enabled: false
+                  return_value:
+                    example: value
+                suspend:
+                  required_events: 1
+                  timeout: 1800
+            expr: '!flow_input["Is Ephemeral?"]'
+            parallel: true
+            skip_failure: true
+        default:
+          - id: bm
+            summary: Stop Ephemeral Runners
+            value:
+              type: flow
+              input_transforms:
+                Cluster Name:
+                  type: javascript
+                  value: Platform_Services
+                  expr: 'flow_input["Cluster Name"]'
+                Desired Count:
+                  type: static
+                  value: 0
+                Environment:
+                  type: javascript
+                  value: ''
+                  expr: flow_input.Environment
+                Is Ephemeral?:
+                  type: static
+                  value: true
+                Services:
+                  type: static
+                  value:
+                    - githubrunnertester
+              path: f/Release/Deploy/update_desired_count_for_services
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order:
+    - Release Hardening
+    - Send Kickoff Message
+    - Environment
+    - Is Ephemeral?
+    - Cluster Name
+    - Use GitHub Variable For Release
+    - Tag/Branch To Deploy
+    - Start Runners?
+    - runServiceIntegrationTests
+    - Services To Test
+    - GitHub Release Tag Variable
+    - runPlatformIntegrationTests
+    - Platform Suites
+    - Run UX Automation
+    - Web UX Suites
+    - Update ReportPortal Filters
+    - Build ReportPortal Dashboard
+    - TriggeredById
+  properties:
+    Build ReportPortal Dashboard:
+      type: boolean
+      description: ''
+      default: false
+    Cluster Name:
+      type: string
+      description: ''
+      default: ''
+    Environment:
+      type: string
+      description: ''
+      dateFormat: ''
+      default: ''
+      disableCreate: false
+      disabled: false
+      disableVariablePicker: false
+      enum:
+        - Pre-Prod-01
+        - RBIT
+        - Pre-Prod-03
+      enumLabels: {}
+      format: ''
+      nullable: false
+      password: false
+      required: []
+    GitHub Release Tag Variable:
+      type: string
+      description: ''
+      default: Current Release Tag
+      disableCreate: false
+      disableVariablePicker: false
+      enum:
+        - Current Release Tag
+        - Upcoming Release Tag
+      format: ''
+      password: false
+      showExpr: 'fields[''Use GitHub Variable For Release'']'
+    Is Ephemeral?:
+      type: boolean
+      default: false
+    Platform Suites:
+      type: array
+      description: ''
+      default:
+        - Infrastructure
+        - OpenShifts-Filters
+        - ShiftManagement
+        - ShiftManagement-CheckIn-CheckOut
+        - Disciplines-Specialties
+        - OpenShifts-Documents
+        - UserManagement
+        - Billing-Payroll
+        - CT-RN-BackgroundCheck
+        - CT-LPN-BackgroundCheck
+        - CT-CNA-BackgroundCheck
+        - DE-LPN-BackgroundCheck
+        - DE-RN-BackgroundCheck
+        - DE-CNA-BackgroundCheck
+        - FL-RN-BackgroundCheck
+        - FL-LPN-BackgroundCheck
+        - FL-CNA-BackgroundCheck
+        - IL-LPN-BackgroundCheck
+        - IL-RN-BackgroundCheck
+        - IL-CNA-BackgroundCheck
+        - KS-RN-BackgroundCheck
+        - KS-LPN-BackgroundCheck
+        - KS-CNA-BackgroundCheck
+        - KY-RN-BackgroundCheck
+        - KY-LPN-BackgroundCheck
+        - KY-CNA-BackgroundCheck
+        - MA-RI-BackgroundCheck
+        - MA-RN-BackgroundCheck
+        - MA-LPN-BackgroundCheck
+        - MA-CMT-BackgroundCheck
+        - MA-CG-BackgroundCheck
+        - MA-CNA-BackgroundCheck
+        - MD-RN-BackgroundCheck
+        - MD-LPN-BackgroundCheck
+        - MD-CNA-BackgroundCheck
+        - MI-RN-BackgroundCheck
+        - MI-LPN-BackgroundCheck
+        - MI-CNA-BackgroundCheck
+        - MO-RN-BackgroundCheck
+        - MO-LPN-BackgroundCheck
+        - MO-CNA-BackgroundCheck
+        - NC-CNA-BackgroundCheck
+        - NC-RN-BackgroundCheck
+        - NC-LPN-BackgroundCheck
+        - NH-RN-BackgroundCheck
+        - NH-LPN-BackgroundCheck
+        - NH-CNA-BackgroundCheck
+        - NJ-RN-BackgroundCheck
+        - NJ-LPN-BackgroundCheck
+        - NJ-CNA-BackgroundCheck
+        - OH-RN-BackgroundCheck
+        - OH-LPN-BackgroundCheck
+        - OH-CNA-BackgroundCheck
+        - PA-RN-BackgroundCheck
+        - PA-LPN-BackgroundCheck
+        - PA-CNA-BackgroundCheck
+        - RI-RN-BackgroundCheck
+        - RI-LPN-BackgroundCheck
+        - RI-CNA-BackgroundCheck
+        - TX-RN-BackgroundCheck
+        - TX-LPN-BackgroundCheck
+        - TX-CNA-BackgroundCheck
+        - VA-RN-BackgroundCheck
+        - VA-LPN-BackgroundCheck
+        - VA-CNA-BackgroundCheck
+        - WorkLicenses-OneFacility
+        - WorkLicenses-TwoFacilities
+        - WorkLicenses-ThreeFacilities
+        - WorkLicenses-ThreeFacilities-ptTwo
+        - WorkLicenses-QTypes
+      format: ''
+      items:
+        type: string
+        enum:
+          - Infrastructure
+          - PA-BackgroundCheck
+          - NC-CNA-BackgroundCheck
+          - OH-BackgroundCheck
+          - OpenShifts-Filters
+          - CT-DE-BackgroundCheck
+          - ShiftManagement
+          - MA-RI-BackgroundCheck
+          - ShiftManagement-CheckIn-CheckOut
+          - NJ-VA-BackgroundCheck
+          - Disciplines-Specialties
+          - FL-KY-BackgroundCheck
+          - OpenShifts-WorkLicenses
+          - IL-NC-Nurse-BackgroundCheck
+          - KS-NH-BackgroundCheck
+          - MD-MO-BackgroundCheck
+          - OpenShifts-Documents
+          - TX-MI-BackgroundCheck
+          - UserManagement
+          - Billing-Payroll
+          - CT-RN-BackgroundCheck
+          - CT-LPN-BackgroundCheck
+          - CT-CNA-BackgroundCheck
+          - DE-LPN-BackgroundCheck
+          - DE-RN-BackgroundCheck
+          - DE-CNA-BackgroundCheck
+          - FL-RN-BackgroundCheck
+          - FL-LPN-BackgroundCheck
+          - FL-CNA-BackgroundCheck
+          - IL-LPN-BackgroundCheck
+          - IL-RN-BackgroundCheck
+          - IL-CNA-BackgroundCheck
+          - KS-RN-BackgroundCheck
+          - KS-LPN-BackgroundCheck
+          - KS-CNA-BackgroundCheck
+          - KY-RN-BackgroundCheck
+          - KY-LPN-BackgroundCheck
+          - KY-CNA-BackgroundCheck
+          - MA-RI-BackgroundCheck
+          - MA-RN-BackgroundCheck
+          - MA-LPN-BackgroundCheck
+          - MA-CMT-BackgroundCheck
+          - MA-CG-BackgroundCheck
+          - MA-CNA-BackgroundCheck
+          - MD-RN-BackgroundCheck
+          - MD-LPN-BackgroundCheck
+          - MD-CNA-BackgroundCheck
+          - MI-RN-BackgroundCheck
+          - MI-LPN-BackgroundCheck
+          - MI-CNA-BackgroundCheck
+          - MO-RN-BackgroundCheck
+          - MO-LPN-BackgroundCheck
+          - MO-CNA-BackgroundCheck
+          - NC-CNA-BackgroundCheck
+          - NC-RN-BackgroundCheck
+          - NC-LPN-BackgroundCheck
+          - NH-RN-BackgroundCheck
+          - NH-LPN-BackgroundCheck
+          - NH-CNA-BackgroundCheck
+          - NJ-RN-BackgroundCheck
+          - NJ-LPN-BackgroundCheck
+          - NJ-CNA-BackgroundCheck
+          - OH-RN-BackgroundCheck
+          - OH-LPN-BackgroundCheck
+          - OH-CNA-BackgroundCheck
+          - PA-RN-BackgroundCheck
+          - PA-LPN-BackgroundCheck
+          - PA-CNA-BackgroundCheck
+          - RI-RN-BackgroundCheck
+          - RI-LPN-BackgroundCheck
+          - RI-CNA-BackgroundCheck
+          - TX-RN-BackgroundCheck
+          - TX-LPN-BackgroundCheck
+          - TX-CNA-BackgroundCheck
+          - VA-RN-BackgroundCheck
+          - VA-LPN-BackgroundCheck
+          - VA-CNA-BackgroundCheck
+          - WorkLicenses-OneFacility
+          - WorkLicenses-TwoFacilities
+          - WorkLicenses-ThreeFacilities
+          - WorkLicenses-ThreeFacilities-ptTwo
+          - WorkLicenses-QTypes
+      nullable: false
+      order: []
+      properties: {}
+      required: []
+    Release Hardening:
+      type: boolean
+      description: ''
+      default: false
+    Run UX Automation:
+      type: boolean
+      description: ''
+      default: false
+      format: ''
+    runPlatformIntegrationTests:
+      type: boolean
+      description: ''
+      default: false
+      format: ''
+      title: Run Platform Integration Tests
+    runServiceIntegrationTests:
+      type: boolean
+      description: ''
+      default: false
+      format: ''
+      title: Run Service Integration Tests
+    Send Kickoff Message:
+      type: boolean
+      description: ''
+      default: false
+    Services To Test:
+      type: array
+      description: ''
+      default: []
+      format: ''
+      items:
+        type: string
+        enum:
+          - AuthService
+          - BackgroundCheckService
+          - BillingService
+          - conflict-check-service
+          - DocumentService
+          - external-onboarding-service
+          - icaredataservice
+          - isystem
+          - job-board-service
+          - MobileScreenService
+          - NotificationManagementService
+          - NotificationService
+          - OnBoardingService
+          - PayrollService
+          - ProviderService
+          - SchedulingService
+          - SearchEngine
+          - shift-management-service
+          - ShiftService
+          - vendors
+          - Staff-Management
+          - JWT-Authentication
+          - Document-Management
+          - PayrollEmploymentService
+          - external-scheduling-service
+          - credentialing-service
+          - QualityScore
+          - PricingBanditService
+    Start Runners?:
+      type: boolean
+      description: ''
+      default: true
+    Tag/Branch To Deploy:
+      type: string
+      description: ''
+      default: latest-master
+      format: ''
+      showExpr: '!fields["Use GitHub Variable For Release"]'
+    TriggeredById:
+      type: string
+      description: >-
+        The unique identifier of the job or other item that triggered this job
+        run
+      default: ''
+      format: ''
+      showExpr: ''
+    Update ReportPortal Filters:
+      type: boolean
+      description: ''
+      default: false
+    Use GitHub Variable For Release:
+      type: boolean
+      description: ''
+      default: false
+      format: ''
+      nullable: false
+      order: []
+      properties: {}
+      required: []
+    Web UX Suites:
+      type: array
+      description: Web UX Suites
+      default:
+        - CPDirectory
+        - IPCredentialing
+        - CPFeaturesQtypes
+        - IPDashboard
+        - CPFeaturesSettings
+        - IPDocument
+        - IPDocumentCovidAndRevision
+        - IPDocumentRejectAndTB
+        - CPScheduler
+        - IPIntelypro
+        - CPFeaturesSchedule
+        - IPLogin
+        - CPSettings
+        - IPFilter
+        - IPOnboarding
+        - IPSettings
+        - IPFacility
+        - CPFeaturesDirectory
+        - IPFacilityFeatures
+        - CPFeaturesDashboard
+        - IPContracts
+      format: ''
+      items:
+        type: string
+        enum:
+          - CPSmoke
+          - IPSmoke
+          - CPDirectory
+          - IPCredentialing
+          - CPFeaturesQtypes
+          - IPDashboard
+          - CPFeaturesSettings
+          - IPDocument
+          - IPDocumentCovidAndRevision
+          - IPDocumentRejectAndTB
+          - CPScheduler
+          - IPIntelypro
+          - CPFeaturesSchedule
+          - IPLogin
+          - CPSettings
+          - IPFilter
+          - IPOnboarding
+          - IPSettings
+          - IPFacility
+          - CPFeaturesDirectory
+          - IPFacilityFeatures
+          - CPFeaturesDashboard
+          - IPContracts
+          - IPJobBoard
+      nullable: false
+      order: []
+      properties: {}
+      required: []
+  required:
+    - Environment
+    - Tag/Branch To Deploy
+    - GitHub Release Tag Variable
