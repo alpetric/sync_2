@@ -1,3 +1,4 @@
+//adfadsf
 import * as wmillclient from "windmill-client";
 import wmill from "windmill-cli";
 import { basename, join } from "node:path";
