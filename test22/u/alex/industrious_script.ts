@@ -1,5 +1,5 @@
 // import * as wmill from "windmill-client"
-import wmill from "windmill-cli@1.553.0";
+import wmill from "windmill-cli@1.543.0";
 
 export async function main() {
   await wmill.parse([
