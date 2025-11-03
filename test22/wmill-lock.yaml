@@ -100,7 +100,7 @@ locks:
     __flow_hash: 5e511432e6a91926bdcc975cf8d32f0027edeb8f60cd84298d1272b380de66c9
     parse_input.inline_script.deno.ts: 6d244c580c6d913fc302c7d2661c0e902b7ae1f6ea251a1036b942fbd0ca296a
     print_help.inline_script.deno.ts: 1887d9d5303567340028224a5c6c53507d6abc0e4816b8e015e79bebe6715298
-  u/alex/industrious_script: e61ca48b2433e4a989fbd0a68bec2c4d93eeab57901e5eae6a6ea1874105937a
+  u/alex/industrious_script: 9cbda19294722b2e23e770c90f738ef2664a479627605e9cd2d21d907425b4a2
   u/alex/init_git_repo: 359c5213da986a4ce961388cdf65f13cd824b0a5304ffa61fc3686c280adccce
   u/alex/init_repo: a455adbcf83481822226802130d1896fb429a64fbfb0ab39c3a7fb8b06f51f40
   u/alex/knowledgeable_flow.flow:
