@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "windmill-cli": "1.535.0"
+    "windmill-cli": "1.536.0"
   }
 }
 //bun.lock
@@ -9,7 +9,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "windmill-cli": "1.535.0",
+        "windmill-cli": "1.536.0",
       },
     },
   },
@@ -262,7 +262,7 @@
 
     "which": ["which@4.0.0", "", { "dependencies": { "isexe": "^3.1.1" }, "bin": { "node-which": "bin/which.js" } }, "sha512-GlaYyEb07DPxYCKhKzplCWBJtvxZcZMrL+4UkrTSJHHPyZU4mYYTv3qaOe77H7EODLSSopAUFAc6W8U4yqvscg=="],
 
-    "windmill-cli": ["windmill-cli@1.535.0", "", { "dependencies": { "@ayonli/jsext": "*", "@deno/shim-deno": "~0.18.0", "diff": "*", "es-main": "*", "esbuild": "*", "express": "*", "get-port": "7.1.0", "jszip": "3.7.1", "minimatch": "*", "open": "*", "ws": "*" }, "bin": { "wmill": "esm/src/main.js" } }, "sha512-bz+yXZrhGCbGfztDjOGQpLKBsB4hA9mpqbY0a4y2N+9FpYsCIIoNOkry/jzq8BNoTysF8oG4H3jLUkZPnr65/A=="],
+    "windmill-cli": ["windmill-cli@1.536.0", "", { "dependencies": { "@ayonli/jsext": "*", "@deno/shim-deno": "~0.18.0", "diff": "*", "es-main": "*", "esbuild": "*", "express": "*", "get-port": "7.1.0", "jszip": "3.7.1", "minimatch": "*", "open": "*", "ws": "*" }, "bin": { "wmill": "esm/src/main.js" } }, "sha512-x5d5qa/zIIWUpudc18XUusaCQvz+z4QVD26e9uyXzPEm3s2fnts/KJBbbj50TIi8iw+v5icSCZ+w9CT2L1fwlw=="],
 
     "wrappy": ["wrappy@1.0.2", "", {}, "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="],
 
