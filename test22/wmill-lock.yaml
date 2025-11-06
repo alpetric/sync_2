@@ -11,7 +11,7 @@ locks:
   f/test/exalting_script: c20f61340e00ae11574c4015d60cf880a597149218941f9cbda0d6cd691f8bc2
   f/test/festive_script: b7f4cbd5fa1132e0daba33a8e16819994a092c4ddb6a76acfa7d9fd68e58de21
   f/test/hello3: 7f4bb47cec2532d5cd90686a9abe1722d1c215f048fc7f081bba1310042c51ba
-  f/test/memory_leak_test: 8189d6d96f0d6f8dbf35f5ded7c5735ab50372f519d6c6f788469f6924709174
+  f/test/memory_leak_test: bc16d64fd50e2df479230798b89822971fea9a2cfe88a64bdc9bd2e5c4a7542d
   f/test/softer_script: 698d08f4cb842ca06a85e21c6e954c042bb82cfe3bdf2964c6aecba21622097c
   f/test/test_env_leak: c6f872a8e55b542eaacc69d74b7944643f2e428ce813aa21875780652e8281bf
   f/test/tops_script: 67a7007a290bc18c90f2ef2e011fdbb27ab67ec41c85884b38922fce0bca8e3f
