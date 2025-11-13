@@ -9,7 +9,7 @@ locks:
   f/schedule/schedule_exceptionnnnnn: 55204e1e5a02488187561b89416cfa2d5c2af3bd666ef6959f1ab3f79735b4ce
   f/sync/trigger_git_sync: d83a83ea94308fa1294a00e0d73aea7fe6d41ed39472a6527f518ba51f2ee43a
   f/test/exalting_script: c20f61340e00ae11574c4015d60cf880a597149218941f9cbda0d6cd691f8bc2
-  f/test/extract_database_url: 846e7af6f95c48e5e4914c57debb31d18bae5ce117ea05b1c7931cb420a62a72
+  f/test/extract_database_url: d803cbd119719032db541822fbe96c462376b94b5713baed5398afa5138a260e
   f/test/festive_script: b7f4cbd5fa1132e0daba33a8e16819994a092c4ddb6a76acfa7d9fd68e58de21
   f/test/hello3: 7f4bb47cec2532d5cd90686a9abe1722d1c215f048fc7f081bba1310042c51ba
   f/test/memory_leak_test: 95cde8bb413df3172fda050a4b8bde8c0eca600cb9343d68e0ece927ee39de79
