@@ -25,11 +25,12 @@ git_sync:
     - exclude_types_override: []
       git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
       group_by_folder: false
-      script_path: hub/19818/sync-script-to-git-repo-windmill
+      script_path: hub/28073/sync-script-to-git-repo-windmill
       settings:
         exclude_path:
           - u/alex/fortuitous_c_git_gpg**
           - u/alex/gpg_github**
+        extra_include_path: []
         include_path:
           - f/**
           - u/**
@@ -48,9 +49,9 @@ git_sync:
           - settings
       use_individual_branch: false
     - exclude_types_override: []
-      git_repo_resource_path: '$res:u/alex/sync_emmpty'
+      git_repo_resource_path: '$res:u/alex/top_git_repository'
       group_by_folder: false
-      script_path: hub/19818/sync-script-to-git-repo-windmill
+      script_path: hub/28073/sync-script-to-git-repo-windmill
       settings:
         exclude_path: []
         extra_include_path: []
@@ -61,6 +62,22 @@ git_sync:
           - flow
           - app
           - folder
+      use_individual_branch: true
+    - exclude_types_override: []
+      git_repo_resource_path: '$res:u/alex/test'
+      group_by_folder: false
+      script_path: hub/28073/sync-script-to-git-repo-windmill
+      settings:
+        exclude_path: []
+        extra_include_path: []
+        include_path:
+          - f/**
+        include_type:
+          - script
+          - flow
+          - app
+          - folder
+          - trigger
       use_individual_branch: false
 large_file_storage:
   type: S3Storage
