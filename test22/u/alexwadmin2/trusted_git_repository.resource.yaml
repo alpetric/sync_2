@@ -1,0 +1,10 @@
+description: >-
+  Repository https://github.com/wmill-alex-test-org/empty_gpg with permissions
+  fetched using Windmill Github App.
+value:
+  branch: ''
+  folder: ''
+  gpg_key: '$res:u/alex/ethical_gpg_key'
+  is_github_app: true
+  url: '$var:u/alexwadmin2/trusted_git_repository'
+resource_type: git_repository
