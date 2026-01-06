@@ -8,7 +8,7 @@ locks:
   f/schedule/schedule_exception22: 9ecff6493f497774a028da1329c49961e9cc53e645ff9937772a9d58ae537edc
   f/schedule/schedule_exceptionnnnnn: 55204e1e5a02488187561b89416cfa2d5c2af3bd666ef6959f1ab3f79735b4ce
   f/shared/prolific_script: 3607e9a4ac537fa2aef25fd5ca708bc80dac9c0f6129ad1c058a84ce81db7e6c
-  f/sync/init: 52cad65c51c43ecaece937541a455bdc5c3f34231ce5da21a9286bb9f75aacf1
+  f/sync/init: 25cd802c884b145e14a5b2aec849fab47dc04499fe853c80b8acb7442a49f903
   f/sync/trigger_git_sync: d83a83ea94308fa1294a00e0d73aea7fe6d41ed39472a6527f518ba51f2ee43a
   f/test/exalting_script: c20f61340e00ae11574c4015d60cf880a597149218941f9cbda0d6cd691f8bc2
   f/test/extract_database_url: 5790dea8f5c251972fd5bae173bacaabb0758b8dcd4aeedc7a2162263107c67e
