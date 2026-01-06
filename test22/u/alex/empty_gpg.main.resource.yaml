@@ -4,6 +4,7 @@ description: >-
 value:
   branch: ''
   folder: ''
+  gpg_key: '$res:u/alex/ethical_gpg_key'
   is_github_app: true
   url: '$var:u/alex/empty_gpg'
 resource_type: git_repository
