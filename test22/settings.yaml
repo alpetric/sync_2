@@ -9,23 +9,32 @@ ai_config:
         - claude-sonnet-4-0
         - claude-3-7-sonnet-20250219
       resource_path: u/alex/anthropic
-auto_invite_as: developer
-auto_invite_enabled: false
-auto_invite_mode: invite
+auto_invite:
+  enabled: false
+  instance_groups:
+    - rsa_app_users
+    - testjc
+  instance_groups_roles:
+    rsa_app_users: developer
+    testjc: admin
+  mode: invite
+  operator: false
 color: '#e22d0e'
 default_app: u/alex/grateful_app
 deploy_to: prod
-error_handler: script/hub/11598/workspace-or-schedule-error-handler-teams
-error_handler_extra_args:
-  channel: '19:RQmL5XixywKyu0vq3i_cAHMlA-9R8rk6FyJhPY_Hi9c1@thread.tacv2'
-  channel_name: General
-error_handler_muted_on_cancel: false
+error_handler:
+  extra_args:
+    channel: '19:RQmL5XixywKyu0vq3i_cAHMlA-9R8rk6FyJhPY_Hi9c1@thread.tacv2'
+    channel_name: General
+  muted_on_cancel: false
+  muted_on_user_path: false
+  path: script/hub/11598/workspace-or-schedule-error-handler-teams
 git_sync:
   repositories:
     - exclude_types_override: []
       git_repo_resource_path: '$res:u/alex/breathtaking_git_repository'
       group_by_folder: false
-      script_path: hub/28102/sync-script-to-git-repo-windmill
+      script_path: hub/28131/sync-script-to-git-repo-windmill
       settings:
         exclude_path:
           - u/alex/fortuitous_c_git_gpg**
