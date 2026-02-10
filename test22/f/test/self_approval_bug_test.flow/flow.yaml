@@ -1,0 +1,29 @@
+summary: Test self-approval disabled
+description: Flow to test self-approval disabled bug
+value:
+  modules:
+    - id: a
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms: {}
+        lock: '!inline inline_script_0.inline_script.lock'
+        language: bun
+    - id: b
+      value:
+        type: identity
+      suspend:
+        required_events: 1
+        self_approval_disabled: true
+        user_auth_required: true
+    - id: c
+      value:
+        type: rawscript
+        content: '!inline inline_script_1.inline_script.ts'
+        input_transforms: {}
+        lock: '!inline inline_script_1.inline_script.lock'
+        language: bun
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  properties: {}

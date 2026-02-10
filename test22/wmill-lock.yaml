@@ -16,6 +16,10 @@ locks:
   f/test/hello3: 7f4bb47cec2532d5cd90686a9abe1722d1c215f048fc7f081bba1310042c51ba
   f/test/memory_leak_test: 95cde8bb413df3172fda050a4b8bde8c0eca600cb9343d68e0ece927ee39de79
   f/test/rust_style_file_deletion: 96a796df976c0b6e04fdbda8a657c3abadfffcb3bb7758f14b85f7bc5fa94155
+  f/test/self_approval_bug_test.flow:
+    __flow_hash: b4c83cb0f2affcc8da42ae01072888bf026908534129803a95dc2fc8700ae9ed
+    inline_script_0.inline_script.ts: c270c44e4fc7c3ecaa84d04538d7617fe2a0c72de965ecd444057e158bc64cac
+    inline_script_1.inline_script.ts: db4ae45be90982d410252f8df03f275544bbf4332ecfcc5c8c507b5f864e6598
   f/test/softer_script: 698d08f4cb842ca06a85e21c6e954c042bb82cfe3bdf2964c6aecba21622097c
   f/test/test_env_leak: c6f872a8e55b542eaacc69d74b7944643f2e428ce813aa21875780652e8281bf
   f/test/test_file_deletion_approach: ce4793d6b1b27f4194e9eddb65901f44fcb7971b4657615757c23e6176021b66
