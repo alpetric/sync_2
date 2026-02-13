@@ -87,6 +87,6 @@ operator_settings:
   resources: true
   runs: false
   schedules: true
-  triggers: false
+  triggers: true
   variables: true
   workers: true
