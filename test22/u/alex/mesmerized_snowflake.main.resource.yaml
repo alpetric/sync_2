@@ -1,0 +1,11 @@
+description: ''
+value:
+  account_identifier: afdadfs
+  database: ''
+  private_key: '$var:u/alex/mesmerized_snowflake'
+  public_key: afdadf
+  role: ''
+  schema: ''
+  username: adfadf
+  warehouse: ''
+resource_type: snowflake

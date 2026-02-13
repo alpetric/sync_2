@@ -152,21 +152,3 @@ value:
     type: path
     path: f/app_themes/theme_0
   unusedInlineScripts: []
-policy:
-  allowed_s3_keys: []
-  execution_mode: publisher
-  s3_inputs: []
-  triggerables_v2:
-    'bg_0:rawscript/188f83edbb08c7ab4ba5eabbcb18b57cd5df4eec50ce1d4e044b0a6c35692db8':
-      allow_user_resources: []
-      one_of_inputs: {}
-      static_inputs:
-        x: null
-    'bg_1:rawscript/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855':
-      allow_user_resources: []
-      one_of_inputs: {}
-      static_inputs: {}
-    'bg_2:rawscript/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855':
-      allow_user_resources: []
-      one_of_inputs: {}
-      static_inputs: {}

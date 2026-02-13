@@ -207,13 +207,3 @@ value:
     type: path
     path: f/app_themes/theme_0
   unusedInlineScripts: []
-policy:
-  allowed_s3_keys: []
-  execution_mode: publisher
-  s3_inputs: []
-  triggerables_v2:
-    'bg_0:rawscript/dc2bd5a2b74eb9f1adab8a728d91c37984efba9d7764507a391ef413abf16ccb':
-      allow_user_resources: []
-      one_of_inputs: {}
-      static_inputs:
-        x: null

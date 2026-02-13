@@ -622,20 +622,4 @@ value:
     type: path
     path: f/app_themes/theme_0
   unusedInlineScripts: []
-policy:
-  allowed_s3_keys: []
-  execution_mode: anonymous
-  s3_inputs: []
-  triggerables_v2:
-    'a:rawscript/f8c757fc4447b9e179969f8acf6ba6fcc47b1523f1ce561adea105543bc4d73d':
-      allow_user_resources: []
-      one_of_inputs: {}
-      static_inputs:
-        dflt: default value
-        msg: null
-    'b_a:rawscript/f8c757fc4447b9e179969f8acf6ba6fcc47b1523f1ce561adea105543bc4d73d':
-      allow_user_resources: []
-      one_of_inputs: {}
-      static_inputs:
-        dflt: default value
-        msg: null
+public: true

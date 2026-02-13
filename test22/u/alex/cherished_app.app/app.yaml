@@ -325,17 +325,3 @@ value:
     type: path
     path: f/app_themes/theme_0
   unusedInlineScripts: []
-policy:
-  execution_mode: publisher
-  s3_inputs: []
-  triggerables_v2:
-    'bg_0:rawscript/464ee291680b25cb381713da09217310ea1c616ee2574c3d041694ed3a2f431e':
-      allow_user_resources:
-        - database
-      one_of_inputs: {}
-      static_inputs: {}
-    'c:rawscript/353d181f6e1df03de3f4a3d2ea4701e837826e208651e24e551ce6fc76a1faa5':
-      allow_user_resources:
-        - database
-      one_of_inputs: {}
-      static_inputs: {}

@@ -219,8 +219,3 @@ value:
     type: inlined
     css: adfadf
   unusedInlineScripts: []
-policy:
-  allowed_s3_keys: []
-  execution_mode: publisher
-  s3_inputs: []
-  triggerables_v2: {}

@@ -1,0 +1,5 @@
+summary: test go
+description: ''
+lock: '!inline u/alex/test_go_identity.script.lock'
+kind: script
+schema: null

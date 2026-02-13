@@ -29,59 +29,43 @@ value:
     - '12':
         fixed: false
         fullHeight: false
-        h: 8
-        w: 6
+        h: 15
+        w: 9
         x: 0
         'y': 2
       '3':
         fixed: false
         fullHeight: false
-        h: 8
-        w: 2
+        h: 4
+        w: 3
         x: 0
         'y': 2
       id: a
       data:
         id: a
-        type: s3fileinputcomponent
+        type: imagecomponent
         configuration:
-          type:
-            type: oneOf
-            configuration:
-              s3:
-                acceptedFileTypes:
-                  type: static
-                  value:
-                    - image/*
-                    - application/pdf
-                allowDelete:
-                  type: static
-                  value: false
-                allowMultiple:
-                  type: static
-                  value: false
-                disabled:
-                  type: static
-                  value: false
-                pathTemplate:
-                  type: evalv2
-                  connections: []
-                  expr: '`${file.name}`'
-                resource:
-                  type: static
-                  value: ''
-                text:
-                  type: static
-                  value: Drag and drop files or click to select them
-            selected: s3
+          altText:
+            type: static
+            value: ''
+          imageFit:
+            type: static
+            value: contain
+          source:
+            type: static
+            value: 4899446f-cf7f-4cfe-b4d3-cb67aa5b4ac0.webp
+            connections: []
+            expr: ''
+          sourceKind:
+            type: static
+            value: s3 (workspace storage)
         customCss:
-          container:
+          image:
             class: ''
             style: ''
   hiddenInlineScripts: []
   hideLegacyTopBar: true
   mobileViewOnSmallerScreens: false
-  norefreshbar: false
   subgrids:
     topbar-0:
       - '12':

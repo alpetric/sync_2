@@ -169,7 +169,7 @@ value:
                 summary: Update database
                 value:
                   type: rawscript
-                  content: '!inline update_database.inline_script.deno.ts'
+                  content: '!inline update_database_1.inline_script.deno.ts'
                   input_transforms: {}
                   language: deno
               - id: m

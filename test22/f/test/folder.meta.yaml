@@ -2,5 +2,7 @@ summary: ''
 display_name: test
 extra_perms:
   u/alex: true
+  u/alexoperator: true
 owners:
   - u/alex
+  - u/alexoperator

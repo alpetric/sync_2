@@ -5,5 +5,5 @@ dflt="${2:-default value}"
 
 # the last line of the stdout is the return value
 # unless you write json to './result.json' or a string to './result.out'
-sleep 10
+sleep 5
 echo "Hello $msg"
