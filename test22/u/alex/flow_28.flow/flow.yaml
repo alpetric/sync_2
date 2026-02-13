@@ -10,12 +10,12 @@ value:
     - id: c
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.ts'
+        content: '!inline c.inline_script.ts'
         input_transforms:
           text_input:
             type: javascript
             expr: flow_input.command
-        lock: '!inline inline_script_0.inline_script.lock'
+        lock: '!inline c.inline_script.lock'
         is_trigger: false
         language: bun
     - id: d
@@ -28,7 +28,7 @@ value:
               - id: f
                 value:
                   type: rawscript
-                  content: '!inline inline_script_1.inline_script.ts'
+                  content: '!inline f.inline_script.ts'
                   input_transforms:
                     activity_id:
                       type: javascript
@@ -39,7 +39,7 @@ value:
                     from_name:
                       type: javascript
                       expr: flow_input.from_name
-                  lock: '!inline inline_script_1.inline_script.lock'
+                  lock: '!inline f.inline_script.lock'
                   is_trigger: false
                   language: bun
             expr: results.c.command === 'echo'
@@ -49,12 +49,12 @@ value:
           - id: e
             value:
               type: rawscript
-              content: '!inline inline_script_2.inline_script.ts'
+              content: '!inline e.inline_script.ts'
               input_transforms:
                 activity_id:
                   type: javascript
                   expr: '`${flow_input.activity_id}`'
-              lock: '!inline inline_script_2.inline_script.lock'
+              lock: '!inline e.inline_script.lock'
               is_trigger: false
               language: bun
 schema:

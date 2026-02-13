@@ -88,8 +88,7 @@ value:
         recomputeIds: []
         verticalAlignment: center
   hiddenInlineScripts:
-    - type: runnableByName
-      name: Background Runnable 0
+    - name: Background Runnable 0
       autoRefresh: true
       fields:
         x:

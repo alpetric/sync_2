@@ -17,7 +17,9 @@ locks:
   f/test/memory_leak_test: 95cde8bb413df3172fda050a4b8bde8c0eca600cb9343d68e0ece927ee39de79
   f/test/rust_style_file_deletion: 96a796df976c0b6e04fdbda8a657c3abadfffcb3bb7758f14b85f7bc5fa94155
   f/test/self_approval_bug_test.flow:
-    __flow_hash: b4c83cb0f2affcc8da42ae01072888bf026908534129803a95dc2fc8700ae9ed
+    __flow_hash: bfa455bade59eadc73f15a4b03c7ad162f77af96eb6725ad0983849bbf05227c
+    a.inline_script.ts: c270c44e4fc7c3ecaa84d04538d7617fe2a0c72de965ecd444057e158bc64cac
+    c.inline_script.ts: db4ae45be90982d410252f8df03f275544bbf4332ecfcc5c8c507b5f864e6598
     inline_script_0.inline_script.ts: c270c44e4fc7c3ecaa84d04538d7617fe2a0c72de965ecd444057e158bc64cac
     inline_script_1.inline_script.ts: db4ae45be90982d410252f8df03f275544bbf4332ecfcc5c8c507b5f864e6598
   f/test/softer_script: 698d08f4cb842ca06a85e21c6e954c042bb82cfe3bdf2964c6aecba21622097c
@@ -44,15 +46,21 @@ locks:
   f/test44/useable_script: 737203cff0b79b0cfd3b039c43afc8cc9ad0145afbc9e2608ff08c1c6a7724a3
   u/alex/adfadfadf: d536070f59368327add0791568497b246458882fd6dc7bfdb6f70ca866421afe
   u/alex/adventuresome_flow.flow:
-    __flow_hash: 3203d74ccdd0c03578e779a248d7c55954db99ae7080a247d58383c609a77992
+    __flow_hash: 4323c5cb9b46a1e83fb1c0ff1da4d260bc31245d3beddda4f2619f159fd28461
+    a.inline_script.ts: 661279f68579a238facae95da541cc7341165c510b2abcb26385592a839f404a
     inline_script_0.inline_script.ts: de6c80e6cada3f3690c63c71ae59714001c80b27397c25fb8eaddae990b989c4
   u/alex/affable_flow.flow:
-    __flow_hash: 05ef193738380afbef907ba54e2d0d9058ef358e485d034698ebb14911d7d1ba
+    __flow_hash: 2c4bbbb374b6cc97e5a30f16618dcb4a3c87bbaed3b7e1405f86a3d670785652
+    b.inline_script.ts: 26c6f65266b43a4c354521c3ac064c90794a191164eff79c8c1e6c18091d21d6
     inline_script_0.inline_script.ts: 1a34bbc5604bde0ba06d3579941996f898571de5e2a699f7b5b700615cc4a3da
   u/alex/blithe_script: 0865d85144eb2a408fd4561b514bb062ab64d859fc03fa34b33d379f7c26269f
   u/alex/bountiful_script: 993471e43985241dfd49d516b8331bc73871fd539bd1b336f492dd0230f280cc
   u/alex/bullish_flow.flow:
-    __flow_hash: 07cdce93c025863c5b5bef6d6e90172dc50061408bec3604cf4de458566933b9
+    __flow_hash: fb238ebee162660c42143a051b37db28e55a3a7ff2446a1af1a973c23c38398c
+    a.inline_script.sh: e8c78264305a128415739b71f6017c3e07f52caaaa6127eee26a25242216ae7d
+    b.inline_script.sh: e8c78264305a128415739b71f6017c3e07f52caaaa6127eee26a25242216ae7d
+    c.inline_script.ts: f839daa712f42e68e477afe873967e157417a60409fef38eb5ba3236d6196c3a
+    d.inline_script.py: d1f4283cd1f1e61cf1a454b51eb6623e055ffbf92607b62274dd267d1dcecc2a
     inline_script_0.inline_script.sh: 10fd0ffb3375294f3bb2dd3c707c9c98d27463396e44c44ee5e216e300065d57
     inline_script_1.inline_script.sh: 10fd0ffb3375294f3bb2dd3c707c9c98d27463396e44c44ee5e216e300065d57
     inline_script_2.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
@@ -80,7 +88,8 @@ locks:
     parse_input.inline_script.deno.ts: 6d244c580c6d913fc302c7d2661c0e902b7ae1f6ea251a1036b942fbd0ca296a
     print_help.inline_script.deno.ts: 71feb2f55ed4f20b5117d809d03c9f85fa2bdb64f959df4157f1ae6209d915b3
   u/alex/enhanced_flow.flow:
-    __flow_hash: 7a452ff20d50e1b5a33212989b893286d375b2e1541a3321d84b50e0784e8e46
+    __flow_hash: 5183a4a6a329dfd7696de5c69cc9539862015b50caba91d7204989f36f63a890
+    a.inline_script.ts: f839daa712f42e68e477afe873967e157417a60409fef38eb5ba3236d6196c3a
     inline_script_0.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
   u/alex/envious_script: 63c2ba55716716b889bd11a155b38c5292b963112a454dc4522d980dc645532e
   u/alex/evocative_script: a86373b1fe138a56883cba10cbebe1ee2af981ea25a94d501f7e04119faf0f5f
@@ -90,7 +99,10 @@ locks:
     parse_input.inline_script.deno.ts: 6d244c580c6d913fc302c7d2661c0e902b7ae1f6ea251a1036b942fbd0ca296a
     print_help.inline_script.deno.ts: 1887d9d5303567340028224a5c6c53507d6abc0e4816b8e015e79bebe6715298
   u/alex/flow_28.flow:
-    __flow_hash: 07a279f809894186876d7238fab64bad25f297ee7421c73e74c02665594d4d46
+    __flow_hash: 42458deca97dba9bb7c9416f4e2daa95d14f09ebc6aba89f99e8ebb3d5611e8e
+    c.inline_script.ts: 61473bd282240042d130cf9f6d1ea59b116e80e4f059334a4945b51a1992c0a8
+    e.inline_script.ts: dd892a7ac335f32ce387a4aecad62d5666b5fc33869ff38e1ce305e4b8c33a66
+    f.inline_script.ts: 0ddd6879d8ffe1d9d177a6db85ff598dd43ac0df87bcf4f0d828485df1f94930
     inline_script_0.inline_script.ts: 159b253650e8e37ddcd9f1dcbbec06180800641564ef8d2885782b0d7052bdc1
     inline_script_1.inline_script.ts: a0a64e580e86044828a45026b002960d2fafdcd66d168d8dba8922c753dc79c6
     inline_script_2.inline_script.ts: 7ffb04cd4fcece2e9a6926abdc2a98089093258c59290a2a466eb8ae8c80e8ab
@@ -107,7 +119,9 @@ locks:
     parse_input.inline_script.deno.ts: 6d244c580c6d913fc302c7d2661c0e902b7ae1f6ea251a1036b942fbd0ca296a
     print_help.inline_script.deno.ts: 1887d9d5303567340028224a5c6c53507d6abc0e4816b8e015e79bebe6715298
   u/alex/hallowed_flow.flow:
-    __flow_hash: 4440e07c76e595be0863a45991db8aafd2df672bd07d024ada84d6a909bca5fc
+    __flow_hash: 2e025249ff1845bfcba9bcba8a54cfaf40563c8fb202e0dd43832b8acf38b669
+    a.inline_script.sh: cee72a9d8f595b86e13ee10034f09c0817a16ff8ebcbc6e24e1d9e0f02f9189c
+    b.inline_script.sh: cee72a9d8f595b86e13ee10034f09c0817a16ff8ebcbc6e24e1d9e0f02f9189c
     inline_script_0.inline_script.sh: 6e636d09792d59c0e1ebba501b7179981193cc6c572c96f3e5c0ca939b27d3e4
     inline_script_1.inline_script.sh: 6e636d09792d59c0e1ebba501b7179981193cc6c572c96f3e5c0ca939b27d3e4
   u/alex/hardier_script: 1a8dd9a4d0dbfcc204b0d21eb196f8f43ebc85cdc63dd9cc154ad0592779d6ae
@@ -121,8 +135,9 @@ locks:
   u/alex/init_git_repo: 359c5213da986a4ce961388cdf65f13cd824b0a5304ffa61fc3686c280adccce
   u/alex/init_repo: 8549559e80acb505c16ef4939ea81dcf518eff6706cc0546c14e8c261a7bbae8
   u/alex/knowledgeable_flow.flow:
-    __flow_hash: 2a095fc7e002a1ddd95be3c3e0d62d0e3e8ed31fa0f00cdc358a4209a8baca49
-    approval.inline_script.ts: c0a040a5c6d5361702dc4a299bb377cde8cbfc6c4291dc86b22abc2d82ab4c9f
+    __flow_hash: 353a1da15f369def56d2465de29adc54843dd652ba4b61fd0c20b6318032c565
+    approval.inline_script.ts: 0641c2edf60e2f68ba1af3577b777142242ffaf56d97c2a70202492177cabe58
+    b.inline_script.ts: aa04288cf18cb9bf16cefc603bbb166c793cc4534ed43c6877362a36fffe305d
     inline_script_0.inline_script.ts: ad8475e1dd52b251713f32534faecfde8e1126dbd81e1e4deaa16ee4576b20e9
   u/alex/light_hearted_flow.flow:
     __flow_hash: ff3d07006f48e28fbc8d644640cf09bf5064719a63bbf12b20a8e4465a91e906
@@ -140,19 +155,23 @@ locks:
     approval.inline_script.ts: c3af41714601fbc8ad506c0170e0c90244c2e478872c6b882bbbc48c02fb493f
     inline_script_0.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
   u/alex/mighty_flow.flow:
-    __flow_hash: d63254ec2db4c091e29ee95a4bfc0998acd4fff4cb7817533ae8339988da7172
+    __flow_hash: cc53d0bd597c47c1e92119c5078eb86fd5fbeb5b6266f8faedc10f0e825f634b
+    a.inline_script.ts: ef0a9359e493963fe48aa538842afe6d8dccbc9d9cd0742618b03cf0c78940b3
     inline_script_0.inline_script.ts: 5cb1c05aa16ecbd5318461ae4ef71bbc6e49a9db8807c0b3cd2a77f9353a8488
   u/alex/pampered_script: 008b9724694247288cd8e008ffdaad46a33846d8cca5c27cb8f3f2cdab665cae
   u/alex/passionate_script: 9ea9b3fab1e9dd1427cc5883ca74632cb95550fcfd0cbca5f1c76f904d54cab9
   u/alex/peppy_flow.flow:
-    __flow_hash: 5a5a355810d7813e9ef76adc1a60fe28e6e5f4f5bd03dd6f2a2516bb937cb3f7
+    __flow_hash: 23ad4267d3e522d733d36d86a70b4f990feb03b3e0457b5932d2cbc4f9d97e77
+    a.inline_script.ts: f839daa712f42e68e477afe873967e157417a60409fef38eb5ba3236d6196c3a
+    b.inline_script.ts: f839daa712f42e68e477afe873967e157417a60409fef38eb5ba3236d6196c3a
     inline_script_0.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
     inline_script_1.inline_script.ts: 47415f1ee082213f35422d6848b8c875b617c6e09d738b79607af316088336d3
   u/alex/permissible_script: ceb1cdfb8be1b9312c79a59e1dc5b74cb25ec834c8a30f83aef1e3033513c930
   u/alex/phenomenal_script: bd7290dc3cf83971c886d1683dc171a0019ef06e50d505c7f4694804a673d64e
   u/alex/prestigious_script: dfb51ae90a3657c706de3dc5116eaea86cbd20ee994a65ff3c1c25b93c2706c2
   u/alex/productive_flow.flow:
-    __flow_hash: bf1d63791eced010ed303a0c84a9d0d8fb6b1883e21a50aa7b26b01b48fe189d
+    __flow_hash: 9ab6fd3b13600ff52628832868cdd048094d4af83107f8eafc9deaa7ee4a3cb8
+    a.inline_script.ts: ce484ce24bb5ac6ea19895a06615032f231fd721f5a338409b7882ab96ff71d3
     inline_script_0.inline_script.ts: 1c686864787a9c5af5d96966032dfbc1e89bd36f83c19115ba2f4d9ef3cb42d0
   u/alex/promising_script: e4254dee669e961c32850dd9e80f6f9abc669d82960b96b5365edddf62ed815f
   u/alex/proper_flow.flow:
@@ -160,8 +179,9 @@ locks:
     parse_input.inline_script.deno.ts: 6d244c580c6d913fc302c7d2661c0e902b7ae1f6ea251a1036b942fbd0ca296a
     print_help.inline_script.deno.ts: 1887d9d5303567340028224a5c6c53507d6abc0e4816b8e015e79bebe6715298
   u/alex/python_slack_approval.flow:
-    __flow_hash: cb1ed2ae8fc5cad2b9a153d4b9b48cfff371bd07f78a983ca9992c409b6dd0ec
-    approval.inline_script.py: 3a0fd64dea4eb41ee8c9d4ea64af8961ab5f2cc552d80547248b81cf71956c31
+    __flow_hash: 5f0927a8056e888aabc453ddd93f2826fe9896a0904b029881002ad2cf18fe29
+    approval.inline_script.py: ea7fc4536c0ded729212e03121d72426dd96f814947f566ae80c7b2a1ef326a3
+    b.inline_script.py: d5ad8ce8595dfef1c572a8af2961348ff9e6dc4431970faca889868e5f43d11c
     inline_script_0.inline_script.py: d8a051a66ca1b117b2a5ad78f2b3890a2c6a49b3101af1a934685ff7655dd6f9
   u/alex/resourceful_script: 5e036d7d9584c4d1f3aa70261de96dc4bb67b26fe704f0341499deefd0864ca5
   u/alex/respectable_script: 982a8a197e31e24e870899dbe4606e1b8f16b5908748bd61acb1710a2a75e195
@@ -183,8 +203,9 @@ locks:
   u/alex/test_go_identity: 503a4ab642540569bbb551997c02c7d7800de03ce3c9f14d4649e18cfc0d2cd5
   u/alex/test3: 3b900cb4f383ad84356d68d5257d7e4ed369a4ccac488eab4a1bebe7fa3fb803
   u/alex/thriving_flow.flow:
-    __flow_hash: 40c125d0045c985d609a3b5ea446cd98ee027113ca28b67d386a02125e56a39c
-    approval.inline_script.ts: 65458e08becf0e67cea2536522387bb0d5b52c6a48ee3413ee8cc49b2885fc84
+    __flow_hash: 519657ce18eb9205ce5076c6136268a66856234c52e02d93f01d15b1447cdd87
+    approval.inline_script.ts: 2ee6150389d0bfc2da544e421b97bebc221344c8b42eaf07746691a97852a55b
+    b.inline_script.ts: 0a00f8433f28f21b0c1d9ddc5f3c11c2aec8979e0eb82373853572ff26e6873b
     inline_script_0.inline_script.ts: 7877b0bc437ad1ed3e3943c50caf8878651a816bde4e3a492cc5569812d4d6c7
   u/alex/trusting_script: 4baef1cf316b184294eb45bc71038be6db0713f25341339ef3ea76c7d732b24f
   u/alex/unbeatable_script: 96af7bbda1b8adc1fffd166e3344e560fed00f16d80a48726b5c61cccfb9d4f3
@@ -202,7 +223,9 @@ locks:
   u/alex/welcome_script: 9a14d49ed863a8bcc465f6304b6ac03b6db9432a82dafb66f6c3cf9a6eb23fb2
   u/alex/well_rounded_script: a14f0958674479e5cad33423b0e27fad39284fa688d626728c77a5bc237ff0c8
   u/alex/wonderful_flow.flow:
-    __flow_hash: a48a6b753d56fdcb3b6b2e19f0ff165f912519b0bc13d03b5c4a500fef7ebe62
+    __flow_hash: bca4e0e1ab09ec96593b201eb1c1943ad4d08aa758343def31fdbbdac66d9231
+    a.inline_script.ts: 1a2c8fd07510249de2adb9accb08513d17e082c032cb52a4679574a957505c73
+    b.inline_script.ts: 3f005abe2e12a200a75522bfdd9b53941e02aa90d93d737a8cd1c6d85e9c7a3e
     inline_script_0.inline_script.ts: c8254dd359581db4f3422dd694a656584b1ed4f2a195b45d9ca50dcae53f6245
     inline_script_1.inline_script.ts: 49865641d046073791ee844034f7548b450c68afd26584cff79481cc89ce02ff
   u/alexwadmin2/smiling_script: c2d0a0020a89ff330eabcab11003006c7045604e2aab88b3d795e7fd3bc07493

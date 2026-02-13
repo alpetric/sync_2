@@ -5,9 +5,9 @@ value:
     - id: a
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.ts'
+        content: '!inline a.inline_script.ts'
         input_transforms: {}
-        lock: '!inline inline_script_0.inline_script.lock'
+        lock: '!inline a.inline_script.lock'
         language: bun
         path: hub/8712/windmill/approval_prompt
       continue_on_error: false

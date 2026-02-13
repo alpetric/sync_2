@@ -5,12 +5,12 @@ value:
     - id: a
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.ts'
+        content: '!inline a.inline_script.ts'
         input_transforms:
           x:
             type: static
             value: ''
-        lock: '!inline inline_script_0.inline_script.lock'
+        lock: '!inline a.inline_script.lock'
         language: bun
     - id: b
       value:

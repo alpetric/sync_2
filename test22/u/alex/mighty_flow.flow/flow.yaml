@@ -5,7 +5,7 @@ value:
     - id: a
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.ts'
+        content: '!inline a.inline_script.ts'
         input_transforms:
           x:
             type: javascript
@@ -14,7 +14,7 @@ value:
             type: javascript
             expr: 'flow_input[''world'']'
         assets: []
-        lock: '!inline inline_script_0.inline_script.lock'
+        lock: '!inline a.inline_script.lock'
         language: bun
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'

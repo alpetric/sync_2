@@ -5,7 +5,7 @@ value:
     - id: a
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.ts'
+        content: '!inline a.inline_script.ts'
         input_transforms:
           approver:
             type: static
@@ -13,7 +13,7 @@ value:
           conversation_id:
             type: static
             value: '19:49d9a024000e42f0877c599e84e49458@thread.tacv2'
-        lock: '!inline inline_script_0.inline_script.lock'
+        lock: '!inline a.inline_script.lock'
         language: bun
       continue_on_error: false
       suspend:

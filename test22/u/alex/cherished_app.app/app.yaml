@@ -168,7 +168,6 @@ value:
           fieldType: object
           recomputeOnInputChanged: true
           runnable:
-            type: runnableByName
             name: Inline Script 0
             inlineScript:
               content: '!inline inline_script_0.inline_script.sf.sql'
@@ -205,8 +204,7 @@ value:
             class: ''
             style: ''
   hiddenInlineScripts:
-    - type: runnableByName
-      name: Background Runnable 0
+    - name: Background Runnable 0
       autoRefresh: true
       fields:
         database:

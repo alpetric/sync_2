@@ -73,7 +73,7 @@ value:
     - id: b
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.ts'
+        content: '!inline b.inline_script.ts'
         input_transforms:
           approvers:
             type: javascript
@@ -81,7 +81,7 @@ value:
           resume:
             type: javascript
             expr: resumes
-        lock: '!inline inline_script_0.inline_script.lock'
+        lock: '!inline b.inline_script.lock'
         is_trigger: false
         language: bun
 schema:

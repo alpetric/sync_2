@@ -27,8 +27,7 @@ value:
             style: ''
         numberOfSubgrids: 1
   hiddenInlineScripts:
-    - type: runnableByName
-      name: Background Runnable 0
+    - name: Background Runnable 0
       autoRefresh: true
       fields:
         x:

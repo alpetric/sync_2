@@ -95,7 +95,7 @@ value:
     - id: b
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.ts'
+        content: '!inline b.inline_script.ts'
         input_transforms:
           x:
             type: javascript
@@ -103,7 +103,7 @@ value:
           'y':
             type: javascript
             expr: approvers
-        lock: '!inline inline_script_0.inline_script.lock'
+        lock: '!inline b.inline_script.lock'
         language: bun
 schema:
   $schema: 'https://json-schema.org/draft/2020-12/schema'

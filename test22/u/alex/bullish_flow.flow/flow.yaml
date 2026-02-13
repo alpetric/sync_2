@@ -5,7 +5,7 @@ value:
     - id: a
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.sh'
+        content: '!inline a.inline_script.sh'
         input_transforms:
           dflt:
             type: static
@@ -19,7 +19,7 @@ value:
     - id: b
       value:
         type: rawscript
-        content: '!inline inline_script_1.inline_script.sh'
+        content: '!inline b.inline_script.sh'
         input_transforms:
           dflt:
             type: static
@@ -33,23 +33,23 @@ value:
     - id: c
       value:
         type: rawscript
-        content: '!inline inline_script_2.inline_script.ts'
+        content: '!inline c.inline_script.ts'
         input_transforms:
           x:
             type: static
             value: ''
-        lock: '!inline inline_script_2.inline_script.lock'
+        lock: '!inline c.inline_script.lock'
         is_trigger: false
         language: bun
     - id: d
       value:
         type: rawscript
-        content: '!inline inline_script_3.inline_script.py'
+        content: '!inline d.inline_script.py'
         input_transforms:
           x:
             type: static
             value: ''
-        lock: '!inline inline_script_3.inline_script.lock'
+        lock: '!inline d.inline_script.lock'
         is_trigger: false
         language: python3
 schema:

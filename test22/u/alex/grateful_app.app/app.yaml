@@ -119,7 +119,6 @@ value:
           fieldType: any
           recomputeOnInputChanged: false
           runnable:
-            type: runnableByName
             name: Inline Script
             inlineScript:
               content: '!inline inline_script.inline_script.frontend.js'

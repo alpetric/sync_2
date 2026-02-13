@@ -67,7 +67,7 @@ value:
     - id: b
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.py'
+        content: '!inline b.inline_script.py'
         input_transforms:
           approval:
             type: static

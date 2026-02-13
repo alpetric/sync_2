@@ -5,7 +5,7 @@ value:
     - id: a
       value:
         type: rawscript
-        content: '!inline inline_script_0.inline_script.sh'
+        content: '!inline a.inline_script.sh'
         input_transforms: {}
         assets: []
         lock: ''
@@ -13,7 +13,7 @@ value:
     - id: b
       value:
         type: rawscript
-        content: '!inline inline_script_1.inline_script.sh'
+        content: '!inline b.inline_script.sh'
         input_transforms: {}
         assets: []
         lock: ''
