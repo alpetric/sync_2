@@ -82,7 +82,7 @@ mute_critical_alerts: false
 operator_settings:
   assets: true
   audit_logs: false
-  folders: true
+  folders: false
   groups: true
   resources: true
   runs: false
