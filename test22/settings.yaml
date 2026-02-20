@@ -77,7 +77,7 @@ git_sync:
           - flow
           - app
           - folder
-      use_individual_branch: null
+      use_individual_branch: false
 large_file_storage:
   type: S3Storage
   advanced_permissions: null
