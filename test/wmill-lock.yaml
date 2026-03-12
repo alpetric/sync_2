@@ -1,0 +1,4 @@
+version: v2
+locks:
+  f/test2/brisk_flow.flow+__flow_hash: 5183a4a6a329dfd7696de5c69cc9539862015b50caba91d7204989f36f63a890
+  f/test2/brisk_flow.flow+a.inline_script.ts: f839daa712f42e68e477afe873967e157417a60409fef38eb5ba3236d6196c3a
