@@ -1,5 +1,5 @@
 locks:
-  f/sync/trigger_git_sync: 543c23dbbf7050fbf26c483492a4d18ce5bcbf6e8dc0ad17b0552e4be48fb920
+  f/sync/trigger_git_sync: 4ab5f41a4980e9fbb4d3649ba63a9a89a46fdf30c6ea68a2f32d09e9df0df33c
   f/test/fastest_growing_script: 8258c23fc2c683c144f22fe1848f21d52fd2fc1cd2a66fb2eb0917c7e4b3d9ea
   f/test2/brisk_flow.flow+__flow_hash: 5183a4a6a329dfd7696de5c69cc9539862015b50caba91d7204989f36f63a890
   f/test2/brisk_flow.flow+a.inline_script.ts: f839daa712f42e68e477afe873967e157417a60409fef38eb5ba3236d6196c3a
