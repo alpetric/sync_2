@@ -4,3 +4,4 @@ description: >-
 value:
   token: '$var:f/slack_bot/bot_token'
 resource_type: slack
+ws_specific: false
