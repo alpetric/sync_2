@@ -1,0 +1,14 @@
+summary: x
+description: ''
+lock: '!inline u/admin/ck_v1.script.lock'
+concurrency_key: '$args[incident_id]'
+concurrency_time_window_s: 0
+concurrent_limit: 1
+kind: script
+schema:
+  type: object
+  properties:
+    incident_id:
+      type: string
+  required:
+    - incident_id
