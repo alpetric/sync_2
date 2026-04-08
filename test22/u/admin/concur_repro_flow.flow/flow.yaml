@@ -12,7 +12,7 @@ value:
             expr: flow_input.incident_id
         lock: '!inline inline_script_0.inline_script.lock'
         language: bun
-  concurrency_key: 'noc_cadence_${flow_input.incident_id}'
+  concurrency_key: '$args[incident_id] '
   concurrency_time_window_s: 0
   concurrent_limit: 1
 schema:
