@@ -1,0 +1,24 @@
+summary: 'Concurrency repro: sleep 30s'
+description: ''
+value:
+  modules:
+    - id: a
+      value:
+        type: rawscript
+        content: '!inline inline_script_0.inline_script.ts'
+        input_transforms:
+          incident_id:
+            type: javascript
+            expr: flow_input.incident_id
+        lock: '!inline inline_script_0.inline_script.lock'
+        language: bun
+  concurrency_key: '`noc_cadence_${flow_input.incident_id}`'
+  concurrency_time_window_s: 0
+  concurrent_limit: 1
+schema:
+  type: object
+  properties:
+    incident_id:
+      type: string
+  required:
+    - incident_id

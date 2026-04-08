@@ -1,0 +1,1 @@
+export async function main(incident_id: string) { await new Promise(r => setTimeout(r, 30000)); return incident_id }
