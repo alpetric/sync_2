@@ -30,11 +30,9 @@ default_app: u/alex/grateful_app
 deploy_to: prod
 error_handler:
   extra_args:
-    channel: '19:RQmL5XixywKyu0vq3i_cAHMlA-9R8rk6FyJhPY_Hi9c1@thread.tacv2'
-    channel_name: General
-  muted_on_cancel: false
-  muted_on_user_path: false
-  path: script/hub/11598/workspace-or-schedule-error-handler-teams
+    channel: test
+    slack: '$res:f/slack_bot/bot_token'
+  path: script/hub/19741/workspace-or-schedule-error-handler-slack
 git_sync:
   repositories:
     - exclude_types_override: []
@@ -96,3 +94,6 @@ operator_settings:
   triggers: true
   variables: true
   workers: true
+slack_command_script: script/u/alex/victorious_script
+slack_name: windmill-alex-test
+slack_team_id: T07RKR3PP1S
