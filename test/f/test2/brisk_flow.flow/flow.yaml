@@ -12,6 +12,18 @@ value:
             value: ''
         lock: '!inline a.inline_script.lock'
         language: bun
+    - id: b
+      summary: '[asdfa] / adfa'
+      value:
+        type: rawscript
+        content: '!inline [asdfa]_adfa.inline_script.ts'
+        input_transforms:
+          x:
+            type: static
+            value: ''
+        lock: '!inline [asdfa]_adfa.inline_script.lock'
+        language: bun
+  groups: []
 schema:
   $schema: https://json-schema.org/draft/2020-12/schema
   type: object
