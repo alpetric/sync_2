@@ -140,6 +140,10 @@ locks:
   u/alex/industrious_script: 46990f6bda35222d9bece64f63c0dff34388d471972eeb6bc6d492a30bc8ba7e
   u/alex/init_git_repo: 359c5213da986a4ce961388cdf65f13cd824b0a5304ffa61fc3686c280adccce
   u/alex/init_repo: 8549559e80acb505c16ef4939ea81dcf518eff6706cc0546c14e8c261a7bbae8
+  u/alex/keystone_group_sync_TEST.flow:
+    __flow_hash: ba229150394e6fa50cd7d7731c0b43c8ae7bc827ed3e9b45e71a3dfb99ad270c
+    fetch_groups_from_keystone_(placeholder_—_hard-coded).inline_script.ts: b14f06c31c79512bd4a9b341ab8b5ebe928061142d63533126a03cfaf576fd42
+    reconcile_windmill_instance_groups_against_the_source.inline_script.ts: d3952548f5a2f03b28a46a12a23c1fdb568d6bdd3af24163e931e77191bc1f1c
   u/alex/knowledgeable_flow.flow:
     __flow_hash: 353a1da15f369def56d2465de29adc54843dd652ba4b61fd0c20b6318032c565
     approval.inline_script.ts: 0641c2edf60e2f68ba1af3577b777142242ffaf56d97c2a70202492177cabe58

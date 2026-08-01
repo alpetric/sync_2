@@ -1,0 +1,107 @@
+summary: Sync instance groups from Keystone
+description: >
+  Full reconciliation of Windmill instance groups against an external source of
+  truth.
+
+  Replaces what SCIM 2.0 would do, driven over the public API on a schedule.
+
+
+  Step 1 is a PLACEHOLDER returning a hard-coded list — swap its body for a real
+  Keystone call.
+
+  Step 2 needs no changes as long as step 1 keeps returning the same shape.
+
+
+  Requires a superadmin token in the secret variable named by `token_variable`.
+
+  Runs in dry-run mode by default: set dry_run=false only after reviewing the
+  plan.
+value:
+  modules:
+    - id: fetch_source_groups
+      summary: Fetch groups from Keystone (PLACEHOLDER — hard-coded)
+      value:
+        type: rawscript
+        content: >-
+          !inline
+          fetch_groups_from_keystone_(placeholder_—_hard-coded).inline_script.ts
+        input_transforms: {}
+        lock: >-
+          !inline
+          fetch_groups_from_keystone_(placeholder_—_hard-coded).inline_script.lock
+        language: bun
+    - id: reconcile
+      summary: Reconcile Windmill instance groups against the source
+      value:
+        type: rawscript
+        content: >-
+          !inline
+          reconcile_windmill_instance_groups_against_the_source.inline_script.ts
+        input_transforms:
+          base_url:
+            type: javascript
+            expr: flow_input.base_url
+          delete_removed_groups:
+            type: javascript
+            expr: flow_input.delete_removed_groups
+          desired_groups:
+            type: javascript
+            expr: results.fetch_source_groups
+          dry_run:
+            type: javascript
+            expr: flow_input.dry_run
+          managed_prefix:
+            type: javascript
+            expr: flow_input.managed_prefix
+          max_deletions:
+            type: javascript
+            expr: flow_input.max_deletions
+          token_variable:
+            type: javascript
+            expr: flow_input.token_variable
+        lock: >-
+          !inline
+          reconcile_windmill_instance_groups_against_the_source.inline_script.lock
+        language: bun
+schema:
+  $schema: 'https://json-schema.org/draft/2020-12/schema'
+  type: object
+  order:
+    - dry_run
+    - managed_prefix
+    - delete_removed_groups
+    - max_deletions
+    - token_variable
+    - base_url
+  properties:
+    base_url:
+      type: string
+      description: Windmill base URL. Leave empty to use this instance's WM_BASE_URL.
+      default: ''
+    delete_removed_groups:
+      type: boolean
+      description: Delete managed groups that no longer exist in the source system.
+      default: true
+    dry_run:
+      type: boolean
+      description: 'When true, compute and return the plan without writing anything.'
+      default: true
+    managed_prefix:
+      type: string
+      description: >-
+        Only instance groups with this name prefix are managed by this flow.
+        Groups outside it are never touched.
+      default: keystone_
+    max_deletions:
+      type: integer
+      description: >-
+        Abort before writing if the plan would delete more groups than this.
+        Guards against an upstream outage returning a short list.
+      default: 3
+    token_variable:
+      type: string
+      description: >-
+        Path of the Windmill secret variable holding a SUPERADMIN token. The
+        /api/groups/* endpoints are superadmin-gated.
+      default: u/admin/windmill_superadmin_token
+  required: []
