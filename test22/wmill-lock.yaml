@@ -115,6 +115,10 @@ locks:
   u/alex/formidable_script: 0b2dd9453ffa619e76a3ccfbb824034f91f4036afacb0db759932f6591c114f6
   u/alex/g2: cbd1ad557dbe99fbca1600af83507cf8ef5503b7896a965eb969b01cf10997b0
   u/alex/g3: fda7518f40a8261084e784524d280e09c3e77aa73c98e0e8895f26099ac0aeb7
+  u/alex/gist_import_TEST.flow:
+    __flow_hash: e430b4d263cdbb2107ed7e9c1fd49dab151475aaa5c4c8e68df832dca790c859
+    fetch_groups_from_the_directory_(placeholder_—_hard-coded).inline_script.ts: 7528094a3dd77acfe75dfe248796c2a58a5e7317323412e067050599e711963b
+    reconcile_windmill_instance_groups_against_the_source.inline_script.ts: 8e87f5f7234e0a185297d96130da4a67d78a948f6793754cc5a652ee6f2ff3d9
   u/alex/git_sync: a07c99baf687f3e1fc79edecc59b894c35f8315fd41c36dd3aa4ec405ee61bea
   u/alex/git_sync_1: 6fa083ada1e20d362eb5a0d2d9bb1e0fe943a76dca2af2f25533d042987a1677
   u/alex/git_sync_2: 1f7f8632e664cec72682d70efc3c50438e842aaa4b44686315bf2c75c6a5ff13
