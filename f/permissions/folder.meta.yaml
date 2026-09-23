@@ -3,4 +3,5 @@ display_name: permissions
 extra_perms:
   u/alex: true
   u/alexbasic: true
-owners: []
+owners:
+  - u/alex
